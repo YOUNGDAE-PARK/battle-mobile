@@ -1,15 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  --background: #ffffff;
+  --foreground: #4B4B4B;
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'Nunito', var(--font-geist-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
+
+  --color-duo-green: #58CC02;
+  --color-duo-green-dark: #58A700;
+  
+  --color-duo-red: #FF4B4B;
+  --color-duo-red-dark: #EA2B2B;
+  
+  --color-duo-blue: #1CB0F6;
+  --color-duo-blue-dark: #1899D6;
+  
+  --color-duo-yellow: #FFC800;
+  --color-duo-yellow-dark: #D7A700;
+  
+  --color-duo-gray: #E5E5E5;
+  --color-duo-gray-dark: #CECECE;
+  
+  --color-duo-dark: #4B4B4B;
   
   --animate-shake: shake 0.4s ease-in-out;
   
@@ -23,6 +40,24 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
 }
 
+/* Custom Utilities for Duolingo Button */
+@layer utilities {
+  .btn-duo-primary {
+    @apply w-full rounded-2xl bg-duo-green border-b-4 border-duo-green-dark px-4 py-3 text-lg font-bold text-white uppercase active:border-b-0 active:translate-y-1 transition-all;
+  }
+  .btn-duo-secondary {
+    @apply w-full rounded-2xl bg-duo-blue border-b-4 border-duo-blue-dark px-4 py-3 text-lg font-bold text-white uppercase active:border-b-0 active:translate-y-1 transition-all;
+  }
+  .btn-duo-danger {
+    @apply w-full rounded-2xl bg-duo-red border-b-4 border-duo-red-dark px-4 py-3 text-lg font-bold text-white uppercase active:border-b-0 active:translate-y-1 transition-all;
+  }
+  .btn-duo-inactive {
+    @apply w-full rounded-2xl bg-duo-gray border-b-4 border-duo-gray-dark px-4 py-3 text-lg font-bold text-[#AFAFAF] uppercase active:border-b-0 active:translate-y-1 transition-all;
+  }
+  .duo-card {
+    @apply rounded-2xl border-2 border-duo-gray bg-white p-4;
+  }
+}
