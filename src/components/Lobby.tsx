@@ -202,12 +202,12 @@ export default function Lobby({
       {/* Header bar */}
       <header className="border-b border-slate-900 bg-slate-900/40 backdrop-blur-md sticky top-0 z-20 px-4 md:px-6 py-4 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3 shrink-0">
-          <div className="p-2 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 text-white shadow-lg shadow-cyan-500/20">
+          <div className="p-2 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 text-duo-dark shadow-lg shadow-cyan-500/20">
             <Swords className="w-5 h-5 md:w-6 md:h-6" />
           </div>
           <div>
             <h2 className="text-sm md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 font-sans">
-              스쿨배틀 아레나
+              배틀스터디 아레나
             </h2>
             <p className="text-[9px] md:text-[10px] text-cyan-400 tracking-wider font-semibold uppercase">
               Season 1: First Honor
@@ -222,7 +222,7 @@ export default function Lobby({
             onClick={handleGoToLobby}
             className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
               lobbyTab === "ARENA"
-                ? "bg-slate-900 text-white shadow-sm"
+                ? "bg-slate-900 text-duo-dark shadow-sm"
                 : "text-slate-500 hover:text-slate-300"
             }`}
           >
@@ -295,7 +295,7 @@ export default function Lobby({
           <button 
             type="button"
             onClick={() => setShowSettings(!showSettings)}
-            className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer"
+            className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 hover:text-duo-dark transition-colors cursor-pointer"
           >
             <Settings className="w-4 h-4" />
           </button>
@@ -315,7 +315,7 @@ export default function Lobby({
                 <span className="px-2 py-0.5 rounded-md bg-cyan-950 border border-cyan-800 text-cyan-300 font-extrabold text-[11px]">
                   학생 모드
                 </span>
-                <span className="text-xs font-bold text-white">
+                <span className="text-xs font-bold text-duo-dark">
                   {nickname || "슈크림먹은빵"}
                 </span>
                 <span className="text-xs text-slate-400 font-medium">
@@ -366,7 +366,7 @@ export default function Lobby({
               </span>
             </div>
             <div className="mt-4">
-              <h4 className="text-sm font-black text-white flex items-center gap-1.5">
+              <h4 className="text-sm font-black text-duo-dark flex items-center gap-1.5">
                 🏛️ 메인 로비 (Lobby)
               </h4>
               <p className="text-xs text-slate-400 mt-1 line-clamp-2">
@@ -395,7 +395,7 @@ export default function Lobby({
               </span>
             </div>
             <div className="mt-4">
-              <h4 className="text-sm font-black text-white flex items-center gap-1.5">
+              <h4 className="text-sm font-black text-duo-dark flex items-center gap-1.5">
                 ⚔️ 1:1 실시간 퀴즈 배틀
               </h4>
               <p className="text-xs text-slate-400 mt-1 line-clamp-2">
@@ -431,7 +431,7 @@ export default function Lobby({
               </span>
             </div>
             <div className="mt-4">
-              <h4 className="text-sm font-black text-white flex items-center gap-1.5">
+              <h4 className="text-sm font-black text-duo-dark flex items-center gap-1.5">
                 👾 오답 던전 (Shadow Raid)
               </h4>
               <p className="text-xs text-slate-400 mt-1 line-clamp-2">
@@ -467,7 +467,7 @@ export default function Lobby({
               </span>
             </div>
             <div className="mt-4">
-              <h4 className="text-sm font-black text-white flex items-center gap-1.5">
+              <h4 className="text-sm font-black text-duo-dark flex items-center gap-1.5">
                 📊 배틀 결과 & 분석
               </h4>
               <p className="text-xs text-slate-400 mt-1 line-clamp-2">
@@ -497,10 +497,10 @@ export default function Lobby({
               <div className="flex items-center gap-3">
                 <span className="text-xl shrink-0">🔥</span>
                 <div>
-                  <h4 className="text-sm md:text-base font-black text-white">
+                  <h4 className="text-sm md:text-base font-black text-duo-dark">
                     [주말 한정] 동탄고 vs 반송고 수학 1짱 데스매치!
                   </h4>
-                  <p className="text-[11px] text-white/80 font-medium mt-0.5">
+                  <p className="text-[11px] text-duo-dark/80 font-medium mt-0.5">
                     우승 학교 아이패드 증정! (스폰서: OO학원)
                   </p>
                 </div>
@@ -594,7 +594,7 @@ export default function Lobby({
                 <span className="text-[10px] font-bold px-2 py-0.5 bg-black/40 text-cyan-300 rounded-md border border-cyan-500/20">
                   {school}
                 </span>
-                <h3 className="text-xl font-extrabold tracking-tight mt-1 text-white">
+                <h3 className="text-xl font-extrabold tracking-tight mt-1 text-duo-dark">
                   {nickname}
                 </h3>
               </div>
@@ -867,7 +867,7 @@ export default function Lobby({
           {/* Big Matchmaking Button */}
           <div id="battle-arena-section" className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 scroll-mt-24">
             <div className="text-center md:text-left flex-1">
-              <h3 className="text-lg font-black tracking-tight text-white flex items-center justify-center md:justify-start gap-2">
+              <h3 className="text-lg font-black tracking-tight text-duo-dark flex items-center justify-center md:justify-start gap-2">
                 <Award className="w-5 h-5 text-cyan-400" />
                 아레나 매칭 준비 완료
               </h3>
@@ -902,7 +902,7 @@ export default function Lobby({
                 onClick={() => selectedSubject && energy > 0 && setIsMatching(true)}
                 whileHover={(selectedSubject && energy > 0) ? { scale: 1.02 } : {}}
                 whileTap={(selectedSubject && energy > 0) ? { scale: 0.98 } : {}}
-                className={`flex-1 lg:flex-initial relative px-8 py-5 rounded-2xl font-black text-base tracking-wider text-white shadow-xl overflow-hidden transition-all duration-300 min-w-[200px] ${
+                className={`flex-1 lg:flex-initial relative px-8 py-5 rounded-2xl font-black text-base tracking-wider text-duo-dark shadow-xl overflow-hidden transition-all duration-300 min-w-[200px] ${
                   selectedSubject && energy > 0
                     ? "shadow-cyan-500/20 cursor-pointer"
                     : "opacity-40 cursor-not-allowed border border-slate-800 bg-slate-950"
@@ -963,7 +963,7 @@ export default function Lobby({
             <button
               type="button"
               onClick={handleGoToLobby}
-              className="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-white rounded-xl flex items-center gap-2 cursor-pointer transition-colors"
+              className="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-duo-dark rounded-xl flex items-center gap-2 cursor-pointer transition-colors"
             >
               <span>← 메인 로비로 돌아가기</span>
             </button>
@@ -981,7 +981,7 @@ export default function Lobby({
             <button
               type="button"
               onClick={handleGoToLobby}
-              className="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-white rounded-xl flex items-center gap-2 cursor-pointer transition-colors"
+              className="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-duo-dark rounded-xl flex items-center gap-2 cursor-pointer transition-colors"
             >
               <span>← 메인 로비로 돌아가기</span>
             </button>
@@ -1041,11 +1041,11 @@ export default function Lobby({
                 />
                 
                 {/* Center Icon */}
-                <Swords className="w-10 h-10 text-white animate-pulse" />
+                <Swords className="w-10 h-10 text-duo-dark animate-pulse" />
               </div>
 
               {/* Status Header */}
-              <h2 className="text-3xl font-black tracking-tight text-white mb-2">
+              <h2 className="text-3xl font-black tracking-tight text-duo-dark mb-2">
                 배틀 상대 탐색 중
               </h2>
 
@@ -1125,7 +1125,7 @@ export default function Lobby({
                       <span className="text-[10px] font-bold px-1.5 py-0.5 bg-black/40 text-red-400 rounded border border-red-500/20">
                         {school === "청계중학교" ? "대청중학교" : "청계중학교"}
                       </span>
-                      <h4 className="text-base font-extrabold text-white mt-0.5">
+                      <h4 className="text-base font-extrabold text-duo-dark mt-0.5">
                         목동수학귀신
                       </h4>
                     </div>
@@ -1160,7 +1160,7 @@ export default function Lobby({
               <span className="text-[9px] font-black text-purple-400 uppercase tracking-widest block mb-1">
                 게릴라 스폰서 대전
               </span>
-              <h3 className="text-lg font-extrabold text-white mb-2 flex items-center gap-2">
+              <h3 className="text-lg font-extrabold text-duo-dark mb-2 flex items-center gap-2">
                 🏆 동탄고 vs 반송고 수학 1짱 데스매치
               </h3>
               <p className="text-xs text-slate-400 mb-4 leading-relaxed">
@@ -1186,7 +1186,7 @@ export default function Lobby({
                 <button
                   type="button"
                   onClick={() => setShowEventModal(false)}
-                  className="flex-1 py-2.5 bg-slate-850 hover:bg-slate-800 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-colors cursor-pointer"
+                  className="flex-1 py-2.5 bg-slate-850 hover:bg-slate-800 rounded-xl text-xs font-bold text-slate-400 hover:text-duo-dark transition-colors cursor-pointer"
                 >
                   돌아가기
                 </button>
@@ -1196,7 +1196,7 @@ export default function Lobby({
                     setShowEventModal(false);
                     onJoinEventRoom?.();
                   }}
-                  className="flex-1 py-2.5 bg-gradient-to-r from-red-500 to-purple-650 hover:opacity-90 rounded-xl text-xs font-black text-white transition-colors cursor-pointer"
+                  className="flex-1 py-2.5 bg-gradient-to-r from-red-500 to-purple-650 hover:opacity-90 rounded-xl text-xs font-black text-duo-dark transition-colors cursor-pointer"
                 >
                   이벤트 룸 입장
                 </button>
@@ -1221,7 +1221,7 @@ export default function Lobby({
               exit={{ scale: 0.95, y: 15 }}
               className="bg-slate-900 border border-slate-800 rounded-3xl p-6 w-full max-w-sm shadow-2xl relative"
             >
-              <h3 className="text-base font-extrabold text-white mb-2 flex items-center gap-2">
+              <h3 className="text-base font-extrabold text-duo-dark mb-2 flex items-center gap-2">
                 🔑 대기실 코드로 입장
               </h3>
               <p className="text-xs text-slate-400 mb-4">
@@ -1244,7 +1244,7 @@ export default function Lobby({
                     setShowPinModal(false);
                     setEnteredPin("");
                   }}
-                  className="flex-1 py-2.5 bg-slate-850 hover:bg-slate-800 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-colors cursor-pointer"
+                  className="flex-1 py-2.5 bg-slate-850 hover:bg-slate-800 rounded-xl text-xs font-bold text-slate-400 hover:text-duo-dark transition-colors cursor-pointer"
                 >
                   취소
                 </button>

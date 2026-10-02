@@ -563,7 +563,7 @@ export default function TeacherDashboard({
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white text-xs md:text-sm font-bold px-5 py-3 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-2"
+            className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-duo-dark text-xs md:text-sm font-bold px-5 py-3 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-2"
           >
             <span>{toastMessage}</span>
           </motion.div>
@@ -573,7 +573,7 @@ export default function TeacherDashboard({
       {/* Top Header */}
       <header className="w-full max-w-7xl mx-auto border-b border-slate-300 pb-5 mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-indigo-600 text-white shadow-md shadow-indigo-600/20">
+          <div className="p-3 rounded-2xl bg-indigo-600 text-duo-dark shadow-md shadow-indigo-600/20">
             <Calculator className="w-7 h-7" />
           </div>
           <div>
@@ -600,7 +600,7 @@ export default function TeacherDashboard({
           
           <button
             onClick={() => onStartAssessmentMatch(true)}
-            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-black shadow-md transition-all cursor-pointer flex items-center gap-1.5"
+            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-duo-dark rounded-xl text-xs font-black shadow-md transition-all cursor-pointer flex items-center gap-1.5"
           >
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span>수행평가 시험 응시 테스트</span>
@@ -673,7 +673,7 @@ export default function TeacherDashboard({
           <div className="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-black flex items-center justify-center">
+                <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
                   1
                 </span>
                 <h2 className="font-extrabold text-slate-900 text-base flex items-center gap-2">
@@ -751,7 +751,7 @@ export default function TeacherDashboard({
               <button
                 onClick={handleGenerateQuestions}
                 disabled={isGenerating}
-                className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white font-black text-xs md:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-duo-dark font-black text-xs md:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 {isGenerating ? (
                   <>
@@ -783,7 +783,7 @@ export default function TeacherDashboard({
                   <div key={q.id} className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
-                        <span className="px-2 py-0.5 rounded-md bg-slate-900 text-white text-[10px] font-black">
+                        <span className="px-2 py-0.5 rounded-md bg-slate-900 text-duo-dark text-[10px] font-black">
                           {idx + 1}번 문항
                         </span>
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700">
@@ -831,7 +831,7 @@ export default function TeacherDashboard({
               {!isQuestionsConfirmed ? (
                 <button
                   onClick={handleConfirmQuestions}
-                  className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs md:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-duo-dark font-black text-xs md:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <CheckCircle2 className="w-4 h-4" />
                   <span>위 문항으로 수행평가 문제 최종 확정하기</span>
@@ -857,7 +857,7 @@ export default function TeacherDashboard({
           <div className="lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-black flex items-center justify-center">
+                <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
                   2
                 </span>
                 <h2 className="font-extrabold text-slate-900 text-base">
@@ -869,7 +869,7 @@ export default function TeacherDashboard({
             {/* Code Box */}
             <div className={`p-6 rounded-3xl border-2 text-center transition-all ${
               codeStatus === "IN_PROGRESS"
-                ? "bg-slate-950 text-white border-indigo-500 shadow-xl"
+                ? "bg-slate-950 text-duo-dark border-indigo-500 shadow-xl"
                 : codeStatus === "EXPIRED"
                 ? "bg-slate-100 text-slate-400 border-slate-300"
                 : "bg-slate-50 text-slate-800 border-dashed border-slate-300"
@@ -940,9 +940,9 @@ export default function TeacherDashboard({
                 <button
                   onClick={handleExpireCode}
                   disabled={codeStatus === "EXPIRED"}
-                  className="py-2.5 px-3 bg-red-600 hover:bg-red-700 disabled:bg-slate-300 text-white rounded-xl text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+                  className="py-2.5 px-3 bg-red-600 hover:bg-red-700 disabled:bg-slate-300 text-duo-dark rounded-xl text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
                 >
-                  <AlertTriangle className="w-3.5 h-3.5 text-white" />
+                  <AlertTriangle className="w-3.5 h-3.5 text-duo-dark" />
                   <span>시험 종료 & 코드 만료</span>
                 </button>
               </div>
@@ -962,7 +962,7 @@ export default function TeacherDashboard({
         <section className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-5">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
             <div className="flex items-center gap-2">
-              <span className="w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-black flex items-center justify-center">
+              <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
                 3
               </span>
               <div>
@@ -1136,7 +1136,7 @@ export default function TeacherDashboard({
                         {student.submitted ? (
                           <button
                             onClick={() => handleOpenReviewModal(student)}
-                            className="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer flex items-center gap-1 ml-auto"
+                            className="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-duo-dark rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer flex items-center gap-1 ml-auto"
                           >
                             <Edit3 className="w-3.5 h-3.5 text-indigo-300" />
                             <span>{student.isConfirmed ? "점수 재조정" : "2차 채점/확정"}</span>
@@ -1291,7 +1291,7 @@ export default function TeacherDashboard({
                 </button>
                 <button
                   onClick={handleSaveTeacherEvaluation}
-                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black shadow-lg transition-colors cursor-pointer flex items-center gap-1.5"
+                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-duo-dark rounded-xl text-xs font-black shadow-lg transition-colors cursor-pointer flex items-center gap-1.5"
                 >
                   <CheckCircle2 className="w-4 h-4" />
                   <span>최종 점수 확정 및 저장</span>

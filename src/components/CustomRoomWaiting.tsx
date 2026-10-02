@@ -72,7 +72,7 @@ export default function CustomRoomWaiting({
             <span className="text-[10px] font-black text-cyan-400 uppercase tracking-widest block">
               {isTeamBattle ? "Class vs Class Event Mode" : "Multiplayer Matchmaking"}
             </span>
-            <h2 className="text-xl md:text-2xl font-black text-white mt-0.5 flex items-center gap-2 justify-center md:justify-start">
+            <h2 className="text-xl md:text-2xl font-black text-duo-dark mt-0.5 flex items-center gap-2 justify-center md:justify-start">
               {isTeamBattle ? "⚔️ 학교대항전 반 단체전 대기실" : "⚔️ 다대다 커스텀 매칭 대기실"}
             </h2>
           </div>
@@ -83,7 +83,7 @@ export default function CustomRoomWaiting({
             <span className="font-mono text-base font-black text-cyan-400 tracking-wider">{roomPin}</span>
             <button 
               onClick={handleCopyPin}
-              className="p-1 rounded bg-slate-900 hover:bg-slate-850 text-slate-400 hover:text-white transition-colors cursor-pointer"
+              className="p-1 rounded bg-slate-900 hover:bg-slate-850 text-slate-400 hover:text-duo-dark transition-colors cursor-pointer"
               title="Copy PIN"
             >
               <Copy className="w-3.5 h-3.5" />
@@ -122,7 +122,7 @@ export default function CustomRoomWaiting({
                   ) : (
                     <button
                       onClick={() => handleJoinTeam("A")}
-                      className="text-[9px] font-black bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-white px-2.5 py-1 rounded-lg border border-slate-800 transition-colors cursor-pointer"
+                      className="text-[9px] font-black bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-duo-dark px-2.5 py-1 rounded-lg border border-slate-800 transition-colors cursor-pointer"
                     >
                       팀 참가
                     </button>
@@ -168,7 +168,7 @@ export default function CustomRoomWaiting({
                   ) : (
                     <button
                       onClick={() => handleJoinTeam("B")}
-                      className="text-[9px] font-black bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-white px-2.5 py-1 rounded-lg border border-slate-800 transition-colors cursor-pointer"
+                      className="text-[9px] font-black bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-duo-dark px-2.5 py-1 rounded-lg border border-slate-800 transition-colors cursor-pointer"
                     >
                       팀 참가
                     </button>
@@ -260,7 +260,7 @@ export default function CustomRoomWaiting({
         <div className="pt-4 flex flex-col sm:flex-row items-center gap-4 border-t border-slate-850/80">
           <button
             onClick={onBackToLobby}
-            className="w-full sm:w-auto px-6 py-3.5 bg-slate-950 hover:bg-slate-900 border border-slate-850 text-slate-400 hover:text-white font-bold text-xs rounded-xl cursor-pointer transition-colors"
+            className="w-full sm:w-auto px-6 py-3.5 bg-slate-950 hover:bg-slate-900 border border-slate-850 text-slate-400 hover:text-duo-dark font-bold text-xs rounded-xl cursor-pointer transition-colors"
           >
             대기실 나가기
           </button>
@@ -274,7 +274,7 @@ export default function CustomRoomWaiting({
             <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
             
             {/* Inner button */}
-            <div className="relative flex items-center justify-center gap-2 bg-slate-950 text-white font-black rounded-[10px] py-3 transition-colors group-hover:bg-slate-900">
+            <div className="relative flex items-center justify-center gap-2 bg-slate-950 text-duo-dark font-black rounded-[10px] py-3 transition-colors group-hover:bg-slate-900">
               <Swords className="w-4.5 h-4.5 text-cyan-400 fill-cyan-400/10" />
               <span>
                 {isTeamBattle ? "단체 대항전 배틀 시작 (Start Team Battle)" : "방장 전용 배틀 시작 (Start Game)"}

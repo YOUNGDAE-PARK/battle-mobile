@@ -208,7 +208,7 @@ export default function PlayerAnalytics() {
                   </defs>
                 </svg>
                 <div className="absolute text-center">
-                  <span className="text-2xl font-black text-white">{winRate}%</span>
+                  <span className="text-2xl font-black text-duo-dark">{winRate}%</span>
                   <span className="block text-[9px] font-bold text-slate-500">최근 5경기</span>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function PlayerAnalytics() {
                 <Zap className="w-3.5 h-3.5 text-purple-400 fill-purple-400/20" />
               </div>
               <span className="text-xs font-black text-purple-400 tracking-wider uppercase">
-                스쿨배틀 AI 분석 코치 통계 피드백
+                배틀스터디 AI 분석 코치 통계 피드백
               </span>
             </div>
 
@@ -277,7 +277,7 @@ export default function PlayerAnalytics() {
                     <div className={`px-2.5 py-1.5 rounded-xl text-xs font-black text-center w-14 shadow ${
                       match.result === "WIN" 
                         ? "bg-cyan-500 text-slate-950" 
-                        : "bg-purple-500 text-white"
+                        : "bg-purple-500 text-duo-dark"
                     }`}>
                       {match.result === "WIN" ? "승리" : "패배"}
                     </div>

@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "스쿨배틀 (SchoolBattle Arena)",
+  title: "배틀스터디 (BattleStudy Arena)",
   description: "학교의 명예를 걸고 맞붙는 1대1 실시간 퀴즈 배틀",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="ko"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-950 text-slate-100 font-sans">
+      <body className="min-h-full flex flex-col bg-white text-slate-700 font-sans">
         <BattleStudyProvider>
           {children}
         </BattleStudyProvider>

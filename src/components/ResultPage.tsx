@@ -178,7 +178,7 @@ export default function ResultPage({
               <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-100 tracking-wider">
                 TIER PROMOTED!
               </h2>
-              <p className="text-lg font-bold text-white mt-2">
+              <p className="text-lg font-bold text-duo-dark mt-2">
                 축하합니다! 티어가 승격되었습니다!
               </p>
               
@@ -243,7 +243,7 @@ export default function ResultPage({
 
           {/* Stats Bar */}
           <div className="mt-8 inline-flex items-center gap-6 bg-slate-900/60 border border-slate-800 px-6 py-2.5 rounded-full text-xs font-semibold text-slate-400">
-            <span>정답 수: <strong className="text-white">{correctAnswersCount} / {answersLog.length || 3}</strong></span>
+            <span>정답 수: <strong className="text-duo-dark">{correctAnswersCount} / {answersLog.length || 3}</strong></span>
             {isStrictAssessment ? (
               <>
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-800" />
@@ -254,9 +254,9 @@ export default function ResultPage({
             ) : (
               <>
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-800" />
-                <span>최종 HP: <strong className="text-white">{Math.max(0, userFinalHp)}%</strong></span>
+                <span>최종 HP: <strong className="text-duo-dark">{Math.max(0, userFinalHp)}%</strong></span>
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-800" />
-                <span>상대 최종 HP: <strong className="text-white">{Math.max(0, opponentFinalHp)}%</strong></span>
+                <span>상대 최종 HP: <strong className="text-duo-dark">{Math.max(0, opponentFinalHp)}%</strong></span>
               </>
             )}
           </div>
@@ -296,7 +296,7 @@ export default function ResultPage({
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-black text-white" style={{ color: currentTierInfo.color }}>
+              <h3 className="text-lg font-black text-duo-dark" style={{ color: currentTierInfo.color }}>
                 {currentTierInfo.label}
               </h3>
               <p className="text-xs text-slate-300 font-bold uppercase tracking-widest mt-0.5">
@@ -309,7 +309,7 @@ export default function ResultPage({
           <div className="space-y-2 relative z-10">
             <div className="flex justify-between items-end text-xs font-semibold">
               <span className="text-slate-400">Progression</span>
-              <span className="font-mono text-white">
+              <span className="font-mono text-duo-dark">
                 {displayedLp} <span className="text-slate-500 font-normal">/ 100 LP</span>
               </span>
             </div>
@@ -326,7 +326,7 @@ export default function ResultPage({
           </div>
         </motion.div>
 
-        {/* AI Tutor Section: SchoolBattle AI Analysis Feedback */}
+        {/* AI Tutor Section: BattleStudy AI Analysis Feedback */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -336,7 +336,7 @@ export default function ResultPage({
           <div>
             <h3 className="text-lg font-extrabold tracking-tight flex items-center gap-2">
               <BookOpen className="text-cyan-400 w-5 h-5" />
-              스쿨배틀 AI 오답 분석 피드백
+              배틀스터디 AI 오답 분석 피드백
             </h3>
             <p className="text-xs text-slate-500 mt-1">
               각 문제에 대한 AI 튜터의 맞춤형 분석 보고서입니다. 카드를 클릭해 상세 해설을 확인하세요.
@@ -431,10 +431,10 @@ export default function ResultPage({
                             {/* AI Coach Banner */}
                             <div className="flex items-center gap-2 mb-3.5">
                               <div className="w-6 h-6 rounded-md bg-gradient-to-tr from-cyan-400 to-indigo-500 flex items-center justify-center shadow">
-                                <Zap className="w-3.5 h-3.5 text-white fill-white" />
+                                <Zap className="w-3.5 h-3.5 text-duo-dark fill-white" />
                               </div>
                               <span className="text-xs font-extrabold text-cyan-400 uppercase tracking-wider">
-                                SchoolBattle AI 튜터 피드백
+                                BattleStudy AI 튜터 피드백
                               </span>
                             </div>
                             
@@ -460,7 +460,7 @@ export default function ResultPage({
           {isStrictAssessment && onGoToTeacherDashboard && (
             <button
               onClick={onGoToTeacherDashboard}
-              className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs md:text-sm rounded-2xl shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+              className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-duo-dark font-black text-xs md:text-sm rounded-2xl shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
             >
               <BookOpen className="w-4 h-4" />
               <span>👩‍🏫 교사 대시보드에서 채점 결과 확인</span>
@@ -473,7 +473,7 @@ export default function ResultPage({
             whileTap={{ scale: 0.98 }}
             className={`w-full font-bold rounded-2xl py-4 transition-colors cursor-pointer text-xs md:text-sm ${
               isStrictAssessment 
-                ? "bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white" 
+                ? "bg-slate-900 hover:bg-slate-800 border border-slate-800 text-duo-dark" 
                 : "relative overflow-hidden p-[1.5px]"
             }`}
           >
@@ -482,7 +482,7 @@ export default function ResultPage({
             ) : (
               <>
                 <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-600 rounded-2xl" />
-                <div className="relative flex items-center justify-center gap-2 bg-slate-950 text-white font-bold rounded-[14px] py-4 hover:bg-slate-900 transition-colors">
+                <div className="relative flex items-center justify-center gap-2 bg-slate-950 text-duo-dark font-bold rounded-[14px] py-4 hover:bg-slate-900 transition-colors">
                   <span>로비로 돌아가기</span>
                 </div>
               </>
@@ -507,7 +507,7 @@ export default function ResultPage({
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-xl font-black text-white">
+                <h3 className="text-xl font-black text-duo-dark">
                   🎉 첫 퀴즈 배틀 완료!
                 </h3>
                 <p className="text-slate-300 text-xs md:text-sm leading-relaxed break-keep font-sans">

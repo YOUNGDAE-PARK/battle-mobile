@@ -8,8 +8,7 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Nunito', var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Nunito', system-ui, sans-serif;
 
   --color-duo-green: #58CC02;
   --color-duo-green-dark: #58A700;
@@ -43,21 +42,20 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Custom Utilities for Duolingo Button */
 @layer utilities {
   .btn-duo-primary {
-    @apply w-full rounded-2xl bg-duo-green border-b-4 border-duo-green-dark px-4 py-3 text-lg font-bold text-white uppercase active:border-b-0 active:translate-y-1 transition-all;
+    @apply w-full rounded-2xl bg-duo-green px-4 py-3 text-lg font-bold text-white uppercase transition-all shadow-[0_4px_0_0_#58A700] active:shadow-[0_0px_0_0_#58A700] active:translate-y-1;
   }
   .btn-duo-secondary {
-    @apply w-full rounded-2xl bg-duo-blue border-b-4 border-duo-blue-dark px-4 py-3 text-lg font-bold text-white uppercase active:border-b-0 active:translate-y-1 transition-all;
+    @apply w-full rounded-2xl bg-duo-blue px-4 py-3 text-lg font-bold text-white uppercase transition-all shadow-[0_4px_0_0_#1899D6] active:shadow-[0_0px_0_0_#1899D6] active:translate-y-1;
   }
   .btn-duo-danger {
-    @apply w-full rounded-2xl bg-duo-red border-b-4 border-duo-red-dark px-4 py-3 text-lg font-bold text-white uppercase active:border-b-0 active:translate-y-1 transition-all;
+    @apply w-full rounded-2xl bg-duo-red px-4 py-3 text-lg font-bold text-white uppercase transition-all shadow-[0_4px_0_0_#EA2B2B] active:shadow-[0_0px_0_0_#EA2B2B] active:translate-y-1;
   }
   .btn-duo-inactive {
-    @apply w-full rounded-2xl bg-duo-gray border-b-4 border-duo-gray-dark px-4 py-3 text-lg font-bold text-[#AFAFAF] uppercase active:border-b-0 active:translate-y-1 transition-all;
+    @apply w-full rounded-2xl bg-duo-gray px-4 py-3 text-lg font-bold text-[#AFAFAF] uppercase transition-all shadow-[0_4px_0_0_#CECECE] active:shadow-[0_0px_0_0_#CECECE] active:translate-y-1;
   }
   .duo-card {
-    @apply rounded-2xl border-2 border-duo-gray bg-white p-4;
+    @apply rounded-2xl border-2 border-duo-gray bg-white p-4 shadow-sm;
   }
 }

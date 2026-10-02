@@ -69,7 +69,7 @@ export default function LandingPage({ onJoin, onGoToTeacherDashboard, onStudentD
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-4xl font-extrabold text-duo-green mb-2">
-            스쿨배틀
+            배틀스터디
           </h1>
           <p className="text-lg font-bold text-duo-gray-dark">
             학교의 명예를 걸고 맞붙자!

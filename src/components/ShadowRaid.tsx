@@ -220,7 +220,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
 
                 {/* Monster Name */}
                 <h3 className={`text-base font-extrabold flex items-center gap-2 mt-2 ${
-                  isCleared ? "text-slate-500 line-through" : "text-white"
+                  isCleared ? "text-slate-500 line-through" : "text-duo-dark"
                 }`}>
                   <Skull className={`w-4.5 h-4.5 shrink-0 ${isCleared ? "text-slate-600" : "text-red-500"}`} />
                   {quest.name}
@@ -251,7 +251,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                 ) : (
                   <button
                     onClick={() => handleStartRevenge(quest)}
-                    className="flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs rounded-xl shadow-lg shadow-red-600/20 hover:scale-105 cursor-pointer transition-all"
+                    className="flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-duo-dark font-bold text-xs rounded-xl shadow-lg shadow-red-600/20 hover:scale-105 cursor-pointer transition-all"
                   >
                     <Swords className="w-3.5 h-3.5" />
                     <span>복수전 시작</span>
@@ -299,7 +299,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                     <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-1">
                       {activeQuest.concept}
                     </span>
-                    <h3 className="text-sm md:text-base font-extrabold text-white leading-relaxed whitespace-pre-line">
+                    <h3 className="text-sm md:text-base font-extrabold text-duo-dark leading-relaxed whitespace-pre-line">
                       {activeQuest.question}
                     </h3>
                   </div>
@@ -430,7 +430,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                   <div className="pt-4 flex items-center justify-center gap-3">
                     <button
                       onClick={() => handleStartRevenge(activeQuest)}
-                      className="px-5 py-2.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-black text-xs rounded-xl shadow-lg cursor-pointer transition-all flex items-center gap-1.5"
+                      className="px-5 py-2.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-duo-dark font-black text-xs rounded-xl shadow-lg cursor-pointer transition-all flex items-center gap-1.5"
                     >
                       <RotateCcw className="w-3.5 h-3.5" />
                       다시 도전하기

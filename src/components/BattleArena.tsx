@@ -378,7 +378,7 @@ export default function BattleArena({
     }`}>
       {/* Anti-cheat warning banner */}
       {isStrictAssessment && (
-        <div className="w-full bg-red-600 text-white py-2.5 px-4 text-xs md:text-sm font-black text-center relative z-50 flex items-center justify-center gap-2 animate-pulse shadow-md border-b border-red-700 uppercase tracking-wide">
+        <div className="w-full bg-red-600 text-duo-dark py-2.5 px-4 text-xs md:text-sm font-black text-center relative z-50 flex items-center justify-center gap-2 animate-pulse shadow-md border-b border-red-700 uppercase tracking-wide">
           <span>⚠️ 수행평가 진행 중: 화면 이탈 시 0점 처리됩니다 (Assessment in progress: Do not leave the screen)</span>
         </div>
       )}
@@ -537,7 +537,7 @@ export default function BattleArena({
                     {userProfile.school}
                   </span>
                   <span className={`text-sm md:text-base font-extrabold ${
-                    isStrictAssessment ? "text-slate-850" : "text-white"
+                    isStrictAssessment ? "text-slate-850" : "text-duo-dark"
                   }`}>
                     {displayUserNickname}
                   </span>
@@ -570,7 +570,7 @@ export default function BattleArena({
               <div className={`w-9 h-9 rounded-full flex items-center justify-center border font-bold text-[10px] ${
                 isStrictAssessment 
                   ? "bg-slate-100 border-slate-250 text-slate-750 shadow-sm" 
-                  : "bg-gradient-to-tr from-cyan-600 via-indigo-600 to-purple-600 border-white/10 text-white shadow-lg shadow-indigo-500/20"
+                  : "bg-gradient-to-tr from-cyan-600 via-indigo-600 to-purple-600 border-white/10 text-duo-dark shadow-lg shadow-indigo-500/20"
               }`}>
                 VS
               </div>
@@ -599,7 +599,7 @@ export default function BattleArena({
                     {opponent.school}
                   </span>
                   <span className={`text-sm md:text-base font-extrabold ${
-                    isStrictAssessment ? "text-slate-850" : "text-white"
+                    isStrictAssessment ? "text-slate-850" : "text-duo-dark"
                   }`}>
                     {displayOpponentNickname}
                   </span>
@@ -705,13 +705,13 @@ export default function BattleArena({
             : "bg-slate-900/50 backdrop-blur-xl border-slate-800"
         }`}>
           <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-7xl md:text-8xl pointer-events-none select-none ${
-            isStrictAssessment ? "text-slate-100/70" : "text-white/5"
+            isStrictAssessment ? "text-slate-100/70" : "text-duo-dark/5"
           }`}>
             Q{currentRound + 1}
           </div>
           
           <h2 className={`text-base md:text-xl font-black leading-relaxed relative z-10 break-keep whitespace-pre-line ${
-            isStrictAssessment ? "text-slate-900" : "text-white"
+            isStrictAssessment ? "text-slate-900" : "text-duo-dark"
           }`}>
             {currentQuestion.question}
           </h2>
