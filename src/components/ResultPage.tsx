@@ -39,10 +39,10 @@ interface ResultPageProps {
 const TIER_ORDER = ["Iron", "Bronze", "Silver", "Gold", "Diamond"];
 const TIER_DETAILS: Record<string, { label: string; color: string; title: string; bg: string }> = {
   Iron: { label: "아이언", color: "#a19d94", title: "[뇌정지]", bg: "from-stone-850 to-stone-950 border-stone-800" },
-  Bronze: { label: "브론즈", color: "#cd7f32", title: "[오답 자판기]", bg: "from-amber-900 to-yellow-950 border-amber-900" },
+  Bronze: { label: "브론즈", color: "#cd7f32", title: "[오답 자판기]", bg: "from-white to-duo-gray border-amber-900" },
   Silver: { label: "실버", color: "#c0c0c0", title: "[현지인]", bg: "from-duo-gray to-duo-gray-dark border-duo-gray-dark" },
-  Gold: { label: "골드", color: "#ffd700", title: "[1인분 장인]", bg: "from-yellow-600 via-amber-800 to-yellow-900 border-yellow-500" },
-  Diamond: { label: "다이아몬드", color: "#b9f2ff", title: "[하드캐리 머신]", bg: "from-cyan-500 via-blue-800 to-indigo-950 border-cyan-400" },
+  Gold: { label: "골드", color: "#ffd700", title: "[1인분 장인]", bg: "from-white via-duo-gray to-duo-gray border-duo-yellow" },
+  Diamond: { label: "다이아몬드", color: "#b9f2ff", title: "[하드캐리 머신]", bg: "from-white via-duo-gray to-duo-gray border-duo-blue" },
 };
 
 export default function ResultPage({ 
@@ -154,7 +154,7 @@ export default function ResultPage({
     <div className="min-h-screen bg-duo-gray text-duo-dark py-12 px-4 relative overflow-x-hidden font-sans">
       {/* Background Radial Glow */}
       <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full blur-3xl pointer-events-none opacity-20 ${
-        isVictory ? "bg-cyan-500" : "bg-red-500"
+        isVictory ? "bg-duo-blue" : "bg-duo-red"
       }`} />
 
       {/* Promotion Animation Screen Overlay */}
@@ -172,10 +172,10 @@ export default function ResultPage({
               transition={{ type: "spring", stiffness: 200, damping: 12 }}
               className="text-center px-6"
             >
-              <div className="inline-flex p-5 rounded-full bg-yellow-500/20 border-2 border-yellow-400 mb-4 animate-bounce">
-                <Crown className="w-16 h-16 text-yellow-400 fill-yellow-400/20" />
+              <div className="inline-flex p-5 rounded-full bg-duo-yellow/20 border-2 border-duo-yellow mb-4 animate-bounce">
+                <Crown className="w-16 h-16 text-duo-yellow fill-yellow-400/20" />
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-100 tracking-wider">
+              <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-duo-gray to-duo-gray tracking-wider">
                 TIER PROMOTED!
               </h2>
               <p className="text-lg font-bold text-duo-dark mt-2">
@@ -186,7 +186,7 @@ export default function ResultPage({
                 <span className="text-duo-dark line-through">
                   {TIER_DETAILS[originalTier].label}
                 </span>
-                <span className="text-cyan-400">→</span>
+                <span className="text-duo-blue">→</span>
                 <span style={{ color: TIER_DETAILS[displayedTier].color }} className="animate-pulse">
                   {TIER_DETAILS[displayedTier].label}
                 </span>
@@ -207,35 +207,35 @@ export default function ResultPage({
         >
           {isStrictAssessment ? (
             <div className="relative">
-              <div className="absolute inset-0 bg-indigo-500/10 blur-xl rounded-full scale-125" />
-              <div className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+              <div className="absolute inset-0 bg-duo-blue/10 blur-xl rounded-full scale-125" />
+              <div className="inline-block px-3 py-1 bg-duo-blue/20 text-duo-blue border border-duo-blue rounded-full text-xs font-bold uppercase tracking-wider mb-2">
                 수학 수행평가 답안 제출 완료
               </div>
               <h1 className="text-4xl md:text-6xl font-black tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-duo-blue via-duo-blue-dark to-duo-blue">
                 AI 1차 자동 채점 완료
               </h1>
-              <p className="text-xs md:text-sm font-extrabold text-indigo-300 mt-2">
+              <p className="text-xs md:text-sm font-extrabold text-duo-blue mt-2">
                 답안이 안전하게 제출되었습니다. 담당 교사의 2차 최종 점수 확정 대기 중입니다.
               </p>
             </div>
           ) : isVictory ? (
             <div className="relative">
               {/* Confetti Glow Background */}
-              <div className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full scale-125" />
-              <h1 className="text-6xl md:text-8xl font-black tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-indigo-200 to-teal-400 drop-shadow-[0_0_30px_rgba(34,211,238,0.3)]">
+              <div className="absolute inset-0 bg-duo-blue/10 blur-xl rounded-full scale-125" />
+              <h1 className="text-6xl md:text-8xl font-black tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-white via-duo-gray to-teal-400 ">
                 VICTORY
               </h1>
-              <p className="text-sm font-extrabold text-cyan-400 tracking-[0.25em] uppercase mt-2">
+              <p className="text-sm font-extrabold text-duo-blue tracking-[0.25em] uppercase mt-2">
                 배틀에서 승리하여 명예를 쟁취했습니다!
               </p>
             </div>
           ) : (
             <div className="relative">
-              <div className="absolute inset-0 bg-red-500/10 blur-xl rounded-full scale-125" />
-              <h1 className="text-6xl md:text-8xl font-black tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-purple-400 to-rose-600 drop-shadow-[0_0_30px_rgba(220,38,38,0.3)]">
+              <div className="absolute inset-0 bg-duo-red/10 blur-xl rounded-full scale-125" />
+              <h1 className="text-6xl md:text-8xl font-black tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-white via-duo-gray to-duo-gray ">
                 DEFEAT
               </h1>
-              <p className="text-sm font-extrabold text-red-400 tracking-[0.25em] uppercase mt-2">
+              <p className="text-sm font-extrabold text-duo-red tracking-[0.25em] uppercase mt-2">
                 배틀에서 패배했습니다. 다시 기회를 노리세요.
               </p>
             </div>
@@ -247,9 +247,9 @@ export default function ResultPage({
             {isStrictAssessment ? (
               <>
                 <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                <span>AI 1차 산출 점수: <strong className="text-emerald-400 font-mono text-sm">{Math.round((correctAnswersCount / (answersLog.length || 1)) * 100)}점</strong></span>
+                <span>AI 1차 산출 점수: <strong className="text-duo-green font-mono text-sm">{Math.round((correctAnswersCount / (answersLog.length || 1)) * 100)}점</strong></span>
                 <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                <span>상태: <strong className="text-amber-400">교사 2차 확정 대기</strong></span>
+                <span>상태: <strong className="text-duo-yellow">교사 2차 확정 대기</strong></span>
               </>
             ) : (
               <>
@@ -275,7 +275,7 @@ export default function ResultPage({
           <div className="flex items-center justify-between mb-4 relative z-10">
             <span className="text-xs text-duo-dark font-bold uppercase tracking-wider">리그 포인트 업데이트</span>
             <span className={`text-sm font-black flex items-center gap-1 ${
-              isVictory ? "text-cyan-400" : "text-red-400"
+              isVictory ? "text-duo-blue" : "text-duo-red"
             }`}>
               {isVictory ? `+${lpChange} LP` : `${lpChange} LP`}
             </span>
@@ -335,7 +335,7 @@ export default function ResultPage({
         >
           <div>
             <h3 className="text-lg font-extrabold tracking-tight flex items-center gap-2">
-              <BookOpen className="text-cyan-400 w-5 h-5" />
+              <BookOpen className="text-duo-blue w-5 h-5" />
               배틀스터디 AI 오답 분석 피드백
             </h3>
             <p className="text-xs text-duo-gray-dark mt-1">
@@ -356,7 +356,7 @@ export default function ResultPage({
                     isOpen 
                       ? "border-duo-gray-dark shadow-lg shadow-black/30" 
                       : isWrong
-                        ? "border-red-500/20 hover:border-red-500/40"
+                        ? "border-duo-red hover:border-duo-red"
                         : "border-duo-gray-dark hover:border-duo-gray-dark"
                   }`}
                 >
@@ -369,8 +369,8 @@ export default function ResultPage({
                       {/* Check/X status emblem */}
                       <div className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 font-extrabold text-xs ${
                         log.isCorrect 
-                          ? "bg-emerald-500/10 border border-emerald-500/30 text-emerald-400" 
-                          : "bg-red-500/10 border border-red-500/30 text-red-400"
+                          ? "bg-duo-green/10 border border-duo-green text-duo-green" 
+                          : "bg-duo-red/10 border border-duo-red text-duo-red"
                       }`}>
                         {log.isCorrect ? <Check className="w-3.5 h-3.5" /> : <X className="w-3.5 h-3.5" />}
                       </div>
@@ -412,7 +412,7 @@ export default function ResultPage({
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="p-3 bg-white border border-duo-gray-dark rounded-xl">
                               <span className="text-xs text-duo-gray-dark font-bold block mb-1">나의 선택</span>
-                              <p className={`font-semibold text-xs md:text-sm ${isWrong ? "text-red-400" : "text-emerald-400"}`}>
+                              <p className={`font-semibold text-xs md:text-sm ${isWrong ? "text-duo-red" : "text-duo-green"}`}>
                                 {log.selectedIndex === -1 
                                   ? "시간 초과 (선택 안 함)" 
                                   : `${log.selectedIndex + 1}. ${log.question.options[log.selectedIndex]}`}
@@ -420,20 +420,20 @@ export default function ResultPage({
                             </div>
                             <div className="p-3 bg-white border border-duo-gray-dark rounded-xl">
                               <span className="text-xs text-duo-gray-dark font-bold block mb-1">정답</span>
-                              <p className="font-semibold text-xs md:text-sm text-emerald-400">
+                              <p className="font-semibold text-xs md:text-sm text-duo-green">
                                 {log.question.answerIndex + 1}. {log.question.options[log.question.answerIndex]}
                               </p>
                             </div>
                           </div>
 
                           {/* AI Tutor breakdown feedback */}
-                          <div className="p-4 bg-white border border-cyan-500/10 rounded-2xl relative">
+                          <div className="p-4 bg-white border border-duo-blue rounded-2xl relative">
                             {/* AI Coach Banner */}
                             <div className="flex items-center gap-2 mb-3.5">
-                              <div className="w-6 h-6 rounded-md bg-gradient-to-tr from-cyan-400 to-indigo-500 flex items-center justify-center shadow">
+                              <div className="w-6 h-6 rounded-md bg-gradient-to-tr from-white to-duo-gray flex items-center justify-center shadow">
                                 <Zap className="w-3.5 h-3.5 text-duo-dark fill-white" />
                               </div>
-                              <span className="text-xs font-extrabold text-cyan-400 uppercase tracking-wider">
+                              <span className="text-xs font-extrabold text-duo-blue uppercase tracking-wider">
                                 BattleStudy AI 튜터 피드백
                               </span>
                             </div>
@@ -460,7 +460,7 @@ export default function ResultPage({
           {isStrictAssessment && onGoToTeacherDashboard && (
             <button
               onClick={onGoToTeacherDashboard}
-              className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-duo-dark font-black text-xs md:text-sm rounded-2xl shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+              className="w-full py-4 bg-duo-blue hover:bg-indigo-700 text-duo-dark font-black text-xs md:text-sm rounded-2xl shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
             >
               <BookOpen className="w-4 h-4" />
               <span>👩‍🏫 교사 대시보드에서 채점 결과 확인</span>
@@ -481,7 +481,7 @@ export default function ResultPage({
               <span>학생 로비로 복귀</span>
             ) : (
               <>
-                <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-600 rounded-2xl" />
+                <span className="absolute inset-0 bg-gradient-to-r from-white via-duo-gray to-duo-gray rounded-2xl" />
                 <div className="relative flex items-center justify-center gap-2 bg-duo-gray text-duo-dark font-bold rounded-[14px] py-4 hover:bg-white transition-colors">
                   <span>로비로 돌아가기</span>
                 </div>
@@ -502,8 +502,8 @@ export default function ResultPage({
               exit={{ scale: 0.9, opacity: 0 }}
               className="w-full max-w-md bg-white border border-duo-gray-dark rounded-3xl p-6 md:p-8 shadow-2xl relative text-center space-y-6"
             >
-              <div className="inline-flex p-4 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500">
-                <Sparkles className="w-8 h-8 text-yellow-400 fill-yellow-400/20 animate-pulse" />
+              <div className="inline-flex p-4 rounded-full bg-duo-yellow/10 border border-duo-yellow text-duo-yellow">
+                <Sparkles className="w-8 h-8 text-duo-yellow fill-yellow-400/20 animate-pulse" />
               </div>
 
               <div className="space-y-2">
@@ -513,9 +513,9 @@ export default function ResultPage({
                 <p className="text-duo-dark text-xs md:text-sm leading-relaxed break-keep font-sans">
                   당신의 첫 번째 놀라운 기록을 영구 저장하시겠습니까? <br />
                   <span className="text-duo-dark mt-1 block">
-                    (닉네임: <strong className="text-cyan-400">{userProfile.nickname}</strong>, 
-                    학교: <strong className="text-cyan-400">{userProfile.school}</strong>, 
-                    획득 LP: <strong className="text-yellow-400">+{lpChange} LP</strong>)
+                    (닉네임: <strong className="text-duo-blue">{userProfile.nickname}</strong>, 
+                    학교: <strong className="text-duo-blue">{userProfile.school}</strong>, 
+                    획득 LP: <strong className="text-duo-yellow">+{lpChange} LP</strong>)
                   </span>
                 </p>
               </div>
@@ -524,7 +524,7 @@ export default function ResultPage({
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-emerald-500/10 border border-emerald-500/25 rounded-2xl text-emerald-400 text-xs font-bold"
+                  className="p-4 bg-duo-green/10 border border-duo-green rounded-2xl text-duo-green text-xs font-bold"
                 >
                   ✅ 카카오 계정 연동 완료! <br />
                   <span className="text-duo-dark text-[10px] block mt-1">

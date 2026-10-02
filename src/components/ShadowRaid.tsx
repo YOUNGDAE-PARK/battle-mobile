@@ -157,9 +157,9 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
   };
 
   const getDifficultyColor = (diff: string) => {
-    if (diff === "EASY") return "text-emerald-400 border-emerald-500/30 bg-emerald-500/10";
-    if (diff === "NORMAL") return "text-cyan-400 border-cyan-500/30 bg-cyan-500/10";
-    return "text-red-400 border-red-500/30 bg-red-500/10 animate-pulse";
+    if (diff === "EASY") return "text-duo-green border-duo-green bg-duo-green/10";
+    if (diff === "NORMAL") return "text-duo-blue border-duo-blue bg-duo-blue/10";
+    return "text-duo-red border-duo-red bg-duo-red/10 animate-pulse";
   };
 
   return (
@@ -168,8 +168,8 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
       {/* View Header */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-duo-gray-dark pb-6">
         <div>
-          <h2 className="text-2xl md:text-3xl font-black tracking-tight flex items-center justify-center md:justify-start gap-2 text-red-400 drop-shadow-[0_0_15px_rgba(239,68,68,0.2)]">
-            <Skull className="w-7 h-7 text-red-500 animate-pulse" />
+          <h2 className="text-2xl md:text-3xl font-black tracking-tight flex items-center justify-center md:justify-start gap-2 text-duo-red ">
+            <Skull className="w-7 h-7 text-duo-red animate-pulse" />
             오답 던전 (Shadow Raid)
           </h2>
           <p className="text-xs md:text-sm text-duo-gray-dark mt-1">
@@ -177,8 +177,8 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 bg-white border border-duo-gray-dark px-4 py-2 rounded-2xl text-xs font-bold text-yellow-400">
-          <Trophy className="w-4 h-4 text-yellow-500" />
+        <div className="flex items-center gap-2 bg-white border border-duo-gray-dark px-4 py-2 rounded-2xl text-xs font-bold text-duo-yellow">
+          <Trophy className="w-4 h-4 text-duo-yellow" />
           <span>보스 처치 시 +5 LP 즉시 획득</span>
         </div>
       </div>
@@ -200,7 +200,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
             >
               {/* Card visual accents */}
               {!isCleared && (
-                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-red-600 to-transparent opacity-60" />
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-white to-transparent opacity-60" />
               )}
 
               <div>
@@ -210,7 +210,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                     {quest.difficulty}
                   </span>
                   
-                  <span className="text-[11px] font-mono font-black text-cyan-400 flex items-center gap-1">
+                  <span className="text-[11px] font-mono font-black text-duo-blue flex items-center gap-1">
                     {quest.subject === "국어" && "📖"}
                     {quest.subject === "영어" && "🔤"}
                     {quest.subject === "수학" && "📐"}
@@ -222,7 +222,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                 <h3 className={`text-base font-extrabold flex items-center gap-2 mt-2 ${
                   isCleared ? "text-duo-gray-dark line-through" : "text-duo-dark"
                 }`}>
-                  <Skull className={`w-4.5 h-4.5 shrink-0 ${isCleared ? "text-duo-gray-dark" : "text-red-500"}`} />
+                  <Skull className={`w-4.5 h-4.5 shrink-0 ${isCleared ? "text-duo-gray-dark" : "text-duo-red"}`} />
                   {quest.name}
                 </h3>
                 
@@ -236,7 +236,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                 <div>
                   <span className="text-[9px] text-duo-gray-dark font-bold block uppercase">RAID REWARD</span>
                   <span className={`font-mono text-sm font-black flex items-center gap-0.5 ${
-                    isCleared ? "text-duo-gray-dark" : "text-yellow-400"
+                    isCleared ? "text-duo-gray-dark" : "text-duo-yellow"
                   }`}>
                     <Trophy className="w-3.5 h-3.5" />
                     +{quest.rewardLp} LP
@@ -244,14 +244,14 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                 </div>
 
                 {isCleared ? (
-                  <div className="flex items-center gap-1.5 text-xs text-emerald-400 font-bold bg-emerald-500/10 border border-emerald-500/20 px-3 py-2 rounded-xl">
+                  <div className="flex items-center gap-1.5 text-xs text-duo-green font-bold bg-duo-green/10 border border-duo-green px-3 py-2 rounded-xl">
                     <CheckCircle className="w-4 h-4" />
                     격파 완료
                   </div>
                 ) : (
                   <button
                     onClick={() => handleStartRevenge(quest)}
-                    className="flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-duo-dark font-bold text-xs rounded-xl shadow-lg shadow-red-600/20 hover:scale-105 cursor-pointer transition-all"
+                    className="flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-white to-duo-gray hover:from-white hover:to-duo-gray text-duo-dark font-bold text-xs rounded-xl shadow-lg shadow-sm hover:scale-105 cursor-pointer transition-all"
                   >
                     <Swords className="w-3.5 h-3.5" />
                     <span>복수전 시작</span>
@@ -271,7 +271,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={modalShake ? { x: [0, -10, 10, -10, 10, 0] } : { scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="w-full max-w-xl bg-white border border-red-500/30 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
+              className="w-full max-w-xl bg-white border border-duo-red rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
             >
               {/* Modal Background Glow */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-950/20 rounded-full blur-2xl pointer-events-none" />
@@ -282,15 +282,15 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                   {/* Modal Header */}
                   <div className="flex items-center justify-between border-b border-duo-gray-dark pb-4">
                     <div className="flex items-center gap-2">
-                      <Skull className="w-5 h-5 text-red-500 animate-pulse" />
-                      <span className="text-xs font-black tracking-wider uppercase text-red-400">
+                      <Skull className="w-5 h-5 text-duo-red animate-pulse" />
+                      <span className="text-xs font-black tracking-wider uppercase text-duo-red">
                         REVENGE MATCH IN PROGRESS
                       </span>
                     </div>
 
                     <div className="flex items-center gap-1.5 bg-duo-gray border border-duo-gray-dark px-3 py-1.5 rounded-full font-mono text-xs">
-                      <Clock className="w-3.5 h-3.5 text-red-500 animate-pulse" />
-                      <span className="font-black text-red-400">{timeLeft}초</span>
+                      <Clock className="w-3.5 h-3.5 text-duo-red animate-pulse" />
+                      <span className="font-black text-duo-red">{timeLeft}초</span>
                     </div>
                   </div>
 
@@ -316,14 +316,14 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                       if (isLocked) {
                         if (isSelected) {
                           if (isCorrectAnswer) {
-                            optClass = "bg-emerald-950/60 border-emerald-500 text-emerald-300";
-                            icon = <CheckCircle className="w-4.5 h-4.5 text-emerald-400 absolute right-4 top-1/2 -translate-y-1/2" />;
+                            optClass = "bg-emerald-950/60 border-duo-green text-duo-green";
+                            icon = <CheckCircle className="w-4.5 h-4.5 text-duo-green absolute right-4 top-1/2 -translate-y-1/2" />;
                           } else {
-                            optClass = "bg-red-950/60 border-red-500 text-red-300";
-                            icon = <XCircle className="w-4.5 h-4.5 text-red-400 absolute right-4 top-1/2 -translate-y-1/2" />;
+                            optClass = "bg-red-950/60 border-duo-red text-duo-red";
+                            icon = <XCircle className="w-4.5 h-4.5 text-duo-red absolute right-4 top-1/2 -translate-y-1/2" />;
                           }
                         } else if (isCorrectAnswer) {
-                          optClass = "bg-emerald-950/30 border-emerald-500/50 text-emerald-400/90";
+                          optClass = "bg-emerald-950/30 border-duo-green text-duo-green/90";
                         } else {
                           optClass = "bg-duo-gray border-slate-950 text-duo-gray-dark opacity-60";
                         }
@@ -340,10 +340,10 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                             isLocked 
                               ? isSelected 
                                 ? isCorrectAnswer 
-                                  ? "bg-emerald-500/20 text-emerald-300"
-                                  : "bg-red-500/20 text-red-300"
+                                  ? "bg-duo-green/20 text-duo-green"
+                                  : "bg-duo-red/20 text-duo-red"
                                 : "bg-white text-duo-dark"
-                              : "bg-white text-red-400 border border-red-500/10"
+                              : "bg-white text-duo-red border border-duo-red"
                           }`}>
                             {idx + 1}
                           </span>
@@ -359,12 +359,12 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
               {/* VICTORY SCREEN */}
               {battleResult === "VICTORY" && (
                 <div className="text-center py-6 space-y-6">
-                  <div className="inline-flex p-4 rounded-full bg-yellow-500/15 border border-yellow-500/30 animate-bounce">
-                    <Trophy className="w-12 h-12 text-yellow-400 fill-yellow-400/10" />
+                  <div className="inline-flex p-4 rounded-full bg-duo-yellow/15 border border-duo-yellow animate-bounce">
+                    <Trophy className="w-12 h-12 text-duo-yellow fill-yellow-400/10" />
                   </div>
                   
                   <div>
-                    <h2 className="text-2xl font-black text-yellow-400 tracking-wider">
+                    <h2 className="text-2xl font-black text-duo-yellow tracking-wider">
                       QUEST COMPLETED!
                     </h2>
                     <p className="text-duo-dark text-xs font-bold mt-2">
@@ -375,23 +375,23 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                   <div className="p-4 bg-duo-gray border border-duo-gray-dark rounded-2xl inline-flex items-center gap-6">
                     <div>
                       <span className="text-[10px] text-duo-gray-dark font-bold block">획득 보상</span>
-                      <span className="text-sm font-mono font-black text-yellow-400 flex items-center gap-1 mt-0.5">
+                      <span className="text-sm font-mono font-black text-duo-yellow flex items-center gap-1 mt-0.5">
                         <Trophy className="w-4 h-4" />
                         +5 LP 복구
                       </span>
-                      <span className="text-[10px] font-black text-yellow-500 block mt-1">
+                      <span className="text-[10px] font-black text-duo-yellow block mt-1">
                         ⚡ 번개 +1개 충전!
                       </span>
                     </div>
                     <div className="h-10 w-px bg-duo-gray" />
                     <div>
                       <span className="text-[10px] text-duo-gray-dark font-bold block">퀘스트 상태</span>
-                      <span className="text-xs font-black text-emerald-400 mt-1.5 block">CLEARED</span>
+                      <span className="text-xs font-black text-duo-green mt-1.5 block">CLEARED</span>
                     </div>
                   </div>
 
                   <div className="pt-2 text-left bg-duo-gray p-4 border border-duo-gray-dark rounded-2xl text-xs text-duo-dark leading-relaxed max-w-md mx-auto">
-                    <strong className="text-cyan-400 block mb-1">AI 튜터 해설:</strong>
+                    <strong className="text-duo-blue block mb-1">AI 튜터 해설:</strong>
                     {activeQuest.explanation}
                   </div>
 
@@ -409,12 +409,12 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
               {/* DEFEAT SCREEN */}
               {battleResult === "DEFEAT" && (
                 <div className="text-center py-6 space-y-6">
-                  <div className="inline-flex p-4 rounded-full bg-red-500/15 border border-red-500/30 animate-pulse">
-                    <AlertTriangle className="w-12 h-12 text-red-500" />
+                  <div className="inline-flex p-4 rounded-full bg-duo-red/15 border border-duo-red animate-pulse">
+                    <AlertTriangle className="w-12 h-12 text-duo-red" />
                   </div>
                   
                   <div>
-                    <h2 className="text-2xl font-black text-red-500 tracking-wider">
+                    <h2 className="text-2xl font-black text-duo-red tracking-wider">
                       QUEST FAILED!
                     </h2>
                     <p className="text-duo-dark text-xs font-bold mt-2">
@@ -423,14 +423,14 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                   </div>
 
                   <div className="pt-2 text-left bg-duo-gray p-4 border border-duo-gray-dark rounded-2xl text-xs text-duo-dark leading-relaxed max-w-md mx-auto">
-                    <strong className="text-red-400 block mb-1">공략 힌트:</strong>
+                    <strong className="text-duo-red block mb-1">공략 힌트:</strong>
                     {activeQuest.explanation}
                   </div>
 
                   <div className="pt-4 flex items-center justify-center gap-3">
                     <button
                       onClick={() => handleStartRevenge(activeQuest)}
-                      className="px-5 py-2.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-duo-dark font-black text-xs rounded-xl shadow-lg cursor-pointer transition-all flex items-center gap-1.5"
+                      className="px-5 py-2.5 bg-gradient-to-r from-white to-duo-gray hover:from-white hover:to-duo-gray text-duo-dark font-black text-xs rounded-xl shadow-lg cursor-pointer transition-all flex items-center gap-1.5"
                     >
                       <RotateCcw className="w-3.5 h-3.5" />
                       다시 도전하기

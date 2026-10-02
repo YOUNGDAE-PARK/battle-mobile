@@ -367,9 +367,9 @@ export default function BattleArena({
   };
 
   const getHpColor = (hp: number) => {
-    if (hp > 50) return "bg-gradient-to-r from-emerald-500 to-green-400";
-    if (hp > 25) return "bg-gradient-to-r from-yellow-500 to-amber-400";
-    return "bg-gradient-to-r from-red-600 to-rose-500 animate-pulse";
+    if (hp > 50) return "bg-gradient-to-r from-white to-duo-gray";
+    if (hp > 25) return "bg-gradient-to-r from-white to-duo-gray";
+    return "bg-gradient-to-r from-white to-duo-gray animate-pulse";
   };
 
   return (
@@ -378,7 +378,7 @@ export default function BattleArena({
     }`}>
       {/* Anti-cheat warning banner */}
       {isStrictAssessment && (
-        <div className="w-full bg-red-600 text-duo-dark py-2.5 px-4 text-xs md:text-sm font-black text-center relative z-50 flex items-center justify-center gap-2 animate-pulse shadow-md border-b border-red-700 uppercase tracking-wide">
+        <div className="w-full bg-duo-red text-duo-dark py-2.5 px-4 text-xs md:text-sm font-black text-center relative z-50 flex items-center justify-center gap-2 animate-pulse shadow-md border-b border-red-700 uppercase tracking-wide">
           <span>⚠️ 수행평가 진행 중: 화면 이탈 시 0점 처리됩니다 (Assessment in progress: Do not leave the screen)</span>
         </div>
       )}
@@ -402,7 +402,7 @@ export default function BattleArena({
             animate={{ opacity: [0.3, 0.7, 0.3] }}
             exit={{ opacity: 0 }}
             transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
-            className="absolute inset-0 z-30 border-[10px] border-red-500 pointer-events-none shadow-[inset_0_0_80px_rgba(239,68,68,0.4)]"
+            className="absolute inset-0 z-30 border-[10px] border-duo-red pointer-events-none shadow-[inset_0_0_80px_rgba(239,68,68,0.4)]"
           />
         )}
       </AnimatePresence>
@@ -414,7 +414,7 @@ export default function BattleArena({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 z-40 bg-red-950/30 border-[16px] border-red-600/40 pointer-events-none shadow-[inset_0_0_100px_rgba(220,38,38,0.5)]"
+            className="absolute inset-0 z-40 bg-red-950/30 border-[16px] border-duo-red pointer-events-none shadow-[inset_0_0_100px_rgba(220,38,38,0.5)]"
           />
         )}
       </AnimatePresence>
@@ -429,11 +429,11 @@ export default function BattleArena({
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center pointer-events-none"
           >
-            <div className="flex items-center gap-1 bg-yellow-500/20 text-yellow-300 font-black text-2xl md:text-4xl px-6 py-2.5 rounded-full border border-yellow-400/50 shadow-[0_0_30px_rgba(234,179,8,0.3)] tracking-widest uppercase animate-bounce">
+            <div className="flex items-center gap-1 bg-duo-yellow/20 text-duo-yellow font-black text-2xl md:text-4xl px-6 py-2.5 rounded-full border border-duo-yellow shadow-[0_0_30px_rgba(234,179,8,0.3)] tracking-widest uppercase animate-bounce">
               <Flame className="w-6 h-6 fill-yellow-400" />
               CRITICAL HIT x2
             </div>
-            <span className="text-yellow-400 font-bold text-xs mt-2 uppercase tracking-widest drop-shadow">
+            <span className="text-duo-yellow font-bold text-xs mt-2 uppercase tracking-widest drop-shadow">
               30% 시간 내에 정답 맞춤! 데미지 2배!
             </span>
           </motion.div>
@@ -469,10 +469,10 @@ export default function BattleArena({
           <div className="bg-white backdrop-blur-xl border border-duo-gray-dark rounded-3xl p-6 shadow-2xl flex flex-col gap-4">
             <div className="w-full flex flex-col gap-3">
               <div className="flex justify-between items-center px-1 font-bold text-xs md:text-sm">
-                <span className="text-cyan-400 flex items-center gap-1.5 font-sans">
+                <span className="text-duo-blue flex items-center gap-1.5 font-sans">
                   🔥 Team A (동탄고 1학년 3반) HP: {teamAHp}%
                 </span>
-                <span className="text-purple-400 flex items-center gap-1.5 font-sans">
+                <span className="text-duo-dark flex items-center gap-1.5 font-sans">
                   😈 Team B (반송고 1학년 4반) HP: {teamBHp}%
                 </span>
               </div>
@@ -482,19 +482,19 @@ export default function BattleArena({
                 <motion.div
                   animate={{ width: `${(teamAHp / (teamAHp + teamBHp || 1)) * 100}%` }}
                   transition={{ type: "spring", stiffness: 80, damping: 15 }}
-                  className="h-full bg-gradient-to-r from-cyan-600 to-cyan-400 rounded-l-full"
+                  className="h-full bg-gradient-to-r from-white to-duo-gray rounded-l-full"
                 />
                 <motion.div
                   animate={{ width: `${(teamBHp / (teamAHp + teamBHp || 1)) * 100}%` }}
                   transition={{ type: "spring", stiffness: 80, damping: 15 }}
-                  className="h-full bg-gradient-to-r from-purple-500 to-purple-700 rounded-r-full"
+                  className="h-full bg-gradient-to-r from-white to-duo-gray rounded-r-full"
                 />
                 
                 {/* Central Sliding Rope Divider */}
                 <motion.div 
                   animate={{ left: `${(teamAHp / (teamAHp + teamBHp || 1)) * 100}%` }}
                   transition={{ type: "spring", stiffness: 80, damping: 15 }}
-                  className="absolute top-0 bottom-0 w-2.5 bg-yellow-400 border-l border-r border-white/50 shadow-[0_0_15px_rgba(234,179,8,1)] -translate-x-1/2 flex items-center justify-center"
+                  className="absolute top-0 bottom-0 w-2.5 bg-duo-yellow border-l border-r border-white/50 shadow-[0_0_15px_rgba(234,179,8,1)] -translate-x-1/2 flex items-center justify-center"
                 >
                   <div className="w-0.5 h-4 bg-white/70" />
                 </motion.div>
@@ -532,7 +532,7 @@ export default function BattleArena({
                   <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border block w-max ${
                     isStrictAssessment 
                       ? "bg-white text-duo-gray-dark border-duo-gray-dark" 
-                      : "bg-cyan-950 text-cyan-300 border-cyan-500/20"
+                      : "bg-cyan-950 text-duo-blue border-duo-blue"
                   }`}>
                     {userProfile.school}
                   </span>
@@ -546,7 +546,7 @@ export default function BattleArena({
 
               <div className="w-full space-y-1">
                 <div className="flex justify-between items-center text-[10px] md:text-xs">
-                  <span className={`font-extrabold ${isStrictAssessment ? "text-duo-gray-dark" : "text-cyan-400"}`}>HP</span>
+                  <span className={`font-extrabold ${isStrictAssessment ? "text-duo-gray-dark" : "text-duo-blue"}`}>HP</span>
                   <span className={`font-mono font-black ${isStrictAssessment ? "text-duo-dark" : "text-duo-dark"}`}>{Math.max(0, userHp)} / 100</span>
                 </div>
                 <div className={`h-3 w-full rounded-full border overflow-hidden relative ${
@@ -570,7 +570,7 @@ export default function BattleArena({
               <div className={`w-9 h-9 rounded-full flex items-center justify-center border font-bold text-[10px] ${
                 isStrictAssessment 
                   ? "bg-white border-slate-250 text-slate-750 shadow-sm" 
-                  : "bg-gradient-to-tr from-cyan-600 via-indigo-600 to-purple-600 border-white/10 text-duo-dark shadow-lg shadow-indigo-500/20"
+                  : "bg-gradient-to-tr from-white via-duo-gray to-duo-gray border-white/10 text-duo-dark shadow-lg shadow-sm"
               }`}>
                 VS
               </div>
@@ -594,7 +594,7 @@ export default function BattleArena({
                   <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border block w-max ml-auto ${
                     isStrictAssessment 
                       ? "bg-white text-duo-gray-dark border-duo-gray-dark" 
-                      : "bg-purple-950 text-purple-300 border-purple-500/20"
+                      : "bg-purple-950 text-duo-dark border-purple-500/20"
                   }`}>
                     {opponent.school}
                   </span>
@@ -608,7 +608,7 @@ export default function BattleArena({
 
               <div className="w-full space-y-1">
                 <div className="flex justify-between items-center text-[10px] md:text-xs flex-row-reverse">
-                  <span className={`font-extrabold ${isStrictAssessment ? "text-duo-gray-dark" : "text-purple-400"}`}>HP</span>
+                  <span className={`font-extrabold ${isStrictAssessment ? "text-duo-gray-dark" : "text-duo-dark"}`}>HP</span>
                   <span className={`font-mono font-black ${isStrictAssessment ? "text-duo-dark" : "text-duo-dark"}`}>{Math.max(0, opponentHp)} / 100</span>
                 </div>
                 <div className={`h-3 w-full rounded-full border overflow-hidden relative ${
@@ -641,7 +641,7 @@ export default function BattleArena({
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="w-full p-3.5 bg-red-950/60 border border-red-500/30 rounded-2xl text-red-400 text-xs md:text-sm font-extrabold text-center flex items-center justify-center gap-2 animate-pulse shadow-lg"
+              className="w-full p-3.5 bg-red-950/60 border border-duo-red rounded-2xl text-duo-red text-xs md:text-sm font-extrabold text-center flex items-center justify-center gap-2 animate-pulse shadow-lg"
             >
               <ShieldAlert className="w-4 h-4 shrink-0" />
               <span>⚠️ 상대방 풀이 완료! 남은 시간: {timeLeft}초</span>
@@ -655,7 +655,7 @@ export default function BattleArena({
             <span className={`text-[10px] md:text-xs font-black tracking-widest uppercase border px-3 py-1 rounded-full ${
               isStrictAssessment 
                 ? "bg-white border-duo-gray-dark text-duo-dark" 
-                : "bg-white border-cyan-500/20 text-cyan-400"
+                : "bg-white border-duo-blue text-duo-blue"
             }`}>
               ROUND {currentRound + 1} / {subjectQuestions.length}
             </span>
@@ -672,10 +672,10 @@ export default function BattleArena({
             <Clock className={`w-4 h-4 ${
               isStrictAssessment 
                 ? "text-slate-650" 
-                : timeLeft <= 5 ? "text-red-500 animate-pulse" : "text-cyan-400"
+                : timeLeft <= 5 ? "text-duo-red animate-pulse" : "text-duo-blue"
             }`} />
             <span className={`font-black ${
-              !isStrictAssessment && timeLeft <= 5 ? "text-red-500 animate-pulse" : ""
+              !isStrictAssessment && timeLeft <= 5 ? "text-duo-red animate-pulse" : ""
             }`}>
               {timeLeft}초 / {currentQuestion.timeLimit}초
             </span>
@@ -693,7 +693,7 @@ export default function BattleArena({
             className={`h-full rounded-full ${
               isStrictAssessment 
                 ? "bg-duo-gray-dark" 
-                : timeLeft <= 5 ? "bg-red-500" : "bg-gradient-to-r from-cyan-500 to-indigo-500"
+                : timeLeft <= 5 ? "bg-duo-red" : "bg-gradient-to-r from-white to-duo-gray"
             }`}
           />
         </div>
@@ -734,30 +734,30 @@ export default function BattleArena({
               if (isStrictAssessment) {
                 if (isSelected) {
                   if (isCorrectAnswer) {
-                    btnClass = "bg-emerald-50 border-emerald-500 text-emerald-800 shadow-sm";
-                    iconElement = <CheckCircle className="w-5 h-5 text-emerald-600 absolute right-4 top-1/2 -translate-y-1/2" />;
+                    btnClass = "bg-emerald-50 border-duo-green text-emerald-800 shadow-sm";
+                    iconElement = <CheckCircle className="w-5 h-5 text-duo-green absolute right-4 top-1/2 -translate-y-1/2" />;
                   } else {
-                    btnClass = "bg-red-50 border-red-500 text-red-800 shadow-sm";
-                    iconElement = <XCircle className="w-5 h-5 text-red-600 absolute right-4 top-1/2 -translate-y-1/2" />;
+                    btnClass = "bg-red-50 border-duo-red text-red-800 shadow-sm";
+                    iconElement = <XCircle className="w-5 h-5 text-duo-red absolute right-4 top-1/2 -translate-y-1/2" />;
                   }
                 } else if (isCorrectAnswer) {
-                  btnClass = "bg-emerald-50/40 border-emerald-400 text-emerald-700";
-                  iconElement = <CheckCircle className="w-4 h-4 text-emerald-600 absolute right-4 top-1/2 -translate-y-1/2" />;
+                  btnClass = "bg-emerald-50/40 border-duo-green text-emerald-700";
+                  iconElement = <CheckCircle className="w-4 h-4 text-duo-green absolute right-4 top-1/2 -translate-y-1/2" />;
                 } else {
                   btnClass = "bg-white border-duo-gray-dark text-duo-dark opacity-60";
                 }
               } else {
                 if (isSelected) {
                   if (isCorrectAnswer) {
-                    btnClass = "bg-emerald-950/60 border-emerald-500 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.15)]";
-                    iconElement = <CheckCircle className="w-5 h-5 text-emerald-400 absolute right-4 top-1/2 -translate-y-1/2" />;
+                    btnClass = "bg-emerald-950/60 border-duo-green text-duo-green shadow-[0_0_15px_rgba(16,185,129,0.15)]";
+                    iconElement = <CheckCircle className="w-5 h-5 text-duo-green absolute right-4 top-1/2 -translate-y-1/2" />;
                   } else {
-                    btnClass = "bg-red-950/60 border-red-500 text-red-300 shadow-[0_0_15px_rgba(239,68,68,0.15)]";
-                    iconElement = <XCircle className="w-5 h-5 text-red-400 absolute right-4 top-1/2 -translate-y-1/2" />;
+                    btnClass = "bg-red-950/60 border-duo-red text-duo-red shadow-[0_0_15px_rgba(239,68,68,0.15)]";
+                    iconElement = <XCircle className="w-5 h-5 text-duo-red absolute right-4 top-1/2 -translate-y-1/2" />;
                   }
                 } else if (isCorrectAnswer) {
-                  btnClass = "bg-emerald-950/30 border-emerald-500/50 text-emerald-400/90";
-                  iconElement = <CheckCircle className="w-4 h-4 text-emerald-500/60 absolute right-4 top-1/2 -translate-y-1/2" />;
+                  btnClass = "bg-emerald-950/30 border-duo-green text-duo-green/90";
+                  iconElement = <CheckCircle className="w-4 h-4 text-duo-green/60 absolute right-4 top-1/2 -translate-y-1/2" />;
                 } else {
                   btnClass = "bg-duo-gray border-duo-gray-dark text-duo-gray-dark opacity-60";
                 }
@@ -767,10 +767,10 @@ export default function BattleArena({
             const badgeClass = isLocked
               ? isSelected
                 ? isCorrectAnswer
-                  ? isStrictAssessment ? "bg-emerald-500/20 text-emerald-700" : "bg-emerald-500/20 text-emerald-300"
-                  : isStrictAssessment ? "bg-red-500/20 text-red-700" : "bg-red-500/20 text-red-300"
+                  ? isStrictAssessment ? "bg-duo-green/20 text-emerald-700" : "bg-duo-green/20 text-duo-green"
+                  : isStrictAssessment ? "bg-duo-red/20 text-red-700" : "bg-duo-red/20 text-duo-red"
                 : isStrictAssessment ? "bg-white text-duo-dark" : "bg-duo-gray text-slate-750"
-              : isStrictAssessment ? "bg-white text-duo-gray-dark border border-slate-250" : "bg-duo-gray text-cyan-400";
+              : isStrictAssessment ? "bg-white text-duo-gray-dark border border-slate-250" : "bg-duo-gray text-duo-blue";
 
             return (
               <motion.button
@@ -806,8 +806,8 @@ export default function BattleArena({
                 transition={{ type: "spring", stiffness: 120, damping: 12 }}
                 className={`p-3.5 rounded-2xl border text-xs font-black shadow-lg flex items-center gap-2.5 backdrop-blur-xl ${
                   evt.type === "success" 
-                    ? "bg-cyan-950/90 border-cyan-500/35 text-cyan-300"
-                    : "bg-red-950/90 border-red-500/35 text-red-300"
+                    ? "bg-cyan-950/90 border-duo-blue text-duo-blue"
+                    : "bg-red-950/90 border-duo-red text-duo-red"
                 }`}
               >
                 <span className="text-sm">{evt.type === "success" ? "⚔️" : "💥"}</span>

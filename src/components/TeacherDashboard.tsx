@@ -573,7 +573,7 @@ export default function TeacherDashboard({
       {/* Top Header */}
       <header className="w-full max-w-7xl mx-auto border-b border-duo-gray-dark pb-5 mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-indigo-600 text-duo-dark shadow-md shadow-indigo-600/20">
+          <div className="p-3 rounded-2xl bg-duo-blue text-duo-dark shadow-md shadow-sm">
             <Calculator className="w-7 h-7" />
           </div>
           <div>
@@ -602,7 +602,7 @@ export default function TeacherDashboard({
             onClick={() => onStartAssessmentMatch(true)}
             className="px-4 py-2 bg-white hover:bg-white text-duo-dark rounded-xl text-xs font-black shadow-md transition-all cursor-pointer flex items-center gap-1.5"
           >
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <ShieldCheck className="w-4 h-4 text-duo-green" />
             <span>수행평가 시험 응시 테스트</span>
           </button>
         </div>
@@ -616,7 +616,7 @@ export default function TeacherDashboard({
           <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 shadow-sm">
             <div className="flex items-center justify-between text-duo-gray-dark text-xs font-bold">
               <span>수행평가 과목</span>
-              <BookOpen className="w-4 h-4 text-indigo-500" />
+              <BookOpen className="w-4 h-4 text-duo-blue" />
             </div>
             <div className="mt-2">
               <span className="text-base md:text-lg font-black text-duo-dark">중3 수학 (I. 실수와 연산)</span>
@@ -627,7 +627,7 @@ export default function TeacherDashboard({
           <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 shadow-sm">
             <div className="flex items-center justify-between text-duo-gray-dark text-xs font-bold">
               <span>응시 현황</span>
-              <Users className="w-4 h-4 text-blue-500" />
+              <Users className="w-4 h-4 text-duo-blue" />
             </div>
             <div className="mt-2 flex items-baseline gap-1.5">
               <span className="text-2xl font-black text-duo-dark">{students.filter(s => s.submitted).length}</span>
@@ -635,7 +635,7 @@ export default function TeacherDashboard({
             </div>
             <div className="w-full bg-white h-1.5 rounded-full mt-2 overflow-hidden">
               <div 
-                className="bg-blue-600 h-full rounded-full transition-all duration-500"
+                className="bg-duo-blue h-full rounded-full transition-all duration-500"
                 style={{ width: `${(students.filter(s => s.submitted).length / students.length) * 100}%` }}
               />
             </div>
@@ -644,7 +644,7 @@ export default function TeacherDashboard({
           <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 shadow-sm">
             <div className="flex items-center justify-between text-duo-gray-dark text-xs font-bold">
               <span>학급 평균 점수</span>
-              <Award className="w-4 h-4 text-amber-500" />
+              <Award className="w-4 h-4 text-duo-yellow" />
             </div>
             <div className="mt-2 flex items-baseline gap-1.5">
               <span className="text-2xl font-black text-duo-dark">{averageScore}</span>
@@ -656,11 +656,11 @@ export default function TeacherDashboard({
           <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 shadow-sm">
             <div className="flex items-center justify-between text-duo-gray-dark text-xs font-bold">
               <span>2차 교사 확정 현황</span>
-              <FileCheck2 className="w-4 h-4 text-emerald-500" />
+              <FileCheck2 className="w-4 h-4 text-duo-green" />
             </div>
             <div className="mt-2 flex items-baseline gap-1.5">
-              <span className="text-2xl font-black text-emerald-600">{confirmedCount}</span>
-              <span className="text-xs font-bold text-duo-gray-dark">명 확정 (대기: <strong className="text-amber-600">{pendingCount}명</strong>)</span>
+              <span className="text-2xl font-black text-duo-green">{confirmedCount}</span>
+              <span className="text-xs font-bold text-duo-gray-dark">명 확정 (대기: <strong className="text-duo-yellow">{pendingCount}명</strong>)</span>
             </div>
             <p className="text-[11px] text-duo-gray-dark mt-0.5">AI 1차 채점 자동 완료됨</p>
           </div>
@@ -673,7 +673,7 @@ export default function TeacherDashboard({
           <div className="lg:col-span-7 bg-white border border-duo-gray-dark rounded-3xl p-6 shadow-sm space-y-5">
             <div className="flex items-center justify-between border-b border-duo-gray-dark pb-4">
               <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
+                <span className="w-6 h-6 rounded-full bg-duo-blue text-duo-dark text-xs font-black flex items-center justify-center">
                   1
                 </span>
                 <h2 className="font-extrabold text-duo-dark text-base flex items-center gap-2">
@@ -703,7 +703,7 @@ export default function TeacherDashboard({
                     const ch = MATH_CHAPTERS.find(c => c.id === e.target.value);
                     if (ch) setPageRange(ch.defaultPage);
                   }}
-                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500 cursor-pointer"
+                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-duo-blue cursor-pointer"
                 >
                   {MATH_CHAPTERS.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
@@ -719,7 +719,7 @@ export default function TeacherDashboard({
                   value={pageRange}
                   onChange={(e) => setPageRange(e.target.value)}
                   placeholder="예: p.12 ~ p.35"
-                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500"
+                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-duo-blue"
                 />
               </div>
 
@@ -729,7 +729,7 @@ export default function TeacherDashboard({
                 <select
                   value={difficulty}
                   onChange={(e) => setDifficulty(e.target.value as "하" | "중" | "상")}
-                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500 cursor-pointer"
+                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-duo-blue cursor-pointer"
                 >
                   <option value="하">기본 (하)</option>
                   <option value="중">표준 (중)</option>
@@ -751,7 +751,7 @@ export default function TeacherDashboard({
               <button
                 onClick={handleGenerateQuestions}
                 disabled={isGenerating}
-                className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-duo-dark font-black text-xs md:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="flex-1 py-3 bg-duo-blue hover:bg-indigo-700 disabled:bg-indigo-300 text-duo-dark font-black text-xs md:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 {isGenerating ? (
                   <>
@@ -809,7 +809,7 @@ export default function TeacherDashboard({
                             key={optIdx} 
                             className={`text-xs px-2.5 py-1.5 rounded-lg border font-medium ${
                               opt === q.correctAnswer 
-                                ? "bg-emerald-50 border-emerald-300 text-emerald-800 font-bold" 
+                                ? "bg-emerald-50 border-duo-green text-emerald-800 font-bold" 
                                 : "bg-white border-duo-gray-dark text-duo-gray-dark"
                             }`}
                           >
@@ -831,7 +831,7 @@ export default function TeacherDashboard({
               {!isQuestionsConfirmed ? (
                 <button
                   onClick={handleConfirmQuestions}
-                  className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-duo-dark font-black text-xs md:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3 bg-duo-green hover:bg-emerald-700 text-duo-dark font-black text-xs md:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <CheckCircle2 className="w-4 h-4" />
                   <span>위 문항으로 수행평가 문제 최종 확정하기</span>
@@ -839,7 +839,7 @@ export default function TeacherDashboard({
               ) : (
                 <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-xs font-bold text-emerald-800">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    <CheckCircle2 className="w-4 h-4 text-duo-green" />
                     <span>수행평가 문제가 확정되었습니다. 일회성 코드로 시험을 시작할 수 있습니다.</span>
                   </div>
                   <button 
@@ -857,7 +857,7 @@ export default function TeacherDashboard({
           <div className="lg:col-span-5 bg-white border border-duo-gray-dark rounded-3xl p-6 shadow-sm space-y-5">
             <div className="flex items-center justify-between border-b border-duo-gray-dark pb-4">
               <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
+                <span className="w-6 h-6 rounded-full bg-duo-blue text-duo-dark text-xs font-black flex items-center justify-center">
                   2
                 </span>
                 <h2 className="font-extrabold text-duo-dark text-base">
@@ -869,20 +869,20 @@ export default function TeacherDashboard({
             {/* Code Box */}
             <div className={`p-6 rounded-3xl border-2 text-center transition-all ${
               codeStatus === "IN_PROGRESS"
-                ? "bg-duo-gray text-duo-dark border-indigo-500 shadow-xl"
+                ? "bg-duo-gray text-duo-dark border-duo-blue shadow-xl"
                 : codeStatus === "EXPIRED"
                 ? "bg-white text-duo-dark border-duo-gray-dark"
                 : "bg-white text-duo-dark border-dashed border-duo-gray-dark"
             }`}>
               <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider mb-2">
-                <Key className="w-4 h-4 text-indigo-400" />
+                <Key className="w-4 h-4 text-duo-blue" />
                 <span>수행평가 일회성 시험 PIN</span>
               </div>
 
               {/* Large PIN Display */}
               <div className="my-3">
                 <span className={`font-mono text-3xl md:text-4xl font-black tracking-widest ${
-                  codeStatus === "EXPIRED" ? "line-through text-duo-dark" : "text-indigo-400"
+                  codeStatus === "EXPIRED" ? "line-through text-duo-dark" : "text-duo-blue"
                 }`}>
                   {roomCode}
                 </span>
@@ -891,14 +891,14 @@ export default function TeacherDashboard({
               {/* Status Badge */}
               <div className="inline-block mt-1">
                 {codeStatus === "IN_PROGRESS" && (
-                  <span className="px-3 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full text-xs font-extrabold flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="px-3 py-1 bg-duo-green/20 text-duo-green border border-duo-green rounded-full text-xs font-extrabold flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-duo-green animate-ping" />
                     시험 진행 중 (학생 응시 가능)
                   </span>
                 )}
                 {codeStatus === "EXPIRED" && (
                   <span className="px-3 py-1 bg-red-100 text-red-700 border border-red-200 rounded-full text-xs font-extrabold flex items-center gap-1.5">
-                    <XCircle className="w-3.5 h-3.5 text-red-600" />
+                    <XCircle className="w-3.5 h-3.5 text-duo-red" />
                     시험 종료 (코드 만료됨 · 재사용 불가)
                   </span>
                 )}
@@ -915,14 +915,14 @@ export default function TeacherDashboard({
             <div className="space-y-3 bg-white p-4 rounded-2xl border border-duo-gray-dark">
               <div className="flex items-center justify-between text-xs font-extrabold text-duo-dark">
                 <span>실시간 답안 제출 현황</span>
-                <span className="font-mono text-indigo-600">
+                <span className="font-mono text-duo-blue">
                   {students.filter(s => s.submitted).length} / {students.length}명 제출 완료
                 </span>
               </div>
 
               <div className="w-full bg-white h-2.5 rounded-full overflow-hidden">
                 <div 
-                  className="bg-indigo-600 h-full rounded-full transition-all duration-500"
+                  className="bg-duo-blue h-full rounded-full transition-all duration-500"
                   style={{ width: `${(students.filter(s => s.submitted).length / students.length) * 100}%` }}
                 />
               </div>
@@ -940,7 +940,7 @@ export default function TeacherDashboard({
                 <button
                   onClick={handleExpireCode}
                   disabled={codeStatus === "EXPIRED"}
-                  className="py-2.5 px-3 bg-red-600 hover:bg-red-700 disabled:bg-white text-duo-dark rounded-xl text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+                  className="py-2.5 px-3 bg-duo-red hover:bg-red-700 disabled:bg-white text-duo-dark rounded-xl text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   <AlertTriangle className="w-3.5 h-3.5 text-duo-dark" />
                   <span>시험 종료 & 코드 만료</span>
@@ -950,7 +950,7 @@ export default function TeacherDashboard({
 
             {/* Guide alert box */}
             <div className="p-3 bg-amber-50/70 border border-amber-200/80 rounded-2xl text-[11px] text-amber-900 flex items-start gap-2">
-              <HelpCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+              <HelpCircle className="w-4 h-4 text-duo-yellow shrink-0 mt-0.5" />
               <span>
                 <strong>선생님 안내:</strong> 학생들이 제출한 답안은 일차적으로 AI가 정밀 자동 채점하며, 아래 관리 테이블에서 최종 점수를 확정할 수 있습니다.
               </span>
@@ -962,7 +962,7 @@ export default function TeacherDashboard({
         <section className="bg-white border border-duo-gray-dark rounded-3xl p-6 shadow-sm space-y-5">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-duo-gray-dark pb-4">
             <div className="flex items-center gap-2">
-              <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
+              <span className="w-6 h-6 rounded-full bg-duo-blue text-duo-dark text-xs font-black flex items-center justify-center">
                 3
               </span>
               <div>
@@ -991,7 +991,7 @@ export default function TeacherDashboard({
               <select
                 value={filterClass}
                 onChange={(e) => setFilterClass(e.target.value)}
-                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500 cursor-pointer"
+                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-duo-blue cursor-pointer"
               >
                 <option value="ALL">전체 반 (1~3반)</option>
                 <option value="1">3학년 1반</option>
@@ -1006,7 +1006,7 @@ export default function TeacherDashboard({
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500 cursor-pointer"
+                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-duo-blue cursor-pointer"
               >
                 <option value="ALL">전체 상태</option>
                 <option value="CONFIRMED">교사 2차 확정 완료</option>
@@ -1023,7 +1023,7 @@ export default function TeacherDashboard({
                 value={filterStudentNum}
                 onChange={(e) => setFilterStudentNum(e.target.value)}
                 placeholder="예: 1, 2, 3..."
-                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500"
+                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-duo-blue"
               />
             </div>
 
@@ -1036,7 +1036,7 @@ export default function TeacherDashboard({
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="학생 이름 입력 (예: 김민수, 박지민...)"
-                  className="w-full bg-white border border-duo-gray-dark rounded-xl pl-9 pr-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500"
+                  className="w-full bg-white border border-duo-gray-dark rounded-xl pl-9 pr-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-duo-blue"
                 />
                 <Search className="w-4 h-4 text-duo-dark absolute left-3 top-2.5" />
                 {searchQuery && (
@@ -1110,7 +1110,7 @@ export default function TeacherDashboard({
                             {student.teacherScore}점
                           </span>
                         ) : student.submitted ? (
-                          <span className="text-xs text-amber-600 font-bold">대기 중</span>
+                          <span className="text-xs text-duo-yellow font-bold">대기 중</span>
                         ) : (
                           <span className="text-duo-dark">-</span>
                         )}
@@ -1118,12 +1118,12 @@ export default function TeacherDashboard({
                       <td className="py-3.5 px-4 text-center">
                         {student.isConfirmed ? (
                           <span className="px-2.5 py-1 bg-indigo-100 text-indigo-800 border border-indigo-200 rounded-full text-[10px] font-black inline-flex items-center gap-1">
-                            <CheckCircle2 className="w-3 h-3 text-indigo-600" />
+                            <CheckCircle2 className="w-3 h-3 text-duo-blue" />
                             최종 확정
                           </span>
                         ) : student.submitted ? (
                           <span className="px-2.5 py-1 bg-amber-100 text-amber-800 border border-amber-200 rounded-full text-[10px] font-black inline-flex items-center gap-1">
-                            <Clock className="w-3 h-3 text-amber-600" />
+                            <Clock className="w-3 h-3 text-duo-yellow" />
                             AI 1차 완료
                           </span>
                         ) : (
@@ -1138,7 +1138,7 @@ export default function TeacherDashboard({
                             onClick={() => handleOpenReviewModal(student)}
                             className="px-3 py-1.5 bg-white hover:bg-white text-duo-dark rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer flex items-center gap-1 ml-auto"
                           >
-                            <Edit3 className="w-3.5 h-3.5 text-indigo-300" />
+                            <Edit3 className="w-3.5 h-3.5 text-duo-blue" />
                             <span>{student.isConfirmed ? "점수 재조정" : "2차 채점/확정"}</span>
                           </button>
                         ) : (
@@ -1211,7 +1211,7 @@ export default function TeacherDashboard({
                     <div key={ans.qNum} className="p-3 bg-white border border-duo-gray-dark rounded-xl text-xs space-y-1">
                       <div className="flex items-center justify-between font-bold text-duo-dark">
                         <span>{ans.qNum}번. {ans.title}</span>
-                        <span className="font-mono text-indigo-600 font-black">
+                        <span className="font-mono text-duo-blue font-black">
                           {ans.pointsEarned} / {ans.maxPoints}점
                         </span>
                       </div>
@@ -1232,7 +1232,7 @@ export default function TeacherDashboard({
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="text-xs font-extrabold text-indigo-950 flex items-center gap-1.5">
-                      <Edit3 className="w-4 h-4 text-indigo-600" />
+                      <Edit3 className="w-4 h-4 text-duo-blue" />
                       선생님 최종 점수 조정 (2차 평가자)
                     </h4>
                     <p className="text-[11px] text-indigo-800 mt-0.5">
@@ -1254,7 +1254,7 @@ export default function TeacherDashboard({
                       max={100}
                       value={tempTeacherScore}
                       onChange={(e) => setTempTeacherScore(Math.min(100, Math.max(0, parseInt(e.target.value) || 0)))}
-                      className="w-16 text-center font-mono font-black text-lg bg-white border border-indigo-300 rounded-xl py-1 text-indigo-900 focus:outline-none"
+                      className="w-16 text-center font-mono font-black text-lg bg-white border border-duo-blue rounded-xl py-1 text-indigo-900 focus:outline-none"
                     />
                     <button
                       onClick={() => setTempTeacherScore(prev => Math.min(100, prev + 1))}
@@ -1276,7 +1276,7 @@ export default function TeacherDashboard({
                     onChange={(e) => setTempFeedback(e.target.value)}
                     placeholder="예: 서술형 단계별 유도 공식이 논리적이므로 부분점수 4점 상향 조정함."
                     rows={2}
-                    className="w-full bg-white border border-indigo-200 rounded-xl p-3 text-xs text-duo-dark placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
+                    className="w-full bg-white border border-indigo-200 rounded-xl p-3 text-xs text-duo-dark placeholder-slate-400 focus:outline-none focus:border-duo-blue font-medium"
                   />
                 </div>
               </div>
@@ -1291,7 +1291,7 @@ export default function TeacherDashboard({
                 </button>
                 <button
                   onClick={handleSaveTeacherEvaluation}
-                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-duo-dark rounded-xl text-xs font-black shadow-lg transition-colors cursor-pointer flex items-center gap-1.5"
+                  className="px-6 py-2.5 bg-duo-blue hover:bg-indigo-700 text-duo-dark rounded-xl text-xs font-black shadow-lg transition-colors cursor-pointer flex items-center gap-1.5"
                 >
                   <CheckCircle2 className="w-4 h-4" />
                   <span>최종 점수 확정 및 저장</span>

@@ -69,7 +69,7 @@ export default function CustomRoomWaiting({
         {/* Waiting Header */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 border-b border-duo-gray-dark pb-5">
           <div>
-            <span className="text-[10px] font-black text-cyan-400 uppercase tracking-widest block">
+            <span className="text-[10px] font-black text-duo-blue uppercase tracking-widest block">
               {isTeamBattle ? "Class vs Class Event Mode" : "Multiplayer Matchmaking"}
             </span>
             <h2 className="text-xl md:text-2xl font-black text-duo-dark mt-0.5 flex items-center gap-2 justify-center md:justify-start">
@@ -80,7 +80,7 @@ export default function CustomRoomWaiting({
           {/* Room PIN Container */}
           <div className="flex items-center gap-2 bg-duo-gray border border-duo-gray-dark px-4 py-2 rounded-2xl">
             <span className="text-xs text-duo-gray-dark font-bold font-sans">ROOM CODE:</span>
-            <span className="font-mono text-base font-black text-cyan-400 tracking-wider">{roomPin}</span>
+            <span className="font-mono text-base font-black text-duo-blue tracking-wider">{roomPin}</span>
             <button 
               onClick={handleCopyPin}
               className="p-1 rounded bg-white hover:bg-duo-gray text-duo-dark hover:text-duo-dark transition-colors cursor-pointer"
@@ -96,7 +96,7 @@ export default function CustomRoomWaiting({
           // --- TEAM BATTLE ROOM LAYOUT ---
           <div className="space-y-6">
             <div className="text-center bg-purple-950/20 border border-purple-550/20 p-3 rounded-2xl">
-              <p className="text-xs text-purple-300 font-extrabold">
+              <p className="text-xs text-duo-dark font-extrabold">
                 📢 각 팀의 멤버가 푸는 퀴즈 결과에 따라 소속 학교의 합산 체력(Shared HP)이 연동됩니다!
               </p>
             </div>
@@ -107,16 +107,16 @@ export default function CustomRoomWaiting({
               {/* TEAM A COLUMN */}
               <div className={`p-5 rounded-2xl border transition-all ${
                 userTeam === "A" 
-                  ? "bg-duo-gray border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.05)]" 
+                  ? "bg-duo-gray border-duo-blue shadow-[0_0_15px_rgba(6,182,212,0.05)]" 
                   : "bg-duo-gray border-duo-gray-dark"
               }`}>
                 <div className="flex items-center justify-between border-b border-duo-gray-dark pb-3 mb-4">
                   <div>
-                    <h3 className="text-sm font-black text-cyan-400">Team A (레드윙즈)</h3>
+                    <h3 className="text-sm font-black text-duo-blue">Team A (레드윙즈)</h3>
                     <span className="text-[10px] text-duo-dark font-bold block mt-0.5">동탄고등학교 1학년 3반</span>
                   </div>
                   {userTeam === "A" ? (
-                    <span className="text-[9px] font-black bg-cyan-950 text-cyan-400 px-2.5 py-1 rounded-lg border border-cyan-500/20">
+                    <span className="text-[9px] font-black bg-cyan-950 text-duo-blue px-2.5 py-1 rounded-lg border border-duo-blue">
                       내 팀
                     </span>
                   ) : (
@@ -158,11 +158,11 @@ export default function CustomRoomWaiting({
               }`}>
                 <div className="flex items-center justify-between border-b border-duo-gray-dark pb-3 mb-4">
                   <div>
-                    <h3 className="text-sm font-black text-purple-400">Team B (블루이글스)</h3>
+                    <h3 className="text-sm font-black text-duo-dark">Team B (블루이글스)</h3>
                     <span className="text-[10px] text-duo-dark font-bold block mt-0.5">반송고등학교 1학년 4반</span>
                   </div>
                   {userTeam === "B" ? (
-                    <span className="text-[9px] font-black bg-purple-950 text-purple-400 px-2.5 py-1 rounded-lg border border-purple-500/20">
+                    <span className="text-[9px] font-black bg-purple-950 text-duo-dark px-2.5 py-1 rounded-lg border border-purple-500/20">
                       내 팀
                     </span>
                   ) : (
@@ -212,13 +212,13 @@ export default function CustomRoomWaiting({
                   key={player.name}
                   className={`flex items-center justify-between p-4 border rounded-2xl transition-all ${
                     player.isHost 
-                      ? "bg-duo-gray border-cyan-500/20" 
+                      ? "bg-duo-gray border-duo-blue" 
                       : "bg-duo-gray border-duo-gray-dark"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-sm ${
-                      player.isHost ? "bg-cyan-500/10 text-cyan-400" : "bg-white text-duo-gray-dark"
+                      player.isHost ? "bg-duo-blue/10 text-duo-blue" : "bg-white text-duo-gray-dark"
                     }`}>
                       {player.isHost ? "👑" : "🙋"}
                     </div>
@@ -236,11 +236,11 @@ export default function CustomRoomWaiting({
                   {/* Ready Check */}
                   <div>
                     {player.isHost ? (
-                      <span className="text-[10px] font-black text-cyan-400 bg-cyan-950/20 border border-cyan-500/20 px-3 py-1.5 rounded-xl uppercase tracking-wider">
+                      <span className="text-[10px] font-black text-duo-blue bg-cyan-950/20 border border-duo-blue px-3 py-1.5 rounded-xl uppercase tracking-wider">
                         방장 (Host)
                       </span>
                     ) : player.isReady ? (
-                      <span className="text-[10px] font-black text-emerald-400 bg-emerald-950/20 border border-emerald-500/20 px-3 py-1.5 rounded-xl flex items-center gap-1">
+                      <span className="text-[10px] font-black text-duo-green bg-emerald-950/20 border border-duo-green px-3 py-1.5 rounded-xl flex items-center gap-1">
                         <CheckCircle className="w-3 h-3 fill-emerald-500/10" />
                         준비 완료
                       </span>
@@ -270,12 +270,12 @@ export default function CustomRoomWaiting({
             className="w-full sm:flex-1 relative group overflow-hidden rounded-xl p-[1.5px] focus:outline-none cursor-pointer"
           >
             {/* Pulsing Outline */}
-            <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-600 rounded-xl" />
-            <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+            <span className="absolute inset-0 bg-gradient-to-r from-white via-duo-gray to-duo-gray rounded-xl" />
+            <span className="absolute inset-0 bg-gradient-to-r from-white via-duo-gray to-duo-gray rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
             
             {/* Inner button */}
             <div className="relative flex items-center justify-center gap-2 bg-duo-gray text-duo-dark font-black rounded-[10px] py-3 transition-colors group-hover:bg-white">
-              <Swords className="w-4.5 h-4.5 text-cyan-400 fill-cyan-400/10" />
+              <Swords className="w-4.5 h-4.5 text-duo-blue fill-cyan-400/10" />
               <span>
                 {isTeamBattle ? "단체 대항전 배틀 시작 (Start Team Battle)" : "방장 전용 배틀 시작 (Start Game)"}
               </span>
