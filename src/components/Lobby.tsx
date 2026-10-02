@@ -206,7 +206,7 @@ export default function Lobby({
             <Swords className="w-5 h-5 md:w-6 md:h-6" />
           </div>
           <div>
-            <h2 className="text-sm md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 font-sans">
+            <h2 className="text-sm md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-duo-dark to-duo-gray-dark font-sans">
               배틀스터디 아레나
             </h2>
             <p className="text-[9px] md:text-[10px] text-cyan-400 tracking-wider font-semibold uppercase">
@@ -506,7 +506,7 @@ export default function Lobby({
                 </div>
               </div>
               
-              <span className="px-4 py-2 bg-white text-purple-700 text-xs font-black rounded-xl hover:bg-slate-50 transition-colors shadow shrink-0">
+              <span className="px-4 py-2 bg-white text-purple-700 text-xs font-black rounded-xl hover:bg-white transition-colors shadow shrink-0">
                 참가하기 (Join Match)
               </span>
             </motion.div>
@@ -532,7 +532,7 @@ export default function Lobby({
                       onClick={() => setTier(t)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border cursor-pointer ${
                         tier === t 
-                          ? "bg-slate-100 text-duo-dark border-white shadow-md shadow-white/10" 
+                          ? "bg-white text-duo-dark border-white shadow-md shadow-white/10" 
                           : "bg-duo-gray text-duo-dark border-duo-gray-dark hover:text-duo-dark"
                       }`}
                     >
@@ -794,7 +794,7 @@ export default function Lobby({
                         index === 0 
                           ? "bg-yellow-500/20 border border-yellow-500 text-yellow-400" 
                           : index === 1
-                            ? "bg-slate-300/20 border border-duo-gray-dark text-duo-dark"
+                            ? "bg-white/20 border border-duo-gray-dark text-duo-dark"
                             : index === 2
                               ? "bg-amber-600/20 border border-amber-600/30 text-amber-500"
                               : "bg-white border border-duo-gray-dark text-duo-gray-dark"

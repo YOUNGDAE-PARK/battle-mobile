@@ -374,7 +374,7 @@ export default function BattleArena({
 
   return (
     <div className={`min-h-screen flex flex-col justify-between font-sans select-none overflow-hidden relative ${
-      isStrictAssessment ? "bg-slate-50 text-duo-dark" : "bg-duo-gray text-duo-dark"
+      isStrictAssessment ? "bg-white text-duo-dark" : "bg-duo-gray text-duo-dark"
     }`}>
       {/* Anti-cheat warning banner */}
       {isStrictAssessment && (
@@ -386,7 +386,7 @@ export default function BattleArena({
       {/* Background radial atmosphere */}
       {!isStrictAssessment && (
         <>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black opacity-90 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-duo-gray to-duo-gray opacity-50 pointer-events-none" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-10 pointer-events-none" />
         </>
       )}
@@ -523,7 +523,7 @@ export default function BattleArena({
               <div className="flex items-center gap-2.5">
                 <div className={`w-9 h-9 md:w-11 md:h-11 rounded-xl flex items-center justify-center font-bold overflow-hidden shadow-inner ${
                   isStrictAssessment 
-                    ? "bg-slate-100 border border-duo-gray-dark text-duo-dark" 
+                    ? "bg-white border border-duo-gray-dark text-duo-dark" 
                     : "bg-duo-gray border border-duo-gray-dark text-duo-dark"
                 }`}>
                   🙋
@@ -531,7 +531,7 @@ export default function BattleArena({
                 <div>
                   <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border block w-max ${
                     isStrictAssessment 
-                      ? "bg-slate-100 text-duo-gray-dark border-duo-gray-dark" 
+                      ? "bg-white text-duo-gray-dark border-duo-gray-dark" 
                       : "bg-cyan-950 text-cyan-300 border-cyan-500/20"
                   }`}>
                     {userProfile.school}
@@ -550,7 +550,7 @@ export default function BattleArena({
                   <span className={`font-mono font-black ${isStrictAssessment ? "text-duo-dark" : "text-duo-dark"}`}>{Math.max(0, userHp)} / 100</span>
                 </div>
                 <div className={`h-3 w-full rounded-full border overflow-hidden relative ${
-                  isStrictAssessment ? "bg-slate-200 border-duo-gray-dark" : "bg-duo-gray border-duo-gray-dark"
+                  isStrictAssessment ? "bg-white border-duo-gray-dark" : "bg-duo-gray border-duo-gray-dark"
                 }`}>
                   <motion.div
                     animate={{ width: `${Math.max(0, userHp)}%` }}
@@ -569,7 +569,7 @@ export default function BattleArena({
             <div className="col-span-1 flex flex-col items-center justify-center">
               <div className={`w-9 h-9 rounded-full flex items-center justify-center border font-bold text-[10px] ${
                 isStrictAssessment 
-                  ? "bg-slate-100 border-slate-250 text-slate-750 shadow-sm" 
+                  ? "bg-white border-slate-250 text-slate-750 shadow-sm" 
                   : "bg-gradient-to-tr from-cyan-600 via-indigo-600 to-purple-600 border-white/10 text-duo-dark shadow-lg shadow-indigo-500/20"
               }`}>
                 VS
@@ -585,7 +585,7 @@ export default function BattleArena({
               <div className="flex items-center gap-2.5 flex-row-reverse">
                 <div className={`w-9 h-9 md:w-11 md:h-11 rounded-xl flex items-center justify-center font-bold overflow-hidden shadow-inner ${
                   isStrictAssessment 
-                    ? "bg-slate-100 border border-duo-gray-dark text-duo-dark" 
+                    ? "bg-white border border-duo-gray-dark text-duo-dark" 
                     : "bg-duo-gray border border-duo-gray-dark text-duo-dark"
                 }`}>
                   😈
@@ -593,7 +593,7 @@ export default function BattleArena({
                 <div>
                   <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border block w-max ml-auto ${
                     isStrictAssessment 
-                      ? "bg-slate-100 text-duo-gray-dark border-duo-gray-dark" 
+                      ? "bg-white text-duo-gray-dark border-duo-gray-dark" 
                       : "bg-purple-950 text-purple-300 border-purple-500/20"
                   }`}>
                     {opponent.school}
@@ -612,14 +612,14 @@ export default function BattleArena({
                   <span className={`font-mono font-black ${isStrictAssessment ? "text-duo-dark" : "text-duo-dark"}`}>{Math.max(0, opponentHp)} / 100</span>
                 </div>
                 <div className={`h-3 w-full rounded-full border overflow-hidden relative ${
-                  isStrictAssessment ? "bg-slate-200 border-duo-gray-dark" : "bg-duo-gray border-duo-gray-dark"
+                  isStrictAssessment ? "bg-white border-duo-gray-dark" : "bg-duo-gray border-duo-gray-dark"
                 }`}>
                   <motion.div
                     animate={{ width: `${Math.max(0, opponentHp)}%` }}
                     transition={{ type: "spring", stiffness: 120, damping: 15 }}
                     className={`h-full rounded-full ${
                       isStrictAssessment 
-                        ? "bg-slate-450" 
+                        ? "bg-white" 
                         : getHpColor(opponentHp)
                     }`}
                   />
@@ -654,7 +654,7 @@ export default function BattleArena({
           <div className="flex items-center gap-2">
             <span className={`text-[10px] md:text-xs font-black tracking-widest uppercase border px-3 py-1 rounded-full ${
               isStrictAssessment 
-                ? "bg-slate-200 border-duo-gray-dark text-duo-dark" 
+                ? "bg-white border-duo-gray-dark text-duo-dark" 
                 : "bg-white border-cyan-500/20 text-cyan-400"
             }`}>
               ROUND {currentRound + 1} / {subjectQuestions.length}
@@ -684,7 +684,7 @@ export default function BattleArena({
 
         {/* Time Progress Bar */}
         <div className={`w-full h-1.5 rounded-full overflow-hidden border p-px ${
-          isStrictAssessment ? "bg-slate-200 border-duo-gray-dark" : "bg-duo-gray border-duo-gray-dark"
+          isStrictAssessment ? "bg-white border-duo-gray-dark" : "bg-duo-gray border-duo-gray-dark"
         }`}>
           <motion.div 
             initial={{ width: "100%" }}
@@ -726,7 +726,7 @@ export default function BattleArena({
             const isCorrectAnswer = currentQuestion.answerIndex === index;
             
             let btnClass = isStrictAssessment
-              ? "bg-white border-duo-gray-dark hover:bg-slate-50 hover:border-duo-gray-dark text-duo-dark shadow-sm"
+              ? "bg-white border-duo-gray-dark hover:bg-white hover:border-duo-gray-dark text-duo-dark shadow-sm"
               : "bg-white border-duo-gray-dark hover:bg-white hover:border-duo-gray-dark text-duo-dark";
             let iconElement = null;
 
@@ -744,7 +744,7 @@ export default function BattleArena({
                   btnClass = "bg-emerald-50/40 border-emerald-400 text-emerald-700";
                   iconElement = <CheckCircle className="w-4 h-4 text-emerald-600 absolute right-4 top-1/2 -translate-y-1/2" />;
                 } else {
-                  btnClass = "bg-slate-100 border-duo-gray-dark text-duo-dark opacity-60";
+                  btnClass = "bg-white border-duo-gray-dark text-duo-dark opacity-60";
                 }
               } else {
                 if (isSelected) {
@@ -769,8 +769,8 @@ export default function BattleArena({
                 ? isCorrectAnswer
                   ? isStrictAssessment ? "bg-emerald-500/20 text-emerald-700" : "bg-emerald-500/20 text-emerald-300"
                   : isStrictAssessment ? "bg-red-500/20 text-red-700" : "bg-red-500/20 text-red-300"
-                : isStrictAssessment ? "bg-slate-200 text-duo-dark" : "bg-duo-gray text-slate-750"
-              : isStrictAssessment ? "bg-slate-100 text-duo-gray-dark border border-slate-250" : "bg-duo-gray text-cyan-400";
+                : isStrictAssessment ? "bg-white text-duo-dark" : "bg-duo-gray text-slate-750"
+              : isStrictAssessment ? "bg-white text-duo-gray-dark border border-slate-250" : "bg-duo-gray text-cyan-400";
 
             return (
               <motion.button

@@ -398,7 +398,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                   <div className="pt-4">
                     <button
                       onClick={() => setIsModalOpen(false)}
-                      className="px-6 py-2.5 bg-slate-100 hover:bg-white text-duo-dark font-black text-xs rounded-xl shadow-lg cursor-pointer transition-all"
+                      className="px-6 py-2.5 bg-white hover:bg-white text-duo-dark font-black text-xs rounded-xl shadow-lg cursor-pointer transition-all"
                     >
                       던전 나가기
                     </button>

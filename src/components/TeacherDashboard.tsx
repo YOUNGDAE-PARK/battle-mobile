@@ -554,7 +554,7 @@ export default function TeacherDashboard({
   );
 
   return (
-    <div className="min-h-screen bg-slate-100 text-duo-dark font-sans p-4 md:p-8 flex flex-col justify-between">
+    <div className="min-h-screen bg-white text-duo-dark font-sans p-4 md:p-8 flex flex-col justify-between">
       
       {/* Toast Alert */}
       <AnimatePresence>
@@ -593,7 +593,7 @@ export default function TeacherDashboard({
         <div className="flex items-center gap-3 w-full md:w-auto justify-end">
           <button
             onClick={onExit}
-            className="px-4 py-2 border border-duo-gray-dark bg-white hover:bg-slate-50 rounded-xl text-xs font-bold text-duo-dark shadow-sm transition-all cursor-pointer"
+            className="px-4 py-2 border border-duo-gray-dark bg-white hover:bg-white rounded-xl text-xs font-bold text-duo-dark shadow-sm transition-all cursor-pointer"
           >
             학생 화면으로 복귀
           </button>
@@ -633,7 +633,7 @@ export default function TeacherDashboard({
               <span className="text-2xl font-black text-duo-dark">{students.filter(s => s.submitted).length}</span>
               <span className="text-xs font-bold text-duo-gray-dark">/ {students.length}명 응시 완료</span>
             </div>
-            <div className="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+            <div className="w-full bg-white h-1.5 rounded-full mt-2 overflow-hidden">
               <div 
                 className="bg-blue-600 h-full rounded-full transition-all duration-500"
                 style={{ width: `${(students.filter(s => s.submitted).length / students.length) * 100}%` }}
@@ -692,7 +692,7 @@ export default function TeacherDashboard({
             </div>
 
             {/* Input Form */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-2xl border border-duo-gray-dark">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 bg-white p-4 rounded-2xl border border-duo-gray-dark">
               {/* Chapter Select */}
               <div className="space-y-1 sm:col-span-2">
                 <label className="text-[11px] font-bold text-duo-gray-dark">교과서 단원 (목차)</label>
@@ -780,7 +780,7 @@ export default function TeacherDashboard({
 
               <div className="space-y-3 max-h-[360px] overflow-y-auto pr-1">
                 {questions.map((q, idx) => (
-                  <div key={q.id} className="p-4 bg-slate-50 border border-duo-gray-dark rounded-2xl space-y-2">
+                  <div key={q.id} className="p-4 bg-white border border-duo-gray-dark rounded-2xl space-y-2">
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         <span className="px-2 py-0.5 rounded-md bg-white text-duo-dark text-[10px] font-black">
@@ -789,7 +789,7 @@ export default function TeacherDashboard({
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700">
                           {q.type}
                         </span>
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200 text-duo-dark">
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white text-duo-dark">
                           배점 {q.points}점
                         </span>
                       </div>
@@ -871,8 +871,8 @@ export default function TeacherDashboard({
               codeStatus === "IN_PROGRESS"
                 ? "bg-duo-gray text-duo-dark border-indigo-500 shadow-xl"
                 : codeStatus === "EXPIRED"
-                ? "bg-slate-100 text-duo-dark border-duo-gray-dark"
-                : "bg-slate-50 text-duo-dark border-dashed border-duo-gray-dark"
+                ? "bg-white text-duo-dark border-duo-gray-dark"
+                : "bg-white text-duo-dark border-dashed border-duo-gray-dark"
             }`}>
               <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider mb-2">
                 <Key className="w-4 h-4 text-indigo-400" />
@@ -912,7 +912,7 @@ export default function TeacherDashboard({
             </div>
 
             {/* Submission Simulator & Controls */}
-            <div className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-duo-gray-dark">
+            <div className="space-y-3 bg-white p-4 rounded-2xl border border-duo-gray-dark">
               <div className="flex items-center justify-between text-xs font-extrabold text-duo-dark">
                 <span>실시간 답안 제출 현황</span>
                 <span className="font-mono text-indigo-600">
@@ -920,7 +920,7 @@ export default function TeacherDashboard({
                 </span>
               </div>
 
-              <div className="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+              <div className="w-full bg-white h-2.5 rounded-full overflow-hidden">
                 <div 
                   className="bg-indigo-600 h-full rounded-full transition-all duration-500"
                   style={{ width: `${(students.filter(s => s.submitted).length / students.length) * 100}%` }}
@@ -931,7 +931,7 @@ export default function TeacherDashboard({
               <div className="grid grid-cols-2 gap-2 pt-2">
                 <button
                   onClick={handleGenerateNewCode}
-                  className="py-2.5 px-3 bg-white hover:bg-slate-100 border border-duo-gray-dark rounded-xl text-xs font-bold text-duo-dark transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+                  className="py-2.5 px-3 bg-white hover:bg-white border border-duo-gray-dark rounded-xl text-xs font-bold text-duo-dark transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   <RotateCcw className="w-3.5 h-3.5 text-duo-gray-dark" />
                   <span>새 일회성 코드 생성</span>
@@ -940,7 +940,7 @@ export default function TeacherDashboard({
                 <button
                   onClick={handleExpireCode}
                   disabled={codeStatus === "EXPIRED"}
-                  className="py-2.5 px-3 bg-red-600 hover:bg-red-700 disabled:bg-slate-300 text-duo-dark rounded-xl text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+                  className="py-2.5 px-3 bg-red-600 hover:bg-red-700 disabled:bg-white text-duo-dark rounded-xl text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   <AlertTriangle className="w-3.5 h-3.5 text-duo-dark" />
                   <span>시험 종료 & 코드 만료</span>
@@ -984,7 +984,7 @@ export default function TeacherDashboard({
           </div>
 
           {/* Filtering & Search Bar (이름, 학년, 반, 번호, 상태별 검색 지원) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 bg-slate-50 p-4 rounded-2xl border border-duo-gray-dark">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 bg-white p-4 rounded-2xl border border-duo-gray-dark">
             {/* Class Filter */}
             <div className="space-y-1">
               <label className="text-[11px] font-bold text-duo-gray-dark">학급(반) 선택</label>
@@ -1054,7 +1054,7 @@ export default function TeacherDashboard({
           {/* Student Table */}
           <div className="overflow-x-auto border border-duo-gray-dark rounded-2xl">
             <table className="w-full text-left text-xs text-duo-dark">
-              <thead className="bg-slate-50 text-duo-gray-dark font-extrabold border-b border-duo-gray-dark">
+              <thead className="bg-white text-duo-gray-dark font-extrabold border-b border-duo-gray-dark">
                 <tr>
                   <th className="py-3.5 px-4">학년</th>
                   <th className="py-3.5 px-3">반</th>
@@ -1078,7 +1078,7 @@ export default function TeacherDashboard({
                   filteredStudents.map((student) => (
                     <tr 
                       key={student.id} 
-                      className="hover:bg-slate-50/80 transition-colors"
+                      className="hover:bg-white/80 transition-colors"
                     >
                       <td className="py-3.5 px-4 font-bold text-duo-dark">{student.grade}학년</td>
                       <td className="py-3.5 px-3 font-bold">{student.classNum}반</td>
@@ -1092,7 +1092,7 @@ export default function TeacherDashboard({
                             제출 완료 ({student.submittedAt})
                           </span>
                         ) : (
-                          <span className="px-2.5 py-1 bg-slate-100 text-duo-gray-dark rounded-md text-[11px] font-bold">
+                          <span className="px-2.5 py-1 bg-white text-duo-gray-dark rounded-md text-[11px] font-bold">
                             미제출
                           </span>
                         )}
@@ -1127,7 +1127,7 @@ export default function TeacherDashboard({
                             AI 1차 완료
                           </span>
                         ) : (
-                          <span className="px-2.5 py-1 bg-slate-100 text-duo-dark rounded-full text-[10px] font-bold">
+                          <span className="px-2.5 py-1 bg-white text-duo-dark rounded-full text-[10px] font-bold">
                             미응시
                           </span>
                         )}
@@ -1182,14 +1182,14 @@ export default function TeacherDashboard({
                 </div>
                 <button
                   onClick={() => setSelectedStudentForReview(null)}
-                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-duo-gray-dark flex items-center justify-center font-bold text-sm cursor-pointer"
+                  className="w-8 h-8 rounded-full bg-white hover:bg-white text-duo-gray-dark flex items-center justify-center font-bold text-sm cursor-pointer"
                 >
                   ✕
                 </button>
               </div>
 
               {/* AI 1st Evaluation Summary */}
-              <div className="bg-slate-50 border border-duo-gray-dark rounded-2xl p-4 space-y-2">
+              <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-black text-indigo-700 flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5" /> AI 1차 자동 채점 결과
@@ -1219,7 +1219,7 @@ export default function TeacherDashboard({
                         <span><strong>학생 답안:</strong> {ans.studentAnswer}</span>
                         <span><strong>정답:</strong> {ans.correctAnswer}</span>
                       </div>
-                      <div className="text-[11px] text-duo-gray-dark bg-slate-50 px-2.5 py-1 rounded-md border border-slate-150">
+                      <div className="text-[11px] text-duo-gray-dark bg-white px-2.5 py-1 rounded-md border border-slate-150">
                         <strong>AI 판정:</strong> {ans.aiAssessment}
                       </div>
                     </div>
@@ -1285,7 +1285,7 @@ export default function TeacherDashboard({
               <div className="flex items-center justify-end gap-3 pt-2">
                 <button
                   onClick={() => setSelectedStudentForReview(null)}
-                  className="px-4 py-2.5 border border-duo-gray-dark hover:bg-slate-100 rounded-xl text-xs font-bold text-duo-gray-dark transition-colors cursor-pointer"
+                  className="px-4 py-2.5 border border-duo-gray-dark hover:bg-white rounded-xl text-xs font-bold text-duo-gray-dark transition-colors cursor-pointer"
                 >
                   취소
                 </button>

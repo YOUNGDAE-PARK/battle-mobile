@@ -40,7 +40,7 @@ const TIER_ORDER = ["Iron", "Bronze", "Silver", "Gold", "Diamond"];
 const TIER_DETAILS: Record<string, { label: string; color: string; title: string; bg: string }> = {
   Iron: { label: "아이언", color: "#a19d94", title: "[뇌정지]", bg: "from-stone-850 to-stone-950 border-stone-800" },
   Bronze: { label: "브론즈", color: "#cd7f32", title: "[오답 자판기]", bg: "from-amber-900 to-yellow-950 border-amber-900" },
-  Silver: { label: "실버", color: "#c0c0c0", title: "[현지인]", bg: "from-slate-700 to-slate-900 border-duo-gray-dark" },
+  Silver: { label: "실버", color: "#c0c0c0", title: "[현지인]", bg: "from-duo-gray to-duo-gray-dark border-duo-gray-dark" },
   Gold: { label: "골드", color: "#ffd700", title: "[1인분 장인]", bg: "from-yellow-600 via-amber-800 to-yellow-900 border-yellow-500" },
   Diamond: { label: "다이아몬드", color: "#b9f2ff", title: "[하드캐리 머신]", bg: "from-cyan-500 via-blue-800 to-indigo-950 border-cyan-400" },
 };
@@ -211,7 +211,7 @@ export default function ResultPage({
               <div className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
                 수학 수행평가 답안 제출 완료
               </div>
-              <h1 className="text-4xl md:text-6xl font-black tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white to-cyan-300">
+              <h1 className="text-4xl md:text-6xl font-black tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-duo-blue via-duo-blue-dark to-duo-blue">
                 AI 1차 자동 채점 완료
               </h1>
               <p className="text-xs md:text-sm font-extrabold text-indigo-300 mt-2">
