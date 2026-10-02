@@ -277,7 +277,7 @@ export default function CustomRoomWaiting({
             <div className="relative flex items-center justify-center gap-2 bg-duo-gray text-duo-dark font-black rounded-[10px] py-3 transition-colors group-hover:bg-white">
               <Swords className="w-4.5 h-4.5 text-duo-blue fill-cyan-400/10" />
               <span>
-                {isTeamBattle ? "단체 대항전 배틀 시작 (Start Team Battle)" : "방장 전용 배틀 시작 (Start Game)"}
+                {isTeamBattle ? "단체 대항전 배틀 시작 (Start Team Battle)" : "배틀 시작 (Start Game)"}
               </span>
             </div>
           </button>
