@@ -79,7 +79,7 @@ export default function CustomRoomWaiting({
 
           {/* Room PIN Container */}
           <div className="flex items-center gap-2 bg-duo-gray border border-duo-gray-dark px-4 py-2 rounded-2xl">
-            <span className="text-xs text-duo-gray-dark font-bold font-sans">ROOM CODE:</span>
+            <span className="text-xs text-duo-dark font-bold font-sans">ROOM CODE:</span>
             <span className="font-mono text-base font-black text-duo-blue tracking-wider">{roomPin}</span>
             <button 
               onClick={handleCopyPin}
@@ -138,7 +138,7 @@ export default function CustomRoomWaiting({
                           <span className="text-xs">🙋</span>
                           <span className="text-xs font-bold text-duo-dark">{player}</span>
                         </div>
-                        <span className="text-[9px] font-bold bg-duo-gray text-duo-gray-dark px-1.5 py-0.5 rounded border border-duo-gray-dark">
+                        <span className="text-[9px] font-bold bg-duo-gray text-duo-dark px-1.5 py-0.5 rounded border border-duo-gray-dark">
                           {original.tier.split(" ")[0]}
                         </span>
                       </div>
@@ -184,7 +184,7 @@ export default function CustomRoomWaiting({
                           <span className="text-xs">😈</span>
                           <span className="text-xs font-bold text-duo-dark">{player}</span>
                         </div>
-                        <span className="text-[9px] font-bold bg-duo-gray text-duo-gray-dark px-1.5 py-0.5 rounded border border-duo-gray-dark">
+                        <span className="text-[9px] font-bold bg-duo-gray text-duo-dark px-1.5 py-0.5 rounded border border-duo-gray-dark">
                           {original.tier.split(" ")[0]}
                         </span>
                       </div>
@@ -201,7 +201,7 @@ export default function CustomRoomWaiting({
         ) : (
           // --- STANDARD WAITING LOBBY LAYOUT ---
           <div className="space-y-3.5">
-            <div className="flex items-center justify-between text-xs text-duo-gray-dark font-bold px-3">
+            <div className="flex items-center justify-between text-xs text-duo-dark font-bold px-3">
               <span>참여 플레이어 ({MOCK_PLAYERS.length} / 6)</span>
               <span>준비 상태</span>
             </div>
@@ -218,7 +218,7 @@ export default function CustomRoomWaiting({
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-sm ${
-                      player.isHost ? "bg-duo-blue/10 text-duo-blue" : "bg-white text-duo-gray-dark"
+                      player.isHost ? "bg-duo-blue/10 text-duo-blue" : "bg-white text-duo-dark"
                     }`}>
                       {player.isHost ? "👑" : "🙋"}
                     </div>
@@ -229,7 +229,7 @@ export default function CustomRoomWaiting({
                           {player.school}
                         </span>
                       </div>
-                      <span className="text-[10px] text-duo-gray-dark font-semibold block mt-0.5">{player.tier}</span>
+                      <span className="text-[10px] text-duo-dark font-semibold block mt-0.5">{player.tier}</span>
                     </div>
                   </div>
 
@@ -245,7 +245,7 @@ export default function CustomRoomWaiting({
                         준비 완료
                       </span>
                     ) : (
-                      <span className="text-[10px] font-black text-duo-gray-dark bg-duo-gray border border-duo-gray-dark px-3 py-1.5 rounded-xl flex items-center gap-1 animate-pulse">
+                      <span className="text-[10px] font-black text-duo-dark bg-duo-gray border border-duo-gray-dark px-3 py-1.5 rounded-xl flex items-center gap-1 animate-pulse">
                         대기 중...
                       </span>
                     )}

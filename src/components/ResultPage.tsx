@@ -310,7 +310,7 @@ export default function ResultPage({
             <div className="flex justify-between items-end text-xs font-semibold">
               <span className="text-duo-dark">Progression</span>
               <span className="font-mono text-duo-dark">
-                {displayedLp} <span className="text-duo-gray-dark font-normal">/ 100 LP</span>
+                {displayedLp} <span className="text-duo-dark font-normal">/ 100 LP</span>
               </span>
             </div>
             <div className="h-2.5 w-full bg-duo-gray rounded-full p-0.5 border border-duo-gray-dark overflow-hidden">
@@ -338,7 +338,7 @@ export default function ResultPage({
               <BookOpen className="text-duo-blue w-5 h-5" />
               배틀스터디 AI 오답 분석 피드백
             </h3>
-            <p className="text-xs text-duo-gray-dark mt-1">
+            <p className="text-xs text-duo-dark mt-1">
               각 문제에 대한 AI 튜터의 맞춤형 분석 보고서입니다. 카드를 클릭해 상세 해설을 확인하세요.
             </p>
           </div>
@@ -376,7 +376,7 @@ export default function ResultPage({
                       </div>
                       
                       <div>
-                        <span className="text-[10px] text-duo-gray-dark font-bold uppercase tracking-wider">
+                        <span className="text-[10px] text-duo-dark font-bold uppercase tracking-wider">
                           ROUND {index + 1} • {log.question.category}
                         </span>
                         <h4 className="text-sm md:text-base font-extrabold text-duo-dark mt-0.5 line-clamp-1">
@@ -386,13 +386,13 @@ export default function ResultPage({
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-duo-gray-dark font-mono hidden sm:block">
+                      <span className="text-xs text-duo-dark font-mono hidden sm:block">
                         풀이 시간: {log.timeTaken}초
                       </span>
                       {isOpen ? (
-                        <ChevronUp className="w-5 h-5 text-duo-gray-dark" />
+                        <ChevronUp className="w-5 h-5 text-duo-dark" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-duo-gray-dark" />
+                        <ChevronDown className="w-5 h-5 text-duo-dark" />
                       )}
                     </div>
                   </button>
@@ -411,7 +411,7 @@ export default function ResultPage({
                           {/* Selected Choice Summary */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="p-3 bg-white border border-duo-gray-dark rounded-xl">
-                              <span className="text-xs text-duo-gray-dark font-bold block mb-1">나의 선택</span>
+                              <span className="text-xs text-duo-dark font-bold block mb-1">나의 선택</span>
                               <p className={`font-semibold text-xs md:text-sm ${isWrong ? "text-duo-red" : "text-duo-green"}`}>
                                 {log.selectedIndex === -1 
                                   ? "시간 초과 (선택 안 함)" 
@@ -419,7 +419,7 @@ export default function ResultPage({
                               </p>
                             </div>
                             <div className="p-3 bg-white border border-duo-gray-dark rounded-xl">
-                              <span className="text-xs text-duo-gray-dark font-bold block mb-1">정답</span>
+                              <span className="text-xs text-duo-dark font-bold block mb-1">정답</span>
                               <p className="font-semibold text-xs md:text-sm text-duo-green">
                                 {log.question.answerIndex + 1}. {log.question.options[log.question.answerIndex]}
                               </p>
@@ -549,7 +549,7 @@ export default function ResultPage({
                   <button
                     type="button"
                     onClick={() => setShowKakaoModal(false)}
-                    className="text-xs text-duo-gray-dark hover:text-duo-dark font-bold transition-colors cursor-pointer"
+                    className="text-xs text-duo-dark hover:text-duo-dark font-bold transition-colors cursor-pointer"
                   >
                     나중에 연동하기
                   </button>

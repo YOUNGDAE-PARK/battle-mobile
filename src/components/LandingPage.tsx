@@ -71,7 +71,7 @@ export default function LandingPage({ onJoin, onGoToTeacherDashboard, onStudentD
           <h1 className="text-4xl font-extrabold text-duo-green mb-2">
             배틀스터디
           </h1>
-          <p className="text-lg font-bold text-duo-gray-dark">
+          <p className="text-lg font-bold text-duo-dark">
             학교의 명예를 걸고 맞붙자!
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function LandingPage({ onJoin, onGoToTeacherDashboard, onStudentD
                 닉네임
               </label>
               <div className="relative">
-                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-duo-gray-dark" />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-duo-dark" />
                 <input
                   type="text"
                   placeholder="예: 대치동불주먹"
@@ -135,7 +135,7 @@ export default function LandingPage({ onJoin, onGoToTeacherDashboard, onStudentD
                 우리 학교
               </label>
               <div className="relative">
-                <School className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-duo-gray-dark" />
+                <School className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-duo-dark" />
                 <input
                   type="text"
                   placeholder="예: 청계중학교"
@@ -147,7 +147,7 @@ export default function LandingPage({ onJoin, onGoToTeacherDashboard, onStudentD
                   onFocus={() => setShowDropdown(true)}
                   className="w-full bg-duo-gray border-2 border-duo-gray-dark rounded-2xl py-4 pl-12 pr-4 text-duo-dark placeholder-duo-gray-dark focus:outline-none focus:border-duo-blue focus:bg-white transition-all font-bold text-base"
                 />
-                <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-duo-gray-dark" />
+                <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-duo-dark" />
               </div>
 
               {/* Dropdown Suggestions */}

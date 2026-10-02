@@ -172,7 +172,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
             <Skull className="w-7 h-7 text-duo-red animate-pulse" />
             오답 던전 (Shadow Raid)
           </h2>
-          <p className="text-xs md:text-sm text-duo-gray-dark mt-1">
+          <p className="text-xs md:text-sm text-duo-dark mt-1">
             내가 틀렸던 오답 보스 몬스터들을 격파하고 잃어버린 랭크 점수를 복구하는 복수전 퀘스트입니다.
           </p>
         </div>
@@ -220,13 +220,13 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
 
                 {/* Monster Name */}
                 <h3 className={`text-base font-extrabold flex items-center gap-2 mt-2 ${
-                  isCleared ? "text-duo-gray-dark line-through" : "text-duo-dark"
+                  isCleared ? "text-duo-dark line-through" : "text-duo-dark"
                 }`}>
-                  <Skull className={`w-4.5 h-4.5 shrink-0 ${isCleared ? "text-duo-gray-dark" : "text-duo-red"}`} />
+                  <Skull className={`w-4.5 h-4.5 shrink-0 ${isCleared ? "text-duo-dark" : "text-duo-red"}`} />
                   {quest.name}
                 </h3>
                 
-                <p className="text-xs text-duo-gray-dark mt-2 line-clamp-2">
+                <p className="text-xs text-duo-dark mt-2 line-clamp-2">
                   오답 분석 요약: [{quest.concept}] 관련 문법/공식을 잘못 이해해 매치에서 패배를 야기한 원인 보스입니다.
                 </p>
               </div>
@@ -234,9 +234,9 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
               {/* Reward & Action */}
               <div className="mt-8 border-t border-duo-gray-dark pt-4 flex items-center justify-between">
                 <div>
-                  <span className="text-[9px] text-duo-gray-dark font-bold block uppercase">RAID REWARD</span>
+                  <span className="text-[9px] text-duo-dark font-bold block uppercase">RAID REWARD</span>
                   <span className={`font-mono text-sm font-black flex items-center gap-0.5 ${
-                    isCleared ? "text-duo-gray-dark" : "text-duo-yellow"
+                    isCleared ? "text-duo-dark" : "text-duo-yellow"
                   }`}>
                     <Trophy className="w-3.5 h-3.5" />
                     +{quest.rewardLp} LP
@@ -296,7 +296,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
 
                   {/* Question body */}
                   <div className="p-5 bg-duo-gray border border-duo-gray-dark rounded-2xl">
-                    <span className="text-[10px] text-duo-gray-dark font-bold uppercase tracking-wider block mb-1">
+                    <span className="text-[10px] text-duo-dark font-bold uppercase tracking-wider block mb-1">
                       {activeQuest.concept}
                     </span>
                     <h3 className="text-sm md:text-base font-extrabold text-duo-dark leading-relaxed whitespace-pre-line">
@@ -325,7 +325,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                         } else if (isCorrectAnswer) {
                           optClass = "bg-emerald-950/30 border-duo-green text-duo-green/90";
                         } else {
-                          optClass = "bg-duo-gray border-slate-950 text-duo-gray-dark opacity-60";
+                          optClass = "bg-duo-gray border-slate-950 text-duo-dark opacity-60";
                         }
                       }
 
@@ -374,7 +374,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
 
                   <div className="p-4 bg-duo-gray border border-duo-gray-dark rounded-2xl inline-flex items-center gap-6">
                     <div>
-                      <span className="text-[10px] text-duo-gray-dark font-bold block">획득 보상</span>
+                      <span className="text-[10px] text-duo-dark font-bold block">획득 보상</span>
                       <span className="text-sm font-mono font-black text-duo-yellow flex items-center gap-1 mt-0.5">
                         <Trophy className="w-4 h-4" />
                         +5 LP 복구
@@ -385,7 +385,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                     </div>
                     <div className="h-10 w-px bg-duo-gray" />
                     <div>
-                      <span className="text-[10px] text-duo-gray-dark font-bold block">퀘스트 상태</span>
+                      <span className="text-[10px] text-duo-dark font-bold block">퀘스트 상태</span>
                       <span className="text-xs font-black text-duo-green mt-1.5 block">CLEARED</span>
                     </div>
                   </div>
@@ -437,7 +437,7 @@ export default function ShadowRaid({ energy, setEnergy }: ShadowRaidProps) {
                     </button>
                     <button
                       onClick={() => setIsModalOpen(false)}
-                      className="px-5 py-2.5 bg-white hover:bg-duo-gray-dark text-duo-dark font-bold text-xs rounded-xl cursor-pointer transition-all"
+                      className="px-5 py-2.5 bg-white hover:bg-duo-gray text-duo-dark font-bold text-xs rounded-xl cursor-pointer transition-all"
                     >
                       던전 나가기
                     </button>

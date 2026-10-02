@@ -500,7 +500,7 @@ export default function BattleArena({
                 </motion.div>
               </div>
 
-              <div className="flex justify-between items-center text-[10px] text-duo-gray-dark font-bold font-mono px-1">
+              <div className="flex justify-between items-center text-[10px] text-duo-dark font-bold font-mono px-1">
                 <span>[참가자: {userProfile.nickname || "대치동불주먹"}, 청계중마스터, 평촌공부귀신 등 5명]</span>
                 <span>[참가자: 목동수학귀신, 분당오답폭격기 등 5명]</span>
               </div>
@@ -531,7 +531,7 @@ export default function BattleArena({
                 <div>
                   <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border block w-max ${
                     isStrictAssessment 
-                      ? "bg-white text-duo-gray-dark border-duo-gray-dark" 
+                      ? "bg-white text-duo-dark border-duo-gray-dark" 
                       : "bg-cyan-950 text-duo-blue border-duo-blue"
                   }`}>
                     {userProfile.school}
@@ -546,7 +546,7 @@ export default function BattleArena({
 
               <div className="w-full space-y-1">
                 <div className="flex justify-between items-center text-[10px] md:text-xs">
-                  <span className={`font-extrabold ${isStrictAssessment ? "text-duo-gray-dark" : "text-duo-blue"}`}>HP</span>
+                  <span className={`font-extrabold ${isStrictAssessment ? "text-duo-dark" : "text-duo-blue"}`}>HP</span>
                   <span className={`font-mono font-black ${isStrictAssessment ? "text-duo-dark" : "text-duo-dark"}`}>{Math.max(0, userHp)} / 100</span>
                 </div>
                 <div className={`h-3 w-full rounded-full border overflow-hidden relative ${
@@ -593,7 +593,7 @@ export default function BattleArena({
                 <div>
                   <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border block w-max ml-auto ${
                     isStrictAssessment 
-                      ? "bg-white text-duo-gray-dark border-duo-gray-dark" 
+                      ? "bg-white text-duo-dark border-duo-gray-dark" 
                       : "bg-purple-950 text-duo-dark border-purple-500/20"
                   }`}>
                     {opponent.school}
@@ -608,7 +608,7 @@ export default function BattleArena({
 
               <div className="w-full space-y-1">
                 <div className="flex justify-between items-center text-[10px] md:text-xs flex-row-reverse">
-                  <span className={`font-extrabold ${isStrictAssessment ? "text-duo-gray-dark" : "text-duo-dark"}`}>HP</span>
+                  <span className={`font-extrabold ${isStrictAssessment ? "text-duo-dark" : "text-duo-dark"}`}>HP</span>
                   <span className={`font-mono font-black ${isStrictAssessment ? "text-duo-dark" : "text-duo-dark"}`}>{Math.max(0, opponentHp)} / 100</span>
                 </div>
                 <div className={`h-3 w-full rounded-full border overflow-hidden relative ${
@@ -659,7 +659,7 @@ export default function BattleArena({
             }`}>
               ROUND {currentRound + 1} / {subjectQuestions.length}
             </span>
-            <span className={`text-xs font-bold ${isStrictAssessment ? "text-duo-gray-dark" : "text-duo-dark"}`}>
+            <span className={`text-xs font-bold ${isStrictAssessment ? "text-duo-dark" : "text-duo-dark"}`}>
               {currentQuestion.category}
             </span>
           </div>
@@ -692,7 +692,7 @@ export default function BattleArena({
             transition={{ duration: 1, ease: "linear" }}
             className={`h-full rounded-full ${
               isStrictAssessment 
-                ? "bg-duo-gray-dark" 
+                ? "bg-duo-gray" 
                 : timeLeft <= 5 ? "bg-duo-red" : "bg-gradient-to-r from-white to-duo-gray"
             }`}
           />
@@ -759,7 +759,7 @@ export default function BattleArena({
                   btnClass = "bg-emerald-950/30 border-duo-green text-duo-green/90";
                   iconElement = <CheckCircle className="w-4 h-4 text-duo-green/60 absolute right-4 top-1/2 -translate-y-1/2" />;
                 } else {
-                  btnClass = "bg-duo-gray border-duo-gray-dark text-duo-gray-dark opacity-60";
+                  btnClass = "bg-duo-gray border-duo-gray-dark text-duo-dark opacity-60";
                 }
               }
             }
@@ -770,7 +770,7 @@ export default function BattleArena({
                   ? isStrictAssessment ? "bg-duo-green/20 text-emerald-700" : "bg-duo-green/20 text-duo-green"
                   : isStrictAssessment ? "bg-duo-red/20 text-red-700" : "bg-duo-red/20 text-duo-red"
                 : isStrictAssessment ? "bg-white text-duo-dark" : "bg-duo-gray text-slate-750"
-              : isStrictAssessment ? "bg-white text-duo-gray-dark border border-slate-250" : "bg-duo-gray text-duo-blue";
+              : isStrictAssessment ? "bg-white text-duo-dark border border-slate-250" : "bg-duo-gray text-duo-blue";
 
             return (
               <motion.button

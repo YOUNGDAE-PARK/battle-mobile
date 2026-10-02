@@ -84,7 +84,7 @@ export default function PlayerAnalytics() {
             <BarChart2 className="w-7 h-7 text-duo-blue" />
             플레이어 전적 분석 (OP.GG Style)
           </h2>
-          <p className="text-xs md:text-sm text-duo-gray-dark mt-1">
+          <p className="text-xs md:text-sm text-duo-dark mt-1">
             내 플레이 스타일을 분석한 실시간 퀴즈 리포트 및 매치 히스토리입니다.
           </p>
         </div>
@@ -183,7 +183,7 @@ export default function PlayerAnalytics() {
             
             {/* Circle Win Rate (Column 5) */}
             <div className="md:col-span-5 flex flex-col items-center border-r-0 md:border-r border-duo-gray-dark pr-0 md:pr-6">
-              <h4 className="text-xs font-bold text-duo-gray-dark uppercase tracking-wider mb-4">
+              <h4 className="text-xs font-bold text-duo-dark uppercase tracking-wider mb-4">
                 승률 분석 (Win Rate)
               </h4>
               <div className="relative w-28 h-28 flex items-center justify-center">
@@ -209,7 +209,7 @@ export default function PlayerAnalytics() {
                 </svg>
                 <div className="absolute text-center">
                   <span className="text-2xl font-black text-duo-dark">{winRate}%</span>
-                  <span className="block text-[9px] font-bold text-duo-gray-dark">최근 5경기</span>
+                  <span className="block text-[9px] font-bold text-duo-dark">최근 5경기</span>
                 </div>
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function PlayerAnalytics() {
             {/* Quick Summary Cards (Column 7) */}
             <div className="md:col-span-7 flex flex-col gap-3.5 pl-0 md:pl-2">
               <div>
-                <span className="text-xs text-duo-gray-dark font-semibold block">총 경기 전적</span>
+                <span className="text-xs text-duo-dark font-semibold block">총 경기 전적</span>
                 <p className="text-lg font-black text-duo-dark mt-1">
                   3승 2패 <span className="text-xs text-duo-dark font-normal ml-1">최근 전적 양호!</span>
                 </p>
@@ -225,11 +225,11 @@ export default function PlayerAnalytics() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="p-3 bg-duo-gray border border-duo-gray-dark rounded-2xl">
-                  <span className="text-[10px] text-duo-gray-dark font-bold block uppercase">평균 정답률</span>
+                  <span className="text-[10px] text-duo-dark font-bold block uppercase">평균 정답률</span>
                   <span className="text-base font-black text-duo-blue mt-0.5 block">73.3%</span>
                 </div>
                 <div className="p-3 bg-duo-gray border border-duo-gray-dark rounded-2xl">
-                  <span className="text-[10px] text-duo-gray-dark font-bold block uppercase">평균 풀이 속도</span>
+                  <span className="text-[10px] text-duo-dark font-bold block uppercase">평균 풀이 속도</span>
                   <span className="text-base font-black text-duo-yellow mt-0.5 block">3.4초</span>
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function PlayerAnalytics() {
 
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-xs text-duo-gray-dark font-bold">VS</span>
+                        <span className="text-xs text-duo-dark font-bold">VS</span>
                         <span className="font-extrabold text-sm text-duo-dark">{match.opponentName}</span>
                         <span className="text-[10px] text-duo-dark">({match.opponentSchool})</span>
                       </div>
@@ -292,7 +292,7 @@ export default function PlayerAnalytics() {
                         <span className="text-[9px] font-bold px-1.5 py-0.5 bg-duo-gray text-duo-dark rounded">
                           {match.opponentTier}
                         </span>
-                        <span className="text-[10px] text-duo-gray-dark font-semibold">{match.subject} 배틀</span>
+                        <span className="text-[10px] text-duo-dark font-semibold">{match.subject} 배틀</span>
                       </div>
                     </div>
                   </div>
@@ -303,7 +303,7 @@ export default function PlayerAnalytics() {
                     }`}>
                       {match.result === "WIN" ? `+${match.lpChange} LP` : `${match.lpChange} LP`}
                     </span>
-                    <span className="text-[10px] text-duo-gray-dark font-semibold font-sans flex items-center gap-1">
+                    <span className="text-[10px] text-duo-dark font-semibold font-sans flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       {match.date}
                     </span>

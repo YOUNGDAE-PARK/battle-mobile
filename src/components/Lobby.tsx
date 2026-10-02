@@ -223,7 +223,7 @@ export default function Lobby({
             className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
               lobbyTab === "ARENA"
                 ? "bg-white text-duo-dark shadow-sm"
-                : "text-duo-gray-dark hover:text-duo-dark"
+                : "text-duo-dark hover:text-duo-dark"
             }`}
           >
             <span>🏛️</span>
@@ -232,7 +232,7 @@ export default function Lobby({
           <button
             type="button"
             onClick={handleGoToBattle}
-            className="px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 text-duo-gray-dark hover:text-duo-red"
+            className="px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 text-duo-dark hover:text-duo-red"
           >
             <span>⚔️</span>
             <span>1:1 퀴즈 배틀</span>
@@ -246,7 +246,7 @@ export default function Lobby({
             className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
               lobbyTab === "SHADOW_RAID"
                 ? "bg-white text-duo-green shadow-sm"
-                : "text-duo-gray-dark hover:text-duo-dark"
+                : "text-duo-dark hover:text-duo-dark"
             }`}
           >
             <span>👾</span>
@@ -261,7 +261,7 @@ export default function Lobby({
             className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
               lobbyTab === "ANALYTICS"
                 ? "bg-white text-duo-dark shadow-sm"
-                : "text-duo-gray-dark hover:text-duo-dark"
+                : "text-duo-dark hover:text-duo-dark"
             }`}
           >
             <span>📊</span>
@@ -375,7 +375,7 @@ export default function Lobby({
             </div>
             <div className="mt-4 pt-3 border-t border-duo-gray-dark flex items-center justify-between text-xs">
               <span className="text-[11px] font-bold text-duo-blue">랭킹 및 커스텀 룸</span>
-              <ChevronRight className="w-4 h-4 text-duo-gray-dark" />
+              <ChevronRight className="w-4 h-4 text-duo-dark" />
             </div>
           </motion.div>
 
@@ -404,7 +404,7 @@ export default function Lobby({
             </div>
             <div className="mt-4 pt-3 border-t border-duo-gray-dark flex items-center justify-between text-xs">
               <span className="text-[11px] font-bold text-duo-red">매칭 시작하기</span>
-              <ChevronRight className="w-4 h-4 text-duo-gray-dark group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 text-duo-dark group-hover:translate-x-1 transition-transform" />
             </div>
           </motion.div>
 
@@ -440,7 +440,7 @@ export default function Lobby({
             </div>
             <div className="mt-4 pt-3 border-t border-duo-gray-dark flex items-center justify-between text-xs">
               <span className="text-[11px] font-bold text-duo-green">던전 입장하기</span>
-              <ChevronRight className="w-4 h-4 text-duo-gray-dark group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 text-duo-dark group-hover:translate-x-1 transition-transform" />
             </div>
           </motion.div>
 
@@ -476,7 +476,7 @@ export default function Lobby({
             </div>
             <div className="mt-4 pt-3 border-t border-duo-gray-dark flex items-center justify-between text-xs">
               <span className="text-[11px] font-bold text-duo-dark">분석 리포트 보기</span>
-              <ChevronRight className="w-4 h-4 text-duo-gray-dark group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 text-duo-dark group-hover:translate-x-1 transition-transform" />
             </div>
           </motion.div>
         </div>
@@ -670,15 +670,15 @@ export default function Lobby({
             </h4>
             <div className="grid grid-cols-3 gap-3 text-center">
               <div className="bg-duo-gray p-3.5 border border-duo-gray-dark rounded-2xl">
-                <span className="text-xs text-duo-gray-dark font-medium">승리</span>
+                <span className="text-xs text-duo-dark font-medium">승리</span>
                 <p className="text-lg font-black text-duo-blue mt-1">24승</p>
               </div>
               <div className="bg-duo-gray p-3.5 border border-duo-gray-dark rounded-2xl">
-                <span className="text-xs text-duo-gray-dark font-medium">패배</span>
+                <span className="text-xs text-duo-dark font-medium">패배</span>
                 <p className="text-lg font-black text-duo-dark mt-1">16패</p>
               </div>
               <div className="bg-duo-gray p-3.5 border border-duo-gray-dark rounded-2xl">
-                <span className="text-xs text-duo-gray-dark font-medium">승률</span>
+                <span className="text-xs text-duo-dark font-medium">승률</span>
                 <p className="text-lg font-black text-duo-yellow mt-1">60%</p>
               </div>
             </div>
@@ -725,7 +725,7 @@ export default function Lobby({
                 <p className="text-xs font-bold text-duo-dark mt-1">
                   5초 컷 배틀 2승 달성
                 </p>
-                <div className="flex justify-between items-center text-[10px] text-duo-gray-dark mt-2 font-semibold font-mono">
+                <div className="flex justify-between items-center text-[10px] text-duo-dark mt-2 font-semibold font-mono">
                   <span>진행도: 0 / 2</span>
                   <span className="text-duo-dark">+30 XP</span>
                 </div>
@@ -739,7 +739,7 @@ export default function Lobby({
                 <p className="text-xs font-bold text-duo-dark mt-1">
                   맞춤법 오답 복수전 1회 성공
                 </p>
-                <div className="flex justify-between items-center text-[10px] text-duo-gray-dark mt-2 font-semibold font-mono">
+                <div className="flex justify-between items-center text-[10px] text-duo-dark mt-2 font-semibold font-mono">
                   <span>진행도: 0 / 1</span>
                   <span className="text-duo-dark">+30 XP</span>
                 </div>
@@ -759,7 +759,7 @@ export default function Lobby({
                   <Trophy className="w-5 h-5 text-duo-yellow" />
                   🏆 실시간 전국 학교 랭킹 (Real-time School Rankings)
                 </h3>
-                <p className="text-xs text-duo-gray-dark mt-1">
+                <p className="text-xs text-duo-dark mt-1">
                   학교별 참여 인원의 LP 누적 합산 순위입니다.
                 </p>
               </div>
@@ -797,7 +797,7 @@ export default function Lobby({
                             ? "bg-white/20 border border-duo-gray-dark text-duo-dark"
                             : index === 2
                               ? "bg-duo-yellow/20 border border-duo-yellow text-duo-yellow"
-                              : "bg-white border border-duo-gray-dark text-duo-gray-dark"
+                              : "bg-white border border-duo-gray-dark text-duo-dark"
                       }`}>
                         {ranking.rank}
                       </div>
@@ -817,11 +817,11 @@ export default function Lobby({
                     {/* School Stats */}
                     <div className="flex items-center gap-6 text-right font-mono">
                       <div>
-                        <span className="text-[10px] text-duo-gray-dark block font-sans">참여 인원</span>
+                        <span className="text-[10px] text-duo-dark block font-sans">참여 인원</span>
                         <span className="text-xs text-duo-dark font-semibold">{ranking.count}명</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-duo-gray-dark block font-sans">누적 LP</span>
+                        <span className="text-[10px] text-duo-dark block font-sans">누적 LP</span>
                         <span className="text-sm font-black text-duo-blue">
                           {ranking.lp.toLocaleString()} <span className="text-[10px] font-bold text-duo-dark">LP</span>
                         </span>
@@ -848,11 +848,11 @@ export default function Lobby({
                     </div>
                     <div className="flex items-center gap-6 text-right font-mono">
                       <div>
-                        <span className="text-[10px] text-duo-gray-dark block font-sans">참여 인원</span>
+                        <span className="text-[10px] text-duo-dark block font-sans">참여 인원</span>
                         <span className="text-xs text-duo-dark font-semibold">12명</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-duo-gray-dark block font-sans">총 LP</span>
+                        <span className="text-[10px] text-duo-dark block font-sans">총 LP</span>
                         <span className="text-sm font-black text-duo-blue">
                           3,250 <span className="text-[10px] font-bold text-duo-dark">LP</span>
                         </span>
@@ -909,7 +909,7 @@ export default function Lobby({
                 }`}
               >
                 {!selectedSubject ? (
-                  <div className="relative flex items-center justify-center gap-3 text-duo-gray-dark py-0.5">
+                  <div className="relative flex items-center justify-center gap-3 text-duo-dark py-0.5">
                     <Swords className="w-5 h-5" />
                     <span>과목을 선택하세요</span>
                   </div>
@@ -918,7 +918,7 @@ export default function Lobby({
                     <span className="flex items-center gap-2 font-black text-sm">
                       <AlertTriangle className="w-4 h-4 text-duo-red" /> 번개가 부족합니다
                     </span>
-                    <span className="text-[10px] font-bold text-duo-gray-dark mt-1">
+                    <span className="text-[10px] font-bold text-duo-dark mt-1">
                       오답 던전에서 충전하세요!
                     </span>
                   </div>
@@ -1132,7 +1132,7 @@ export default function Lobby({
                   </div>
 
                   <div className="mt-4 flex items-center justify-between text-xs border-t border-duo-gray-dark pt-3">
-                    <span className="text-duo-gray-dark">Tier</span>
+                    <span className="text-duo-dark">Tier</span>
                     <span className="font-bold text-duo-yellow">Gold [1인분 장인]</span>
                   </div>
                 </motion.div>
@@ -1169,15 +1169,15 @@ export default function Lobby({
 
               <div className="bg-duo-gray border border-duo-gray-dark rounded-2xl p-4 mb-4 space-y-2">
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-duo-gray-dark">스폰서</span>
+                  <span className="text-duo-dark">스폰서</span>
                   <span className="text-duo-dark">OO학원 (아이패드 5대 후원)</span>
                 </div>
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-duo-gray-dark">평가 과목</span>
+                  <span className="text-duo-dark">평가 과목</span>
                   <span className="text-slate-350">수학 (수학 I 삼각함수 파트)</span>
                 </div>
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-duo-gray-dark">진행 방식</span>
+                  <span className="text-duo-dark">진행 방식</span>
                   <span className="text-slate-350">5:5 실시간 공유 체력 배틀</span>
                 </div>
               </div>
