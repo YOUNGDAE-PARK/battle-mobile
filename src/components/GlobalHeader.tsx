@@ -3,15 +3,15 @@
 import React, { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useBattleStudy } from "@/context/BattleStudyContext";
-import { Swords, Zap, Settings } from "lucide-react";
+import { Swords, Zap, Settings, LogIn } from "lucide-react";
 
 export default function GlobalHeader() {
   const router = useRouter();
   const pathname = usePathname();
   const { energy } = useBattleStudy();
 
-  // Hide header on landing page
-  if (pathname === "/") return null;
+  // Hide header on login page
+  if (pathname === "/login") return null;
 
   const currentTab = pathname.includes("/battle") ? "BATTLE" :
                      pathname.includes("/shadow-raid") ? "SHADOW_RAID" :
@@ -21,7 +21,7 @@ export default function GlobalHeader() {
   return (
     <header className="border-b border-duo-gray-dark bg-white sticky top-0 z-50 px-4 md:px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div className="flex items-center justify-between w-full md:w-auto">
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-3 shrink-0 cursor-pointer" onClick={() => router.push("/")}>
           <div className="p-2 rounded-xl bg-duo-gray text-duo-dark shadow-sm">
             <Swords className="w-5 h-5 md:w-6 md:h-6" />
           </div>
@@ -48,7 +48,7 @@ export default function GlobalHeader() {
       <div className="flex overflow-x-auto no-scrollbar items-center gap-1 bg-duo-gray border border-duo-gray-dark p-1 rounded-xl w-full md:w-auto shrink-0">
         <button
           type="button"
-          onClick={() => router.push("/lobby")}
+          onClick={() => router.push("/")}
           className={`px-3.5 py-2 whitespace-nowrap rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
             currentTab === "ARENA" ? "bg-white text-duo-dark shadow-sm" : "text-duo-dark hover:text-duo-dark"
           }`}
@@ -90,6 +90,14 @@ export default function GlobalHeader() {
           }`}
         >
           <span>👩‍🏫</span><span>교사</span>
+        </button>
+        <div className="w-px h-6 bg-duo-gray-dark mx-1"></div>
+        <button
+          type="button"
+          onClick={() => router.push("/login")}
+          className="px-3.5 py-2 whitespace-nowrap rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 text-duo-blue hover:bg-white"
+        >
+          <LogIn className="w-3.5 h-3.5" /><span>로그인</span>
         </button>
       </div>
 

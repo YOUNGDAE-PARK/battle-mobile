@@ -114,7 +114,7 @@ export default function Lobby({
 
   const handleGoToLobby = () => {
     setLobbyTab("ARENA");
-    router.push("/lobby");
+    router.push("/");
     setTimeout(() => {
       const el = document.getElementById("school-ranking-section");
       if (el) {

@@ -19,7 +19,7 @@ export default function TeacherRoutePage() {
   return (
     <TeacherDashboard
       onStartAssessmentMatch={handleStartAssessmentMatch}
-      onExit={() => router.push("/lobby")}
+      onExit={() => router.push("/")}
       roomCode={assessmentCode}
       setRoomCode={setAssessmentCode}
       codeStatus={assessmentStatus}

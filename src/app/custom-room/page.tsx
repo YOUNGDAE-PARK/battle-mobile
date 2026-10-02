@@ -19,7 +19,7 @@ export default function CustomRoomRoutePage() {
       hostSchool={school || "청계중학교"}
       isTeamBattle={isTeamBattle}
       onStartBattle={handleStartCustomBattle}
-      onBackToLobby={() => router.push("/lobby")}
+      onBackToLobby={() => router.push("/")}
     />
   );
 }

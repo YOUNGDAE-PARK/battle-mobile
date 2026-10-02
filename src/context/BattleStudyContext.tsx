@@ -165,7 +165,7 @@ export function BattleStudyProvider({ children }: { children: React.ReactNode })
     } else if (targetMenu === "ANALYTICS") {
       router.push("/analytics");
     } else {
-      router.push("/lobby");
+      router.push("/");
     }
   };
 
@@ -303,7 +303,7 @@ export function BattleStudyProvider({ children }: { children: React.ReactNode })
     setLp(newLp);
     setSelectedSubject(null);
     setIsFirstMatch(false);
-    router.push("/lobby");
+    router.push("/");
   };
 
   return (
