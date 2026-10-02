@@ -8,10 +8,10 @@ import { Swords, Zap, Settings, LogIn } from "lucide-react";
 export default function GlobalHeader() {
   const router = useRouter();
   const pathname = usePathname();
-  const { energy } = useBattleStudy();
+  const { energy, isStrictAssessment } = useBattleStudy();
 
   // Hide header on login page
-  if (pathname === "/login") return null;
+  if (pathname === "/login" || isStrictAssessment) return null;
 
   const currentTab = pathname.includes("/battle") ? "BATTLE" :
                      pathname.includes("/shadow-raid") ? "SHADOW_RAID" :
