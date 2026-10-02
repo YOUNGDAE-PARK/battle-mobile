@@ -194,13 +194,13 @@ export default function Lobby({
   const currentTierData = TIER_DETAILS[tier] || TIER_DETAILS.Silver;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col relative font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-duo-gray text-duo-dark flex flex-col relative font-sans overflow-x-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-900/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-900/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header bar */}
-      <header className="border-b border-slate-900 bg-slate-900/40 backdrop-blur-md sticky top-0 z-20 px-4 md:px-6 py-4 flex items-center justify-between gap-4">
+      <header className="border-b border-duo-gray-dark bg-white backdrop-blur-md sticky top-0 z-20 px-4 md:px-6 py-4 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3 shrink-0">
           <div className="p-2 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 text-duo-dark shadow-lg shadow-cyan-500/20">
             <Swords className="w-5 h-5 md:w-6 md:h-6" />
@@ -216,14 +216,14 @@ export default function Lobby({
         </div>
 
         {/* Game Navigation Tabs */}
-        <div className="hidden md:flex items-center gap-1 bg-slate-950/80 border border-slate-850 p-1 rounded-xl">
+        <div className="hidden md:flex items-center gap-1 bg-duo-gray border border-duo-gray-dark p-1 rounded-xl">
           <button
             type="button"
             onClick={handleGoToLobby}
             className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
               lobbyTab === "ARENA"
-                ? "bg-slate-900 text-duo-dark shadow-sm"
-                : "text-slate-500 hover:text-slate-300"
+                ? "bg-white text-duo-dark shadow-sm"
+                : "text-duo-gray-dark hover:text-duo-dark"
             }`}
           >
             <span>🏛️</span>
@@ -232,7 +232,7 @@ export default function Lobby({
           <button
             type="button"
             onClick={handleGoToBattle}
-            className="px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 text-slate-500 hover:text-red-400"
+            className="px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 text-duo-gray-dark hover:text-red-400"
           >
             <span>⚔️</span>
             <span>1:1 퀴즈 배틀</span>
@@ -245,8 +245,8 @@ export default function Lobby({
             }}
             className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
               lobbyTab === "SHADOW_RAID"
-                ? "bg-slate-900 text-emerald-400 shadow-sm"
-                : "text-slate-500 hover:text-slate-300"
+                ? "bg-white text-emerald-400 shadow-sm"
+                : "text-duo-gray-dark hover:text-duo-dark"
             }`}
           >
             <span>👾</span>
@@ -260,8 +260,8 @@ export default function Lobby({
             }}
             className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
               lobbyTab === "ANALYTICS"
-                ? "bg-slate-900 text-purple-400 shadow-sm"
-                : "text-slate-500 hover:text-slate-300"
+                ? "bg-white text-purple-400 shadow-sm"
+                : "text-duo-gray-dark hover:text-duo-dark"
             }`}
           >
             <span>📊</span>
@@ -287,7 +287,7 @@ export default function Lobby({
             <span>⚡ {energy} / 5</span>
           </div>
 
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-semibold text-emerald-400">
+          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-duo-gray-dark text-xs font-semibold text-emerald-400">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
             <span>4,821명 접속 중</span>
           </div>
@@ -295,7 +295,7 @@ export default function Lobby({
           <button 
             type="button"
             onClick={() => setShowSettings(!showSettings)}
-            className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 hover:text-duo-dark transition-colors cursor-pointer"
+            className="p-2 rounded-lg bg-white border border-duo-gray-dark hover:bg-white text-duo-dark hover:text-duo-dark transition-colors cursor-pointer"
           >
             <Settings className="w-4 h-4" />
           </button>
@@ -305,7 +305,7 @@ export default function Lobby({
       {/* 4-Card Student Navigation Hub */}
       <div className="max-w-7xl mx-auto px-4 mt-6 w-full">
         {/* Student Profile Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-4 backdrop-blur-md">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 bg-white border border-duo-gray-dark rounded-2xl p-4 backdrop-blur-md">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-lg shadow-md shadow-cyan-500/20 shrink-0">
               🎒
@@ -318,20 +318,20 @@ export default function Lobby({
                 <span className="text-xs font-bold text-duo-dark">
                   {nickname || "슈크림먹은빵"}
                 </span>
-                <span className="text-xs text-slate-400 font-medium">
+                <span className="text-xs text-duo-dark font-medium">
                   ({school || "청계중학교"})
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">
+                <span className="text-[10px] px-2 py-0.5 rounded bg-white text-duo-dark font-mono">
                   {tier} {lp} LP
                 </span>
               </div>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-duo-dark mt-0.5">
                 4개 주요 기능 중 원하는 칸을 클릭하여 즉시 이동하세요.
               </p>
             </div>
           </div>
           <div className="flex items-center gap-2 shrink-0">
-            <span className="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-300">
+            <span className="px-3 py-1.5 rounded-xl bg-duo-gray border border-duo-gray-dark text-xs font-bold text-duo-dark">
               현재 위치: <span className="text-cyan-400 font-black">{
                 lobbyTab === "ARENA" ? "🏛️ 메인 로비 (Lobby)" :
                 lobbyTab === "SHADOW_RAID" ? "👾 오답 던전 (Shadow Raid)" : "📊 배틀 결과 & 분석 (Result & Analytics)"
@@ -349,8 +349,8 @@ export default function Lobby({
             onClick={handleGoToLobby}
             className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between ${
               lobbyTab === "ARENA"
-                ? "bg-slate-900/90 border-cyan-500/80 shadow-lg shadow-cyan-500/10 ring-1 ring-cyan-500/40"
-                : "bg-slate-900/40 border-slate-800 hover:border-cyan-500/40 hover:bg-slate-900/70"
+                ? "bg-white border-cyan-500/80 shadow-lg shadow-cyan-500/10 ring-1 ring-cyan-500/40"
+                : "bg-white border-duo-gray-dark hover:border-cyan-500/40 hover:bg-white"
             }`}
           >
             <div className="flex items-start justify-between">
@@ -360,7 +360,7 @@ export default function Lobby({
               <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${
                 lobbyTab === "ARENA"
                   ? "bg-cyan-500/20 border-cyan-400/40 text-cyan-300"
-                  : "bg-slate-800 border-slate-700 text-slate-400"
+                  : "bg-white border-duo-gray-dark text-duo-dark"
               }`}>
                 {lobbyTab === "ARENA" ? "현재 위치" : "홈으로 이동"}
               </span>
@@ -369,13 +369,13 @@ export default function Lobby({
               <h4 className="text-sm font-black text-duo-dark flex items-center gap-1.5">
                 🏛️ 메인 로비 (Lobby)
               </h4>
-              <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+              <p className="text-xs text-duo-dark mt-1 line-clamp-2">
                 실시간 학교 랭킹, 개인 티어 진행도, 커스텀 방 생성 및 PIN 코드 입장
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <div className="mt-4 pt-3 border-t border-duo-gray-dark flex items-center justify-between text-xs">
               <span className="text-[11px] font-bold text-cyan-400">랭킹 및 커스텀 룸</span>
-              <ChevronRight className="w-4 h-4 text-slate-500" />
+              <ChevronRight className="w-4 h-4 text-duo-gray-dark" />
             </div>
           </motion.div>
 
@@ -384,7 +384,7 @@ export default function Lobby({
             whileHover={{ y: -4, scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
             onClick={handleGoToBattle}
-            className="p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between bg-slate-900/40 border-slate-800 hover:border-red-500/60 hover:bg-slate-900/70 group"
+            className="p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between bg-white border-duo-gray-dark hover:border-red-500/60 hover:bg-white group"
           >
             <div className="flex items-start justify-between">
               <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 group-hover:scale-110 transition-transform">
@@ -398,13 +398,13 @@ export default function Lobby({
               <h4 className="text-sm font-black text-duo-dark flex items-center gap-1.5">
                 ⚔️ 1:1 실시간 퀴즈 배틀
               </h4>
-              <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+              <p className="text-xs text-duo-dark mt-1 line-clamp-2">
                 국어 · 영어 · 수학 라이벌 학교 학생과 실시간 5문항 스피드 승부
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <div className="mt-4 pt-3 border-t border-duo-gray-dark flex items-center justify-between text-xs">
               <span className="text-[11px] font-bold text-red-400">매칭 시작하기</span>
-              <ChevronRight className="w-4 h-4 text-slate-500 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 text-duo-gray-dark group-hover:translate-x-1 transition-transform" />
             </div>
           </motion.div>
 
@@ -418,8 +418,8 @@ export default function Lobby({
             }}
             className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between ${
               lobbyTab === "SHADOW_RAID"
-                ? "bg-slate-900/90 border-emerald-500/80 shadow-lg shadow-emerald-500/10 ring-1 ring-emerald-500/40"
-                : "bg-slate-900/40 border-slate-800 hover:border-emerald-500/60 hover:bg-slate-900/70"
+                ? "bg-white border-emerald-500/80 shadow-lg shadow-emerald-500/10 ring-1 ring-emerald-500/40"
+                : "bg-white border-duo-gray-dark hover:border-emerald-500/60 hover:bg-white"
             } group`}
           >
             <div className="flex items-start justify-between">
@@ -434,13 +434,13 @@ export default function Lobby({
               <h4 className="text-sm font-black text-duo-dark flex items-center gap-1.5">
                 👾 오답 던전 (Shadow Raid)
               </h4>
-              <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+              <p className="text-xs text-duo-dark mt-1 line-clamp-2">
                 배틀에서 틀린 문제 오답 몬스터 토벌! 오답 극복 시 배틀 번개 에너지 충전
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <div className="mt-4 pt-3 border-t border-duo-gray-dark flex items-center justify-between text-xs">
               <span className="text-[11px] font-bold text-emerald-400">던전 입장하기</span>
-              <ChevronRight className="w-4 h-4 text-slate-500 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 text-duo-gray-dark group-hover:translate-x-1 transition-transform" />
             </div>
           </motion.div>
 
@@ -454,8 +454,8 @@ export default function Lobby({
             }}
             className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between ${
               lobbyTab === "ANALYTICS"
-                ? "bg-slate-900/90 border-purple-500/80 shadow-lg shadow-purple-500/10 ring-1 ring-purple-500/40"
-                : "bg-slate-900/40 border-slate-800 hover:border-purple-500/60 hover:bg-slate-900/70"
+                ? "bg-white border-purple-500/80 shadow-lg shadow-purple-500/10 ring-1 ring-purple-500/40"
+                : "bg-white border-duo-gray-dark hover:border-purple-500/60 hover:bg-white"
             } group`}
           >
             <div className="flex items-start justify-between">
@@ -470,13 +470,13 @@ export default function Lobby({
               <h4 className="text-sm font-black text-duo-dark flex items-center gap-1.5">
                 📊 배틀 결과 & 분석
               </h4>
-              <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+              <p className="text-xs text-duo-dark mt-1 line-clamp-2">
                 최근 전적 기록, 5각 레이더 역량 분석(속도/어휘/문법), 취약점 리포트
               </p>
             </div>
-            <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <div className="mt-4 pt-3 border-t border-duo-gray-dark flex items-center justify-between text-xs">
               <span className="text-[11px] font-bold text-purple-400">분석 리포트 보기</span>
-              <ChevronRight className="w-4 h-4 text-slate-500 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 text-duo-gray-dark group-hover:translate-x-1 transition-transform" />
             </div>
           </motion.div>
         </div>
@@ -519,7 +519,7 @@ export default function Lobby({
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="bg-slate-900/80 border-b border-slate-800 px-6 py-4 relative z-20 flex flex-wrap items-center gap-4 text-sm"
+                className="bg-white border-b border-duo-gray-dark px-6 py-4 relative z-20 flex flex-wrap items-center gap-4 text-sm"
               >
                 <span className="font-bold text-cyan-400 flex items-center gap-1.5">
                   <Sparkles className="w-4 h-4" /> 티어 디자인 테스트 도구:
@@ -532,8 +532,8 @@ export default function Lobby({
                       onClick={() => setTier(t)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border cursor-pointer ${
                         tier === t 
-                          ? "bg-slate-100 text-slate-950 border-white shadow-md shadow-white/10" 
-                          : "bg-slate-950 text-slate-400 border-slate-800 hover:text-slate-200"
+                          ? "bg-slate-100 text-duo-dark border-white shadow-md shadow-white/10" 
+                          : "bg-duo-gray text-duo-dark border-duo-gray-dark hover:text-duo-dark"
                       }`}
                     >
                       {TIER_DETAILS[t].label} {TIER_DETAILS[t].title}
@@ -541,7 +541,7 @@ export default function Lobby({
                   ))}
                 </div>
                 <div className="flex items-center gap-2 ml-auto">
-                  <span className="text-xs text-slate-400 font-medium">LP 조정:</span>
+                  <span className="text-xs text-duo-dark font-medium">LP 조정:</span>
                   <input 
                     type="range" 
                     min="0" 
@@ -574,8 +574,8 @@ export default function Lobby({
             {/* Profile Info */}
             <div className="flex items-center gap-4 relative z-10">
               <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-slate-950/80 border border-slate-800 flex items-center justify-center text-slate-400 overflow-hidden shadow-inner">
-                  <User className="w-8 h-8 text-slate-300" />
+                <div className="w-16 h-16 rounded-2xl bg-duo-gray border border-duo-gray-dark flex items-center justify-center text-duo-dark overflow-hidden shadow-inner">
+                  <User className="w-8 h-8 text-duo-dark" />
                 </div>
                 {tier === "Gold" && (
                   <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -591,7 +591,7 @@ export default function Lobby({
                 )}
               </div>
               <div>
-                <span className="text-[10px] font-bold px-2 py-0.5 bg-black/40 text-cyan-300 rounded-md border border-cyan-500/20">
+                <span className="text-[10px] font-bold px-2 py-0.5 bg-duo-gray text-cyan-300 rounded-md border border-cyan-500/20">
                   {school}
                 </span>
                 <h3 className="text-xl font-extrabold tracking-tight mt-1 text-duo-dark">
@@ -634,7 +634,7 @@ export default function Lobby({
               >
                 {currentTierData.label}
               </h4>
-              <span className="text-xs font-bold text-slate-300 mt-1 uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-white/5">
+              <span className="text-xs font-bold text-duo-dark mt-1 uppercase tracking-widest bg-duo-gray px-3 py-1 rounded-full border border-white/5">
                 {currentTierData.title}
               </span>
             </div>
@@ -642,12 +642,12 @@ export default function Lobby({
             {/* LP Progress Bar */}
             <div className="space-y-2 mt-auto relative z-10">
               <div className="flex justify-between items-end text-xs">
-                <span className="text-slate-300 font-bold">League Points</span>
+                <span className="text-duo-dark font-bold">League Points</span>
                 <span className="font-mono font-black" style={{ color: currentTierData.color }}>
-                  {lp} <span className="text-slate-400 font-normal">/ 100 LP</span>
+                  {lp} <span className="text-duo-dark font-normal">/ 100 LP</span>
                 </span>
               </div>
-              <div className="h-2.5 w-full bg-black/40 rounded-full p-0.5 border border-white/5 overflow-hidden">
+              <div className="h-2.5 w-full bg-duo-gray rounded-full p-0.5 border border-white/5 overflow-hidden">
                 <motion.div 
                   initial={{ width: 0 }}
                   animate={{ width: `${lp}%` }}
@@ -663,85 +663,85 @@ export default function Lobby({
           </motion.div>
 
           {/* Quick Stats Panel */}
-          <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6">
-            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <div className="bg-white backdrop-blur-xl border border-duo-gray-dark rounded-3xl p-6">
+            <h4 className="text-sm font-bold text-duo-dark uppercase tracking-wider mb-4 flex items-center gap-2">
               <BarChart2 className="w-4 h-4 text-cyan-400" />
               아레나 개인 전적
             </h4>
             <div className="grid grid-cols-3 gap-3 text-center">
-              <div className="bg-slate-950/80 p-3.5 border border-slate-900 rounded-2xl">
-                <span className="text-xs text-slate-500 font-medium">승리</span>
+              <div className="bg-duo-gray p-3.5 border border-duo-gray-dark rounded-2xl">
+                <span className="text-xs text-duo-gray-dark font-medium">승리</span>
                 <p className="text-lg font-black text-cyan-400 mt-1">24승</p>
               </div>
-              <div className="bg-slate-950/80 p-3.5 border border-slate-900 rounded-2xl">
-                <span className="text-xs text-slate-500 font-medium">패배</span>
+              <div className="bg-duo-gray p-3.5 border border-duo-gray-dark rounded-2xl">
+                <span className="text-xs text-duo-gray-dark font-medium">패배</span>
                 <p className="text-lg font-black text-purple-400 mt-1">16패</p>
               </div>
-              <div className="bg-slate-950/80 p-3.5 border border-slate-900 rounded-2xl">
-                <span className="text-xs text-slate-500 font-medium">승률</span>
+              <div className="bg-duo-gray p-3.5 border border-duo-gray-dark rounded-2xl">
+                <span className="text-xs text-duo-gray-dark font-medium">승률</span>
                 <p className="text-lg font-black text-yellow-400 mt-1">60%</p>
               </div>
             </div>
-            <div className="mt-4 flex items-center gap-3 px-4 py-3 bg-slate-950/40 rounded-2xl border border-slate-900/80 text-xs">
+            <div className="mt-4 flex items-center gap-3 px-4 py-3 bg-duo-gray rounded-2xl border border-duo-gray-dark text-xs">
               <Flame className="w-5 h-5 text-orange-500 fill-orange-500 animate-pulse" />
-              <span className="text-slate-300">
+              <span className="text-duo-dark">
                 현재 <strong className="text-orange-400">3연승</strong> 달리는 중! 다음 승리 시 보너스 LP
               </span>
             </div>
           </div>
 
           {/* Daily Bounty UI Widget */}
-          <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 flex flex-col relative overflow-hidden mt-6 shadow-xl">
+          <div className="bg-white backdrop-blur-xl border border-duo-gray-dark rounded-3xl p-6 flex flex-col relative overflow-hidden mt-6 shadow-xl">
             <div className="absolute top-0 right-0 w-16 h-16 bg-yellow-950/10 rounded-full blur-xl pointer-events-none" />
             
-            <h4 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+            <h4 className="text-sm font-black text-duo-dark uppercase tracking-widest mb-4 flex items-center gap-2">
               <Trophy className="w-4.5 h-4.5 text-yellow-500 animate-pulse" />
               오늘의 현상금 수배 (Daily Bounty)
             </h4>
             
             <div className="space-y-3">
               {/* Quest 1 (Completed) */}
-              <div className="p-3 bg-slate-950/80 border border-yellow-500/30 rounded-2xl relative shadow-[0_0_15px_rgba(234,179,8,0.08)]">
+              <div className="p-3 bg-duo-gray border border-yellow-500/30 rounded-2xl relative shadow-[0_0_15px_rgba(234,179,8,0.08)]">
                 <div className="absolute top-2.5 right-2.5 px-1.5 py-0.5 bg-yellow-500/20 text-yellow-400 font-extrabold text-[8px] rounded uppercase border border-yellow-500/20 tracking-wider">
                   CLEAR
                 </div>
                 <span className="text-[9px] font-bold text-yellow-500 uppercase tracking-wider block">
                   수학 • 삼각함수
                 </span>
-                <p className="text-xs font-bold text-slate-200 mt-1">
+                <p className="text-xs font-bold text-duo-dark mt-1">
                   삼각함수 몬스터 3회 처치
                 </p>
-                <div className="flex justify-between items-center text-[10px] text-slate-400 mt-2 font-semibold font-mono">
+                <div className="flex justify-between items-center text-[10px] text-duo-dark mt-2 font-semibold font-mono">
                   <span>진행도: 3 / 3</span>
                   <span className="text-yellow-400">+50 XP</span>
                 </div>
               </div>
 
               {/* Quest 2 (Incomplete) */}
-              <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-2xl">
+              <div className="p-3 bg-duo-gray border border-duo-gray-dark rounded-2xl">
                 <span className="text-[9px] font-bold text-cyan-400 uppercase tracking-wider block">
                   영어 • 타임어택
                 </span>
-                <p className="text-xs font-bold text-slate-300 mt-1">
+                <p className="text-xs font-bold text-duo-dark mt-1">
                   5초 컷 배틀 2승 달성
                 </p>
-                <div className="flex justify-between items-center text-[10px] text-slate-500 mt-2 font-semibold font-mono">
+                <div className="flex justify-between items-center text-[10px] text-duo-gray-dark mt-2 font-semibold font-mono">
                   <span>진행도: 0 / 2</span>
-                  <span className="text-slate-400">+30 XP</span>
+                  <span className="text-duo-dark">+30 XP</span>
                 </div>
               </div>
 
               {/* Quest 3 (Incomplete) */}
-              <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-2xl">
+              <div className="p-3 bg-duo-gray border border-duo-gray-dark rounded-2xl">
                 <span className="text-[9px] font-bold text-purple-400 uppercase tracking-wider block">
                   국어 • 복수전
                 </span>
-                <p className="text-xs font-bold text-slate-300 mt-1">
+                <p className="text-xs font-bold text-duo-dark mt-1">
                   맞춤법 오답 복수전 1회 성공
                 </p>
-                <div className="flex justify-between items-center text-[10px] text-slate-500 mt-2 font-semibold font-mono">
+                <div className="flex justify-between items-center text-[10px] text-duo-gray-dark mt-2 font-semibold font-mono">
                   <span>진행도: 0 / 1</span>
-                  <span className="text-slate-400">+30 XP</span>
+                  <span className="text-duo-dark">+30 XP</span>
                 </div>
               </div>
             </div>
@@ -752,18 +752,18 @@ export default function Lobby({
         <section className="lg:col-span-8 flex flex-col gap-6">
           
           {/* Main School Leaderboard */}
-          <div id="school-ranking-section" className="bg-slate-900/40 backdrop-blur-xl border border-slate-900 rounded-3xl p-6 flex-1 flex flex-col scroll-mt-24">
+          <div id="school-ranking-section" className="bg-white backdrop-blur-xl border border-duo-gray-dark rounded-3xl p-6 flex-1 flex flex-col scroll-mt-24">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="text-lg font-extrabold tracking-tight flex items-center gap-2">
                   <Trophy className="w-5 h-5 text-yellow-400" />
                   🏆 실시간 전국 학교 랭킹 (Real-time School Rankings)
                 </h3>
-                <p className="text-xs text-slate-500 mt-1">
+                <p className="text-xs text-duo-gray-dark mt-1">
                   학교별 참여 인원의 LP 누적 합산 순위입니다.
                 </p>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px] font-bold text-slate-400">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-duo-gray-dark text-[11px] font-bold text-duo-dark">
                 <RefreshCw className="w-3.5 h-3.5" />
                 실시간 반영됨
               </div>
@@ -783,7 +783,7 @@ export default function Lobby({
                       isUserSchool 
                         ? "bg-cyan-950/20 border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.05)]" 
                         : isPodium
-                          ? "bg-slate-950/40 border-slate-900"
+                          ? "bg-duo-gray border-duo-gray-dark"
                           : "bg-transparent border-transparent"
                     }`}
                   >
@@ -794,20 +794,20 @@ export default function Lobby({
                         index === 0 
                           ? "bg-yellow-500/20 border border-yellow-500 text-yellow-400" 
                           : index === 1
-                            ? "bg-slate-300/20 border border-slate-300 text-slate-300"
+                            ? "bg-slate-300/20 border border-duo-gray-dark text-duo-dark"
                             : index === 2
                               ? "bg-amber-600/20 border border-amber-600/30 text-amber-500"
-                              : "bg-slate-900 border border-slate-800 text-slate-500"
+                              : "bg-white border border-duo-gray-dark text-duo-gray-dark"
                       }`}>
                         {ranking.rank}
                       </div>
 
                       <div>
-                        <span className="font-extrabold text-sm md:text-base text-slate-200">
+                        <span className="font-extrabold text-sm md:text-base text-duo-dark">
                           {ranking.name}
                         </span>
                         {isUserSchool && (
-                          <span className="ml-2 text-[9px] font-extrabold px-1.5 py-0.5 bg-cyan-500 text-slate-950 rounded uppercase tracking-wider">
+                          <span className="ml-2 text-[9px] font-extrabold px-1.5 py-0.5 bg-cyan-500 text-duo-dark rounded uppercase tracking-wider">
                             My School
                           </span>
                         )}
@@ -817,13 +817,13 @@ export default function Lobby({
                     {/* School Stats */}
                     <div className="flex items-center gap-6 text-right font-mono">
                       <div>
-                        <span className="text-[10px] text-slate-500 block font-sans">참여 인원</span>
-                        <span className="text-xs text-slate-300 font-semibold">{ranking.count}명</span>
+                        <span className="text-[10px] text-duo-gray-dark block font-sans">참여 인원</span>
+                        <span className="text-xs text-duo-dark font-semibold">{ranking.count}명</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-slate-500 block font-sans">누적 LP</span>
+                        <span className="text-[10px] text-duo-gray-dark block font-sans">누적 LP</span>
                         <span className="text-sm font-black text-cyan-400">
-                          {ranking.lp.toLocaleString()} <span className="text-[10px] font-bold text-slate-400">LP</span>
+                          {ranking.lp.toLocaleString()} <span className="text-[10px] font-bold text-duo-dark">LP</span>
                         </span>
                       </div>
                     </div>
@@ -833,28 +833,28 @@ export default function Lobby({
 
               {/* Show user's school if not in the list (Simulated rank) */}
               {!MOCK_SCHOOL_LEADERBOARD.some(r => r.name === school) && (
-                <div className="pt-2 border-t border-dashed border-slate-800/80">
+                <div className="pt-2 border-t border-dashed border-duo-gray-dark">
                   <div className="flex items-center justify-between px-4 py-3 rounded-2xl bg-cyan-950/20 border border-cyan-500/30">
                     <div className="flex items-center gap-4">
-                      <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 flex items-center justify-center font-bold text-xs font-mono">
+                      <div className="w-8 h-8 rounded-lg bg-white border border-duo-gray-dark text-cyan-400 flex items-center justify-center font-bold text-xs font-mono">
                         45
                       </div>
                       <div>
-                        <span className="font-extrabold text-sm text-slate-200">우리 학교: {school || "청계중학교"}</span>
-                        <span className="ml-2 text-[9px] font-extrabold px-1.5 py-0.5 bg-cyan-500 text-slate-950 rounded uppercase tracking-wider">
+                        <span className="font-extrabold text-sm text-duo-dark">우리 학교: {school || "청계중학교"}</span>
+                        <span className="ml-2 text-[9px] font-extrabold px-1.5 py-0.5 bg-cyan-500 text-duo-dark rounded uppercase tracking-wider">
                           45위
                         </span>
                       </div>
                     </div>
                     <div className="flex items-center gap-6 text-right font-mono">
                       <div>
-                        <span className="text-[10px] text-slate-500 block font-sans">참여 인원</span>
-                        <span className="text-xs text-slate-300 font-semibold">12명</span>
+                        <span className="text-[10px] text-duo-gray-dark block font-sans">참여 인원</span>
+                        <span className="text-xs text-duo-dark font-semibold">12명</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-slate-500 block font-sans">총 LP</span>
+                        <span className="text-[10px] text-duo-gray-dark block font-sans">총 LP</span>
                         <span className="text-sm font-black text-cyan-400">
-                          3,250 <span className="text-[10px] font-bold text-slate-400">LP</span>
+                          3,250 <span className="text-[10px] font-bold text-duo-dark">LP</span>
                         </span>
                       </div>
                     </div>
@@ -865,13 +865,13 @@ export default function Lobby({
           </div>
 
           {/* Big Matchmaking Button */}
-          <div id="battle-arena-section" className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 scroll-mt-24">
+          <div id="battle-arena-section" className="bg-white backdrop-blur-xl border border-duo-gray-dark rounded-3xl p-6 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 scroll-mt-24">
             <div className="text-center md:text-left flex-1">
               <h3 className="text-lg font-black tracking-tight text-duo-dark flex items-center justify-center md:justify-start gap-2">
                 <Award className="w-5 h-5 text-cyan-400" />
                 아레나 매칭 준비 완료
               </h3>
-              <p className="text-xs text-slate-400 mt-1 max-w-md">
+              <p className="text-xs text-duo-dark mt-1 max-w-md">
                 퀴즈 과목을 선택하고 매칭 시작을 누르면, 실력이 비슷한 라이벌 중학교 학생과 실시간 배틀이 진행됩니다.
               </p>
               
@@ -884,8 +884,8 @@ export default function Lobby({
                     onClick={() => setSelectedSubject(subject)}
                     className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
                       selectedSubject === subject
-                        ? "bg-cyan-500 text-slate-950 border-cyan-400 shadow-lg shadow-cyan-500/20"
-                        : "bg-slate-950 text-slate-400 border-slate-800 hover:text-slate-200 hover:border-slate-700"
+                        ? "bg-cyan-500 text-duo-dark border-cyan-400 shadow-lg shadow-cyan-500/20"
+                        : "bg-duo-gray text-duo-dark border-duo-gray-dark hover:text-duo-dark hover:border-duo-gray-dark"
                     }`}
                   >
                     {subject === "국어" && "📖 국어 (Korean)"}
@@ -905,11 +905,11 @@ export default function Lobby({
                 className={`flex-1 lg:flex-initial relative px-8 py-5 rounded-2xl font-black text-base tracking-wider text-duo-dark shadow-xl overflow-hidden transition-all duration-300 min-w-[200px] ${
                   selectedSubject && energy > 0
                     ? "shadow-cyan-500/20 cursor-pointer"
-                    : "opacity-40 cursor-not-allowed border border-slate-800 bg-slate-950"
+                    : "opacity-40 cursor-not-allowed border border-duo-gray-dark bg-duo-gray"
                 }`}
               >
                 {!selectedSubject ? (
-                  <div className="relative flex items-center justify-center gap-3 text-slate-500 py-0.5">
+                  <div className="relative flex items-center justify-center gap-3 text-duo-gray-dark py-0.5">
                     <Swords className="w-5 h-5" />
                     <span>과목을 선택하세요</span>
                   </div>
@@ -918,7 +918,7 @@ export default function Lobby({
                     <span className="flex items-center gap-2 font-black text-sm">
                       <AlertTriangle className="w-4 h-4 text-red-500" /> 번개가 부족합니다
                     </span>
-                    <span className="text-[10px] font-bold text-slate-500 mt-1">
+                    <span className="text-[10px] font-bold text-duo-gray-dark mt-1">
                       오답 던전에서 충전하세요!
                     </span>
                   </div>
@@ -938,14 +938,14 @@ export default function Lobby({
                 <button
                   type="button"
                   onClick={onCreateRoom}
-                  className="flex-1 px-5 py-4 bg-slate-900 border border-slate-800 hover:bg-slate-850 text-xs font-black text-slate-200 rounded-2xl flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-lg"
+                  className="flex-1 px-5 py-4 bg-white border border-duo-gray-dark hover:bg-duo-gray text-xs font-black text-duo-dark rounded-2xl flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-lg"
                 >
                   <span>방 만들기 (Create Room)</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowPinModal(true)}
-                  className="flex-1 px-5 py-4 bg-slate-900 border border-slate-800 hover:bg-slate-850 text-xs font-black text-slate-200 rounded-2xl flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-lg"
+                  className="flex-1 px-5 py-4 bg-white border border-duo-gray-dark hover:bg-duo-gray text-xs font-black text-duo-dark rounded-2xl flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-lg"
                 >
                   <span>코드로 입장 (Enter PIN)</span>
                 </button>
@@ -963,7 +963,7 @@ export default function Lobby({
             <button
               type="button"
               onClick={handleGoToLobby}
-              className="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-duo-dark rounded-xl flex items-center gap-2 cursor-pointer transition-colors"
+              className="px-4 py-2 bg-white border border-duo-gray-dark hover:bg-white text-xs font-bold text-duo-dark hover:text-duo-dark rounded-xl flex items-center gap-2 cursor-pointer transition-colors"
             >
               <span>← 메인 로비로 돌아가기</span>
             </button>
@@ -981,7 +981,7 @@ export default function Lobby({
             <button
               type="button"
               onClick={handleGoToLobby}
-              className="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-duo-dark rounded-xl flex items-center gap-2 cursor-pointer transition-colors"
+              className="px-4 py-2 bg-white border border-duo-gray-dark hover:bg-white text-xs font-bold text-duo-dark hover:text-duo-dark rounded-xl flex items-center gap-2 cursor-pointer transition-colors"
             >
               <span>← 메인 로비로 돌아가기</span>
             </button>
@@ -1000,7 +1000,7 @@ export default function Lobby({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex flex-col items-center justify-center"
+            className="fixed inset-0 bg-duo-gray backdrop-blur-md z-50 flex flex-col items-center justify-center"
           >
             {/* Pulsing ring waves */}
             <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
@@ -1050,7 +1050,7 @@ export default function Lobby({
               </h2>
 
               {/* Matching Timer */}
-              <div className="font-mono text-cyan-400 font-extrabold text-xl mb-6 bg-slate-900 border border-slate-800 px-4 py-1.5 rounded-full">
+              <div className="font-mono text-cyan-400 font-extrabold text-xl mb-6 bg-white border border-duo-gray-dark px-4 py-1.5 rounded-full">
                 00:0{matchTimer}
               </div>
 
@@ -1063,7 +1063,7 @@ export default function Lobby({
                       initial={{ y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       exit={{ y: -20, opacity: 0 }}
-                      className="text-slate-400 text-sm font-semibold"
+                      className="text-duo-dark text-sm font-semibold"
                     >
                       아레나 매칭 대기열에 진입하는 중...
                     </motion.p>
@@ -1074,7 +1074,7 @@ export default function Lobby({
                       initial={{ y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       exit={{ y: -20, opacity: 0 }}
-                      className="text-slate-300 text-sm font-semibold"
+                      className="text-duo-dark text-sm font-semibold"
                     >
                       비슷한 티어의 라이벌 학교 학생 탐색 중...
                     </motion.p>
@@ -1110,7 +1110,7 @@ export default function Lobby({
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
-                  className="mt-8 bg-slate-900 border border-cyan-500/30 p-6 rounded-3xl shadow-2xl max-w-xs w-80 text-left relative overflow-hidden"
+                  className="mt-8 bg-white border border-cyan-500/30 p-6 rounded-3xl shadow-2xl max-w-xs w-80 text-left relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 bg-red-950/20 rounded-full blur-xl pointer-events-none" />
                   <span className="text-[10px] font-black text-red-400 uppercase tracking-widest block mb-1">
@@ -1118,11 +1118,11 @@ export default function Lobby({
                   </span>
                   
                   <div className="flex items-center gap-3 mt-2">
-                    <div className="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center text-red-500 font-bold">
+                    <div className="w-10 h-10 rounded-xl bg-duo-gray border border-duo-gray-dark flex items-center justify-center text-red-500 font-bold">
                       ⚔️
                     </div>
                     <div>
-                      <span className="text-[10px] font-bold px-1.5 py-0.5 bg-black/40 text-red-400 rounded border border-red-500/20">
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 bg-duo-gray text-red-400 rounded border border-red-500/20">
                         {school === "청계중학교" ? "대청중학교" : "청계중학교"}
                       </span>
                       <h4 className="text-base font-extrabold text-duo-dark mt-0.5">
@@ -1131,8 +1131,8 @@ export default function Lobby({
                     </div>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between text-xs border-t border-slate-800 pt-3">
-                    <span className="text-slate-500">Tier</span>
+                  <div className="mt-4 flex items-center justify-between text-xs border-t border-duo-gray-dark pt-3">
+                    <span className="text-duo-gray-dark">Tier</span>
                     <span className="font-bold text-yellow-400">Gold [1인분 장인]</span>
                   </div>
                 </motion.div>
@@ -1149,13 +1149,13 @@ export default function Lobby({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-duo-gray backdrop-blur-sm z-50 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.95, y: 15 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-6 w-full max-w-md shadow-2xl relative"
+              className="bg-white border border-duo-gray-dark rounded-3xl p-6 w-full max-w-md shadow-2xl relative"
             >
               <span className="text-[9px] font-black text-purple-400 uppercase tracking-widest block mb-1">
                 게릴라 스폰서 대전
@@ -1163,21 +1163,21 @@ export default function Lobby({
               <h3 className="text-lg font-extrabold text-duo-dark mb-2 flex items-center gap-2">
                 🏆 동탄고 vs 반송고 수학 1짱 데스매치
               </h3>
-              <p className="text-xs text-slate-400 mb-4 leading-relaxed">
+              <p className="text-xs text-duo-dark mb-4 leading-relaxed">
                 본 대전은 <strong>동탄고등학교</strong>와 <strong>반송고등학교</strong> 학생들을 위한 반 대항전 형태의 이벤트 룸입니다. 참가 시 소속 학교의 합산 체력(Shared HP)을 공유하여 실시간으로 경쟁하게 됩니다.
               </p>
 
-              <div className="bg-slate-950 border border-slate-800 rounded-2xl p-4 mb-4 space-y-2">
+              <div className="bg-duo-gray border border-duo-gray-dark rounded-2xl p-4 mb-4 space-y-2">
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-slate-500">스폰서</span>
-                  <span className="text-slate-300">OO학원 (아이패드 5대 후원)</span>
+                  <span className="text-duo-gray-dark">스폰서</span>
+                  <span className="text-duo-dark">OO학원 (아이패드 5대 후원)</span>
                 </div>
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-slate-500">평가 과목</span>
+                  <span className="text-duo-gray-dark">평가 과목</span>
                   <span className="text-slate-350">수학 (수학 I 삼각함수 파트)</span>
                 </div>
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-slate-500">진행 방식</span>
+                  <span className="text-duo-gray-dark">진행 방식</span>
                   <span className="text-slate-350">5:5 실시간 공유 체력 배틀</span>
                 </div>
               </div>
@@ -1186,7 +1186,7 @@ export default function Lobby({
                 <button
                   type="button"
                   onClick={() => setShowEventModal(false)}
-                  className="flex-1 py-2.5 bg-slate-850 hover:bg-slate-800 rounded-xl text-xs font-bold text-slate-400 hover:text-duo-dark transition-colors cursor-pointer"
+                  className="flex-1 py-2.5 bg-duo-gray hover:bg-white rounded-xl text-xs font-bold text-duo-dark hover:text-duo-dark transition-colors cursor-pointer"
                 >
                   돌아가기
                 </button>
@@ -1213,18 +1213,18 @@ export default function Lobby({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-duo-gray backdrop-blur-sm z-50 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.95, y: 15 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-6 w-full max-w-sm shadow-2xl relative"
+              className="bg-white border border-duo-gray-dark rounded-3xl p-6 w-full max-w-sm shadow-2xl relative"
             >
               <h3 className="text-base font-extrabold text-duo-dark mb-2 flex items-center gap-2">
                 🔑 대기실 코드로 입장
               </h3>
-              <p className="text-xs text-slate-400 mb-4">
+              <p className="text-xs text-duo-dark mb-4">
                 친구에게 받은 6자리 방 코드(예: 1A2B3C)를 입력해 주세요.
               </p>
 
@@ -1234,7 +1234,7 @@ export default function Lobby({
                 value={enteredPin}
                 onChange={(e) => setEnteredPin(e.target.value.toUpperCase())}
                 placeholder="코드 입력"
-                className="w-full text-center font-mono text-xl font-bold tracking-widest bg-slate-950 border border-slate-800 rounded-xl py-3 text-cyan-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 mb-4 uppercase placeholder:text-slate-700"
+                className="w-full text-center font-mono text-xl font-bold tracking-widest bg-duo-gray border border-duo-gray-dark rounded-xl py-3 text-cyan-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 mb-4 uppercase placeholder:text-duo-dark"
               />
 
               <div className="flex gap-2">
@@ -1244,7 +1244,7 @@ export default function Lobby({
                     setShowPinModal(false);
                     setEnteredPin("");
                   }}
-                  className="flex-1 py-2.5 bg-slate-850 hover:bg-slate-800 rounded-xl text-xs font-bold text-slate-400 hover:text-duo-dark transition-colors cursor-pointer"
+                  className="flex-1 py-2.5 bg-duo-gray hover:bg-white rounded-xl text-xs font-bold text-duo-dark hover:text-duo-dark transition-colors cursor-pointer"
                 >
                   취소
                 </button>
@@ -1259,7 +1259,7 @@ export default function Lobby({
                     setShowPinModal(false);
                     setEnteredPin("");
                   }}
-                  className="flex-1 py-2.5 bg-cyan-600 hover:bg-cyan-500 rounded-xl text-xs font-black text-slate-950 transition-colors cursor-pointer"
+                  className="flex-1 py-2.5 bg-cyan-600 hover:bg-cyan-500 rounded-xl text-xs font-black text-duo-dark transition-colors cursor-pointer"
                 >
                   입장하기
                 </button>

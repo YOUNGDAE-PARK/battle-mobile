@@ -554,7 +554,7 @@ export default function TeacherDashboard({
   );
 
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-900 font-sans p-4 md:p-8 flex flex-col justify-between">
+    <div className="min-h-screen bg-slate-100 text-duo-dark font-sans p-4 md:p-8 flex flex-col justify-between">
       
       {/* Toast Alert */}
       <AnimatePresence>
@@ -563,7 +563,7 @@ export default function TeacherDashboard({
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-duo-dark text-xs md:text-sm font-bold px-5 py-3 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-2"
+            className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-white text-duo-dark text-xs md:text-sm font-bold px-5 py-3 rounded-2xl shadow-2xl border border-duo-gray-dark flex items-center gap-2"
           >
             <span>{toastMessage}</span>
           </motion.div>
@@ -571,7 +571,7 @@ export default function TeacherDashboard({
       </AnimatePresence>
 
       {/* Top Header */}
-      <header className="w-full max-w-7xl mx-auto border-b border-slate-300 pb-5 mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <header className="w-full max-w-7xl mx-auto border-b border-duo-gray-dark pb-5 mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="flex items-center gap-3">
           <div className="p-3 rounded-2xl bg-indigo-600 text-duo-dark shadow-md shadow-indigo-600/20">
             <Calculator className="w-7 h-7" />
@@ -581,9 +581,9 @@ export default function TeacherDashboard({
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-indigo-100 text-indigo-700 border border-indigo-200 uppercase tracking-wider">
                 수학과 전용 관리 대시보드
               </span>
-              <span className="text-xs text-slate-500 font-semibold">청계중학교 3학년 수학과</span>
+              <span className="text-xs text-duo-gray-dark font-semibold">청계중학교 3학년 수학과</span>
             </div>
-            <h1 className="text-xl md:text-2xl font-black text-slate-950 mt-1">
+            <h1 className="text-xl md:text-2xl font-black text-duo-dark mt-1">
               수학 수행평가 통합 관리 시스템
             </h1>
           </div>
@@ -593,14 +593,14 @@ export default function TeacherDashboard({
         <div className="flex items-center gap-3 w-full md:w-auto justify-end">
           <button
             onClick={onExit}
-            className="px-4 py-2 border border-slate-300 bg-white hover:bg-slate-50 rounded-xl text-xs font-bold text-slate-700 shadow-sm transition-all cursor-pointer"
+            className="px-4 py-2 border border-duo-gray-dark bg-white hover:bg-slate-50 rounded-xl text-xs font-bold text-duo-dark shadow-sm transition-all cursor-pointer"
           >
             학생 화면으로 복귀
           </button>
           
           <button
             onClick={() => onStartAssessmentMatch(true)}
-            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-duo-dark rounded-xl text-xs font-black shadow-md transition-all cursor-pointer flex items-center gap-1.5"
+            className="px-4 py-2 bg-white hover:bg-white text-duo-dark rounded-xl text-xs font-black shadow-md transition-all cursor-pointer flex items-center gap-1.5"
           >
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span>수행평가 시험 응시 테스트</span>
@@ -613,25 +613,25 @@ export default function TeacherDashboard({
 
         {/* Summary Metric Cards */}
         <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
-            <div className="flex items-center justify-between text-slate-500 text-xs font-bold">
+          <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 shadow-sm">
+            <div className="flex items-center justify-between text-duo-gray-dark text-xs font-bold">
               <span>수행평가 과목</span>
               <BookOpen className="w-4 h-4 text-indigo-500" />
             </div>
             <div className="mt-2">
-              <span className="text-base md:text-lg font-black text-slate-900">중3 수학 (I. 실수와 연산)</span>
-              <p className="text-[11px] text-slate-500 mt-0.5">평가 범위: {selectedChapter.name}</p>
+              <span className="text-base md:text-lg font-black text-duo-dark">중3 수학 (I. 실수와 연산)</span>
+              <p className="text-[11px] text-duo-gray-dark mt-0.5">평가 범위: {selectedChapter.name}</p>
             </div>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
-            <div className="flex items-center justify-between text-slate-500 text-xs font-bold">
+          <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 shadow-sm">
+            <div className="flex items-center justify-between text-duo-gray-dark text-xs font-bold">
               <span>응시 현황</span>
               <Users className="w-4 h-4 text-blue-500" />
             </div>
             <div className="mt-2 flex items-baseline gap-1.5">
-              <span className="text-2xl font-black text-slate-900">{students.filter(s => s.submitted).length}</span>
-              <span className="text-xs font-bold text-slate-500">/ {students.length}명 응시 완료</span>
+              <span className="text-2xl font-black text-duo-dark">{students.filter(s => s.submitted).length}</span>
+              <span className="text-xs font-bold text-duo-gray-dark">/ {students.length}명 응시 완료</span>
             </div>
             <div className="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
               <div 
@@ -641,28 +641,28 @@ export default function TeacherDashboard({
             </div>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
-            <div className="flex items-center justify-between text-slate-500 text-xs font-bold">
+          <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 shadow-sm">
+            <div className="flex items-center justify-between text-duo-gray-dark text-xs font-bold">
               <span>학급 평균 점수</span>
               <Award className="w-4 h-4 text-amber-500" />
             </div>
             <div className="mt-2 flex items-baseline gap-1.5">
-              <span className="text-2xl font-black text-slate-900">{averageScore}</span>
-              <span className="text-xs font-bold text-slate-500">/ 100점 만점</span>
+              <span className="text-2xl font-black text-duo-dark">{averageScore}</span>
+              <span className="text-xs font-bold text-duo-gray-dark">/ 100점 만점</span>
             </div>
-            <p className="text-[11px] text-slate-500 mt-0.5">최고 100점 · 최저 68점</p>
+            <p className="text-[11px] text-duo-gray-dark mt-0.5">최고 100점 · 최저 68점</p>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
-            <div className="flex items-center justify-between text-slate-500 text-xs font-bold">
+          <div className="bg-white border border-duo-gray-dark rounded-2xl p-4 shadow-sm">
+            <div className="flex items-center justify-between text-duo-gray-dark text-xs font-bold">
               <span>2차 교사 확정 현황</span>
               <FileCheck2 className="w-4 h-4 text-emerald-500" />
             </div>
             <div className="mt-2 flex items-baseline gap-1.5">
               <span className="text-2xl font-black text-emerald-600">{confirmedCount}</span>
-              <span className="text-xs font-bold text-slate-500">명 확정 (대기: <strong className="text-amber-600">{pendingCount}명</strong>)</span>
+              <span className="text-xs font-bold text-duo-gray-dark">명 확정 (대기: <strong className="text-amber-600">{pendingCount}명</strong>)</span>
             </div>
-            <p className="text-[11px] text-slate-500 mt-0.5">AI 1차 채점 자동 완료됨</p>
+            <p className="text-[11px] text-duo-gray-dark mt-0.5">AI 1차 채점 자동 완료됨</p>
           </div>
         </section>
 
@@ -670,13 +670,13 @@ export default function TeacherDashboard({
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
           {/* Step 1: AI 수행평가 문항 출제 및 문제 확정 (7 cols) */}
-          <div className="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-5">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+          <div className="lg:col-span-7 bg-white border border-duo-gray-dark rounded-3xl p-6 shadow-sm space-y-5">
+            <div className="flex items-center justify-between border-b border-duo-gray-dark pb-4">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
                   1
                 </span>
-                <h2 className="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                <h2 className="font-extrabold text-duo-dark text-base flex items-center gap-2">
                   <span>AI 수학 수행평가 문항 출제 및 문제 확정</span>
                 </h2>
               </div>
@@ -692,10 +692,10 @@ export default function TeacherDashboard({
             </div>
 
             {/* Input Form */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-2xl border border-duo-gray-dark">
               {/* Chapter Select */}
               <div className="space-y-1 sm:col-span-2">
-                <label className="text-[11px] font-bold text-slate-600">교과서 단원 (목차)</label>
+                <label className="text-[11px] font-bold text-duo-gray-dark">교과서 단원 (목차)</label>
                 <select
                   value={selectedChapterId}
                   onChange={(e) => {
@@ -703,7 +703,7 @@ export default function TeacherDashboard({
                     const ch = MATH_CHAPTERS.find(c => c.id === e.target.value);
                     if (ch) setPageRange(ch.defaultPage);
                   }}
-                  className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-500 cursor-pointer"
+                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500 cursor-pointer"
                 >
                   {MATH_CHAPTERS.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
@@ -713,23 +713,23 @@ export default function TeacherDashboard({
 
               {/* Page Range */}
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-600">페이지 범위</label>
+                <label className="text-[11px] font-bold text-duo-gray-dark">페이지 범위</label>
                 <input
                   type="text"
                   value={pageRange}
                   onChange={(e) => setPageRange(e.target.value)}
                   placeholder="예: p.12 ~ p.35"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-500"
+                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500"
                 />
               </div>
 
               {/* Difficulty */}
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-600">출제 난이도</label>
+                <label className="text-[11px] font-bold text-duo-gray-dark">출제 난이도</label>
                 <select
                   value={difficulty}
                   onChange={(e) => setDifficulty(e.target.value as "하" | "중" | "상")}
-                  className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-500 cursor-pointer"
+                  className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500 cursor-pointer"
                 >
                   <option value="하">기본 (하)</option>
                   <option value="중">표준 (중)</option>
@@ -773,32 +773,32 @@ export default function TeacherDashboard({
 
             {/* Questions List */}
             <div className="space-y-3 pt-2">
-              <div className="flex items-center justify-between text-xs font-extrabold text-slate-700">
+              <div className="flex items-center justify-between text-xs font-extrabold text-duo-dark">
                 <span>생성된 문항 리스트 ({questions.length}문항)</span>
-                <span className="text-[11px] text-slate-500 font-semibold">총 배점: 100점 만점</span>
+                <span className="text-[11px] text-duo-gray-dark font-semibold">총 배점: 100점 만점</span>
               </div>
 
               <div className="space-y-3 max-h-[360px] overflow-y-auto pr-1">
                 {questions.map((q, idx) => (
-                  <div key={q.id} className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+                  <div key={q.id} className="p-4 bg-slate-50 border border-duo-gray-dark rounded-2xl space-y-2">
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
-                        <span className="px-2 py-0.5 rounded-md bg-slate-900 text-duo-dark text-[10px] font-black">
+                        <span className="px-2 py-0.5 rounded-md bg-white text-duo-dark text-[10px] font-black">
                           {idx + 1}번 문항
                         </span>
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700">
                           {q.type}
                         </span>
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200 text-slate-700">
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200 text-duo-dark">
                           배점 {q.points}점
                         </span>
                       </div>
-                      <span className="text-[10px] font-semibold text-slate-400">
+                      <span className="text-[10px] font-semibold text-duo-dark">
                         난이도: {q.difficulty}
                       </span>
                     </div>
 
-                    <p className="text-xs md:text-sm font-bold text-slate-900 leading-relaxed">
+                    <p className="text-xs md:text-sm font-bold text-duo-dark leading-relaxed">
                       {q.question}
                     </p>
 
@@ -810,7 +810,7 @@ export default function TeacherDashboard({
                             className={`text-xs px-2.5 py-1.5 rounded-lg border font-medium ${
                               opt === q.correctAnswer 
                                 ? "bg-emerald-50 border-emerald-300 text-emerald-800 font-bold" 
-                                : "bg-white border-slate-200 text-slate-600"
+                                : "bg-white border-duo-gray-dark text-duo-gray-dark"
                             }`}
                           >
                             {optIdx + 1}. {opt}
@@ -819,9 +819,9 @@ export default function TeacherDashboard({
                       </div>
                     )}
 
-                    <div className="bg-white p-2.5 rounded-xl border border-slate-200 text-[11px] text-slate-600 space-y-0.5">
-                      <div><strong className="text-slate-800">정답:</strong> {q.correctAnswer}</div>
-                      <div><strong className="text-slate-800">채점 기준/해설:</strong> {q.solution}</div>
+                    <div className="bg-white p-2.5 rounded-xl border border-duo-gray-dark text-[11px] text-duo-gray-dark space-y-0.5">
+                      <div><strong className="text-duo-dark">정답:</strong> {q.correctAnswer}</div>
+                      <div><strong className="text-duo-dark">채점 기준/해설:</strong> {q.solution}</div>
                     </div>
                   </div>
                 ))}
@@ -844,7 +844,7 @@ export default function TeacherDashboard({
                   </div>
                   <button 
                     onClick={() => setIsQuestionsConfirmed(false)}
-                    className="text-[11px] font-bold text-slate-500 hover:text-slate-800 underline cursor-pointer"
+                    className="text-[11px] font-bold text-duo-gray-dark hover:text-duo-dark underline cursor-pointer"
                   >
                     문제 재수정
                   </button>
@@ -854,13 +854,13 @@ export default function TeacherDashboard({
           </div>
 
           {/* Step 2: 일회성 시험 코드 배포 & 만료 관리 (5 cols) */}
-          <div className="lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-5">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+          <div className="lg:col-span-5 bg-white border border-duo-gray-dark rounded-3xl p-6 shadow-sm space-y-5">
+            <div className="flex items-center justify-between border-b border-duo-gray-dark pb-4">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
                   2
                 </span>
-                <h2 className="font-extrabold text-slate-900 text-base">
+                <h2 className="font-extrabold text-duo-dark text-base">
                   수업시간 일회성 시험 코드 배포
                 </h2>
               </div>
@@ -869,10 +869,10 @@ export default function TeacherDashboard({
             {/* Code Box */}
             <div className={`p-6 rounded-3xl border-2 text-center transition-all ${
               codeStatus === "IN_PROGRESS"
-                ? "bg-slate-950 text-duo-dark border-indigo-500 shadow-xl"
+                ? "bg-duo-gray text-duo-dark border-indigo-500 shadow-xl"
                 : codeStatus === "EXPIRED"
-                ? "bg-slate-100 text-slate-400 border-slate-300"
-                : "bg-slate-50 text-slate-800 border-dashed border-slate-300"
+                ? "bg-slate-100 text-duo-dark border-duo-gray-dark"
+                : "bg-slate-50 text-duo-dark border-dashed border-duo-gray-dark"
             }`}>
               <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider mb-2">
                 <Key className="w-4 h-4 text-indigo-400" />
@@ -882,7 +882,7 @@ export default function TeacherDashboard({
               {/* Large PIN Display */}
               <div className="my-3">
                 <span className={`font-mono text-3xl md:text-4xl font-black tracking-widest ${
-                  codeStatus === "EXPIRED" ? "line-through text-slate-400" : "text-indigo-400"
+                  codeStatus === "EXPIRED" ? "line-through text-duo-dark" : "text-indigo-400"
                 }`}>
                   {roomCode}
                 </span>
@@ -904,7 +904,7 @@ export default function TeacherDashboard({
                 )}
               </div>
 
-              <p className={`text-xs mt-4 ${codeStatus === "IN_PROGRESS" ? "text-slate-400" : "text-slate-500"}`}>
+              <p className={`text-xs mt-4 ${codeStatus === "IN_PROGRESS" ? "text-duo-dark" : "text-duo-gray-dark"}`}>
                 {codeStatus === "IN_PROGRESS"
                   ? "수업 시간에 학생들에게 이 코드를 공유하면 즉시 시험이 시작됩니다."
                   : "시험이 종료되면 일회성 코드는 보안을 위해 영구 만료되며 재사용할 수 없습니다."}
@@ -912,8 +912,8 @@ export default function TeacherDashboard({
             </div>
 
             {/* Submission Simulator & Controls */}
-            <div className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-200">
-              <div className="flex items-center justify-between text-xs font-extrabold text-slate-800">
+            <div className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-duo-gray-dark">
+              <div className="flex items-center justify-between text-xs font-extrabold text-duo-dark">
                 <span>실시간 답안 제출 현황</span>
                 <span className="font-mono text-indigo-600">
                   {students.filter(s => s.submitted).length} / {students.length}명 제출 완료
@@ -931,9 +931,9 @@ export default function TeacherDashboard({
               <div className="grid grid-cols-2 gap-2 pt-2">
                 <button
                   onClick={handleGenerateNewCode}
-                  className="py-2.5 px-3 bg-white hover:bg-slate-100 border border-slate-300 rounded-xl text-xs font-bold text-slate-700 transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+                  className="py-2.5 px-3 bg-white hover:bg-slate-100 border border-duo-gray-dark rounded-xl text-xs font-bold text-duo-dark transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
                 >
-                  <RotateCcw className="w-3.5 h-3.5 text-slate-500" />
+                  <RotateCcw className="w-3.5 h-3.5 text-duo-gray-dark" />
                   <span>새 일회성 코드 생성</span>
                 </button>
 
@@ -959,23 +959,23 @@ export default function TeacherDashboard({
         </section>
 
         {/* Section 3: 학생 수행평가 관리 테이블 (요구사항 1 & 2) */}
-        <section className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-5">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+        <section className="bg-white border border-duo-gray-dark rounded-3xl p-6 shadow-sm space-y-5">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-duo-gray-dark pb-4">
             <div className="flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-indigo-600 text-duo-dark text-xs font-black flex items-center justify-center">
                 3
               </span>
               <div>
-                <h2 className="font-extrabold text-slate-900 text-base md:text-lg">
+                <h2 className="font-extrabold text-duo-dark text-base md:text-lg">
                   학생 수행평가 응시 현황 및 2차 채점 관리 테이블
                 </h2>
-                <p className="text-xs text-slate-500 mt-0.5">
+                <p className="text-xs text-duo-gray-dark mt-0.5">
                   이름, 학년, 반, 번호별 검색 및 필터링이 가능하며, AI 1차 자동 채점 결과를 검토하고 최종 점수를 확정합니다.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-bold text-slate-600">
+            <div className="flex items-center gap-2 text-xs font-bold text-duo-gray-dark">
               <span>표시 학생:</span>
               <span className="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-lg border border-indigo-200 font-extrabold">
                 총 {students.length}명 중 {filteredStudents.length}명
@@ -984,14 +984,14 @@ export default function TeacherDashboard({
           </div>
 
           {/* Filtering & Search Bar (이름, 학년, 반, 번호, 상태별 검색 지원) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 bg-slate-50 p-4 rounded-2xl border border-duo-gray-dark">
             {/* Class Filter */}
             <div className="space-y-1">
-              <label className="text-[11px] font-bold text-slate-600">학급(반) 선택</label>
+              <label className="text-[11px] font-bold text-duo-gray-dark">학급(반) 선택</label>
               <select
                 value={filterClass}
                 onChange={(e) => setFilterClass(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-500 cursor-pointer"
+                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500 cursor-pointer"
               >
                 <option value="ALL">전체 반 (1~3반)</option>
                 <option value="1">3학년 1반</option>
@@ -1002,11 +1002,11 @@ export default function TeacherDashboard({
 
             {/* Status Filter */}
             <div className="space-y-1">
-              <label className="text-[11px] font-bold text-slate-600">채점 및 평가 상태</label>
+              <label className="text-[11px] font-bold text-duo-gray-dark">채점 및 평가 상태</label>
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-500 cursor-pointer"
+                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500 cursor-pointer"
               >
                 <option value="ALL">전체 상태</option>
                 <option value="CONFIRMED">교사 2차 확정 완료</option>
@@ -1017,32 +1017,32 @@ export default function TeacherDashboard({
 
             {/* Student Number Filter */}
             <div className="space-y-1">
-              <label className="text-[11px] font-bold text-slate-600">번호 검색</label>
+              <label className="text-[11px] font-bold text-duo-gray-dark">번호 검색</label>
               <input
                 type="number"
                 value={filterStudentNum}
                 onChange={(e) => setFilterStudentNum(e.target.value)}
                 placeholder="예: 1, 2, 3..."
-                className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-500"
+                className="w-full bg-white border border-duo-gray-dark rounded-xl px-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500"
               />
             </div>
 
             {/* Name Search */}
             <div className="space-y-1 sm:col-span-2">
-              <label className="text-[11px] font-bold text-slate-600">학생 이름 실시간 검색</label>
+              <label className="text-[11px] font-bold text-duo-gray-dark">학생 이름 실시간 검색</label>
               <div className="relative">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="학생 이름 입력 (예: 김민수, 박지민...)"
-                  className="w-full bg-white border border-slate-200 rounded-xl pl-9 pr-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-500"
+                  className="w-full bg-white border border-duo-gray-dark rounded-xl pl-9 pr-3 py-2 text-xs font-bold text-duo-dark focus:outline-none focus:border-indigo-500"
                 />
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+                <Search className="w-4 h-4 text-duo-dark absolute left-3 top-2.5" />
                 {searchQuery && (
                   <button 
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-2.5 text-xs text-slate-400 hover:text-slate-600 cursor-pointer"
+                    className="absolute right-3 top-2.5 text-xs text-duo-dark hover:text-duo-gray-dark cursor-pointer"
                   >
                     ×
                   </button>
@@ -1052,9 +1052,9 @@ export default function TeacherDashboard({
           </div>
 
           {/* Student Table */}
-          <div className="overflow-x-auto border border-slate-200 rounded-2xl">
-            <table className="w-full text-left text-xs text-slate-700">
-              <thead className="bg-slate-50 text-slate-600 font-extrabold border-b border-slate-200">
+          <div className="overflow-x-auto border border-duo-gray-dark rounded-2xl">
+            <table className="w-full text-left text-xs text-duo-dark">
+              <thead className="bg-slate-50 text-duo-gray-dark font-extrabold border-b border-duo-gray-dark">
                 <tr>
                   <th className="py-3.5 px-4">학년</th>
                   <th className="py-3.5 px-3">반</th>
@@ -1070,7 +1070,7 @@ export default function TeacherDashboard({
               <tbody className="divide-y divide-slate-100 font-medium">
                 {filteredStudents.length === 0 ? (
                   <tr>
-                    <td colSpan={9} className="text-center py-10 text-slate-400 font-bold">
+                    <td colSpan={9} className="text-center py-10 text-duo-dark font-bold">
                       검색 조건에 일치하는 학생이 없습니다.
                     </td>
                   </tr>
@@ -1080,10 +1080,10 @@ export default function TeacherDashboard({
                       key={student.id} 
                       className="hover:bg-slate-50/80 transition-colors"
                     >
-                      <td className="py-3.5 px-4 font-bold text-slate-900">{student.grade}학년</td>
+                      <td className="py-3.5 px-4 font-bold text-duo-dark">{student.grade}학년</td>
                       <td className="py-3.5 px-3 font-bold">{student.classNum}반</td>
-                      <td className="py-3.5 px-3 font-mono font-bold text-slate-500">{student.studentNum}번</td>
-                      <td className="py-3.5 px-4 font-extrabold text-slate-950">
+                      <td className="py-3.5 px-3 font-mono font-bold text-duo-gray-dark">{student.studentNum}번</td>
+                      <td className="py-3.5 px-4 font-extrabold text-duo-dark">
                         {student.name}
                       </td>
                       <td className="py-3.5 px-4">
@@ -1092,16 +1092,16 @@ export default function TeacherDashboard({
                             제출 완료 ({student.submittedAt})
                           </span>
                         ) : (
-                          <span className="px-2.5 py-1 bg-slate-100 text-slate-500 rounded-md text-[11px] font-bold">
+                          <span className="px-2.5 py-1 bg-slate-100 text-duo-gray-dark rounded-md text-[11px] font-bold">
                             미제출
                           </span>
                         )}
                       </td>
-                      <td className="py-3.5 px-4 text-center font-mono font-black text-slate-800">
+                      <td className="py-3.5 px-4 text-center font-mono font-black text-duo-dark">
                         {student.submitted ? (
                           <span className="text-sm">{student.aiScore}점</span>
                         ) : (
-                          <span className="text-slate-300">-</span>
+                          <span className="text-duo-dark">-</span>
                         )}
                       </td>
                       <td className="py-3.5 px-4 text-center font-mono font-black">
@@ -1112,7 +1112,7 @@ export default function TeacherDashboard({
                         ) : student.submitted ? (
                           <span className="text-xs text-amber-600 font-bold">대기 중</span>
                         ) : (
-                          <span className="text-slate-300">-</span>
+                          <span className="text-duo-dark">-</span>
                         )}
                       </td>
                       <td className="py-3.5 px-4 text-center">
@@ -1127,7 +1127,7 @@ export default function TeacherDashboard({
                             AI 1차 완료
                           </span>
                         ) : (
-                          <span className="px-2.5 py-1 bg-slate-100 text-slate-400 rounded-full text-[10px] font-bold">
+                          <span className="px-2.5 py-1 bg-slate-100 text-duo-dark rounded-full text-[10px] font-bold">
                             미응시
                           </span>
                         )}
@@ -1136,13 +1136,13 @@ export default function TeacherDashboard({
                         {student.submitted ? (
                           <button
                             onClick={() => handleOpenReviewModal(student)}
-                            className="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-duo-dark rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer flex items-center gap-1 ml-auto"
+                            className="px-3 py-1.5 bg-white hover:bg-white text-duo-dark rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer flex items-center gap-1 ml-auto"
                           >
                             <Edit3 className="w-3.5 h-3.5 text-indigo-300" />
                             <span>{student.isConfirmed ? "점수 재조정" : "2차 채점/확정"}</span>
                           </button>
                         ) : (
-                          <span className="text-xs text-slate-300 font-bold">-</span>
+                          <span className="text-xs text-duo-dark font-bold">-</span>
                         )}
                       </td>
                     </tr>
@@ -1158,68 +1158,68 @@ export default function TeacherDashboard({
       {/* Step 4: 2차 평가 상세 모달 (AI 1차 채점 -> 교사 2차 점수 조정 및 확정) */}
       <AnimatePresence>
         {selectedStudentForReview && (
-          <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 bg-duo-gray backdrop-blur-xs flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="bg-white border border-slate-200 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl p-6 space-y-6"
+              className="bg-white border border-duo-gray-dark rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl p-6 space-y-6"
             >
               {/* Modal Header */}
-              <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+              <div className="flex items-center justify-between border-b border-duo-gray-dark pb-4">
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 text-[10px] font-black">
                       2차 평가자 점수 조정
                     </span>
-                    <span className="text-xs text-slate-500 font-bold">
+                    <span className="text-xs text-duo-gray-dark font-bold">
                       {selectedStudentForReview.grade}학년 {selectedStudentForReview.classNum}반 {selectedStudentForReview.studentNum}번
                     </span>
                   </div>
-                  <h3 className="text-lg font-black text-slate-900 mt-1">
+                  <h3 className="text-lg font-black text-duo-dark mt-1">
                     {selectedStudentForReview.name} 학생 수행평가 채점 및 확정
                   </h3>
                 </div>
                 <button
                   onClick={() => setSelectedStudentForReview(null)}
-                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center font-bold text-sm cursor-pointer"
+                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-duo-gray-dark flex items-center justify-center font-bold text-sm cursor-pointer"
                 >
                   ✕
                 </button>
               </div>
 
               {/* AI 1st Evaluation Summary */}
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-2">
+              <div className="bg-slate-50 border border-duo-gray-dark rounded-2xl p-4 space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-black text-indigo-700 flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5" /> AI 1차 자동 채점 결과
                   </span>
-                  <span className="font-mono text-base font-black text-slate-900">
+                  <span className="font-mono text-base font-black text-duo-dark">
                     AI 점수: {selectedStudentForReview.aiScore}점 / 100점
                   </span>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed font-medium bg-white p-3 rounded-xl border border-slate-200">
+                <p className="text-xs text-duo-dark leading-relaxed font-medium bg-white p-3 rounded-xl border border-duo-gray-dark">
                   {selectedStudentForReview.aiSummary}
                 </p>
               </div>
 
               {/* Detailed Question Answers & AI Check */}
               <div className="space-y-3">
-                <h4 className="text-xs font-extrabold text-slate-700">문항별 학생 답안 및 AI 세부 판정</h4>
+                <h4 className="text-xs font-extrabold text-duo-dark">문항별 학생 답안 및 AI 세부 판정</h4>
                 <div className="space-y-2.5 max-h-56 overflow-y-auto pr-1">
                   {selectedStudentForReview.answers.map((ans) => (
-                    <div key={ans.qNum} className="p-3 bg-white border border-slate-200 rounded-xl text-xs space-y-1">
-                      <div className="flex items-center justify-between font-bold text-slate-900">
+                    <div key={ans.qNum} className="p-3 bg-white border border-duo-gray-dark rounded-xl text-xs space-y-1">
+                      <div className="flex items-center justify-between font-bold text-duo-dark">
                         <span>{ans.qNum}번. {ans.title}</span>
                         <span className="font-mono text-indigo-600 font-black">
                           {ans.pointsEarned} / {ans.maxPoints}점
                         </span>
                       </div>
-                      <div className="text-[11px] text-slate-600 flex items-center gap-3">
+                      <div className="text-[11px] text-duo-gray-dark flex items-center gap-3">
                         <span><strong>학생 답안:</strong> {ans.studentAnswer}</span>
                         <span><strong>정답:</strong> {ans.correctAnswer}</span>
                       </div>
-                      <div className="text-[11px] text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-150">
+                      <div className="text-[11px] text-duo-gray-dark bg-slate-50 px-2.5 py-1 rounded-md border border-slate-150">
                         <strong>AI 판정:</strong> {ans.aiAssessment}
                       </div>
                     </div>
@@ -1244,7 +1244,7 @@ export default function TeacherDashboard({
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setTempTeacherScore(prev => Math.max(0, prev - 1))}
-                      className="w-8 h-8 rounded-lg bg-white border border-indigo-200 font-black text-slate-800 hover:bg-indigo-100 cursor-pointer flex items-center justify-center"
+                      className="w-8 h-8 rounded-lg bg-white border border-indigo-200 font-black text-duo-dark hover:bg-indigo-100 cursor-pointer flex items-center justify-center"
                     >
                       -
                     </button>
@@ -1258,7 +1258,7 @@ export default function TeacherDashboard({
                     />
                     <button
                       onClick={() => setTempTeacherScore(prev => Math.min(100, prev + 1))}
-                      className="w-8 h-8 rounded-lg bg-white border border-indigo-200 font-black text-slate-800 hover:bg-indigo-100 cursor-pointer flex items-center justify-center"
+                      className="w-8 h-8 rounded-lg bg-white border border-indigo-200 font-black text-duo-dark hover:bg-indigo-100 cursor-pointer flex items-center justify-center"
                     >
                       +
                     </button>
@@ -1276,7 +1276,7 @@ export default function TeacherDashboard({
                     onChange={(e) => setTempFeedback(e.target.value)}
                     placeholder="예: 서술형 단계별 유도 공식이 논리적이므로 부분점수 4점 상향 조정함."
                     rows={2}
-                    className="w-full bg-white border border-indigo-200 rounded-xl p-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
+                    className="w-full bg-white border border-indigo-200 rounded-xl p-3 text-xs text-duo-dark placeholder-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
                   />
                 </div>
               </div>
@@ -1285,7 +1285,7 @@ export default function TeacherDashboard({
               <div className="flex items-center justify-end gap-3 pt-2">
                 <button
                   onClick={() => setSelectedStudentForReview(null)}
-                  className="px-4 py-2.5 border border-slate-300 hover:bg-slate-100 rounded-xl text-xs font-bold text-slate-600 transition-colors cursor-pointer"
+                  className="px-4 py-2.5 border border-duo-gray-dark hover:bg-slate-100 rounded-xl text-xs font-bold text-duo-gray-dark transition-colors cursor-pointer"
                 >
                   취소
                 </button>

@@ -75,21 +75,21 @@ export default function PlayerAnalytics() {
   ].join(" ");
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-8 flex flex-col gap-8 text-slate-100 font-sans relative z-10">
+    <div className="w-full max-w-7xl mx-auto px-4 py-8 flex flex-col gap-8 text-duo-dark font-sans relative z-10">
       
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-900 pb-6">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-duo-gray-dark pb-6">
         <div>
           <h2 className="text-2xl md:text-3xl font-black tracking-tight flex items-center justify-center md:justify-start gap-2">
             <BarChart2 className="w-7 h-7 text-cyan-400" />
             플레이어 전적 분석 (OP.GG Style)
           </h2>
-          <p className="text-xs md:text-sm text-slate-500 mt-1">
+          <p className="text-xs md:text-sm text-duo-gray-dark mt-1">
             내 플레이 스타일을 분석한 실시간 퀴즈 리포트 및 매치 히스토리입니다.
           </p>
         </div>
         
-        <div className="flex items-center gap-3 bg-slate-900 border border-slate-800/80 px-4 py-2 rounded-2xl text-xs font-semibold text-slate-400">
+        <div className="flex items-center gap-3 bg-white border border-duo-gray-dark px-4 py-2 rounded-2xl text-xs font-semibold text-duo-dark">
           <RotateCw className="w-3.5 h-3.5" />
           <span>최신 데이터 업데이트 완료</span>
         </div>
@@ -102,8 +102,8 @@ export default function PlayerAnalytics() {
         <section className="lg:col-span-5 flex flex-col gap-6">
           
           {/* Radar Chart Card */}
-          <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-850 rounded-3xl p-6 flex flex-col items-center">
-            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest self-start mb-6 flex items-center gap-2">
+          <div className="bg-white backdrop-blur-xl border border-duo-gray-dark rounded-3xl p-6 flex flex-col items-center">
+            <h3 className="text-sm font-bold text-duo-dark uppercase tracking-widest self-start mb-6 flex items-center gap-2">
               <Brain className="w-4.5 h-4.5 text-cyan-400" />
               능력치 헥사곤 (Radar Chart)
             </h3>
@@ -141,33 +141,33 @@ export default function PlayerAnalytics() {
               </svg>
 
               {/* Labels overlay placed manually based on layout angles */}
-              <span className="absolute top-0 text-[10px] font-black text-slate-300">어휘력 (Vocab)</span>
-              <span className="absolute right-0 top-1/4 translate-x-2 text-[10px] font-black text-slate-300">문법 (Grammar)</span>
-              <span className="absolute right-8 bottom-4 text-[10px] font-black text-slate-300">반응속도 (Speed)</span>
-              <span className="absolute left-8 bottom-4 text-[10px] font-black text-slate-300">콤보 (Combo)</span>
-              <span className="absolute left-0 top-1/4 -translate-x-2 text-[10px] font-black text-slate-300">멘탈 (Mental)</span>
+              <span className="absolute top-0 text-[10px] font-black text-duo-dark">어휘력 (Vocab)</span>
+              <span className="absolute right-0 top-1/4 translate-x-2 text-[10px] font-black text-duo-dark">문법 (Grammar)</span>
+              <span className="absolute right-8 bottom-4 text-[10px] font-black text-duo-dark">반응속도 (Speed)</span>
+              <span className="absolute left-8 bottom-4 text-[10px] font-black text-duo-dark">콤보 (Combo)</span>
+              <span className="absolute left-0 top-1/4 -translate-x-2 text-[10px] font-black text-duo-dark">멘탈 (Mental)</span>
             </div>
 
             {/* List breakdown of stats values */}
             <div className="w-full space-y-2.5 mt-4">
-              <div className="flex justify-between items-center text-xs border-b border-slate-850 pb-2">
-                <span className="text-slate-400 font-semibold">어휘력 (Vocab)</span>
+              <div className="flex justify-between items-center text-xs border-b border-duo-gray-dark pb-2">
+                <span className="text-duo-dark font-semibold">어휘력 (Vocab)</span>
                 <span className="font-mono font-black text-cyan-400">{STATS.vocab} / 100</span>
               </div>
-              <div className="flex justify-between items-center text-xs border-b border-slate-850 pb-2">
-                <span className="text-slate-400 font-semibold">문법 (Grammar)</span>
+              <div className="flex justify-between items-center text-xs border-b border-duo-gray-dark pb-2">
+                <span className="text-duo-dark font-semibold">문법 (Grammar)</span>
                 <span className="font-mono font-black text-purple-400">{STATS.grammar} / 100</span>
               </div>
-              <div className="flex justify-between items-center text-xs border-b border-slate-850 pb-2">
-                <span className="text-slate-400 font-semibold">반응속도 (Speed)</span>
+              <div className="flex justify-between items-center text-xs border-b border-duo-gray-dark pb-2">
+                <span className="text-duo-dark font-semibold">반응속도 (Speed)</span>
                 <span className="font-mono font-black text-cyan-400">{STATS.speed} / 100</span>
               </div>
-              <div className="flex justify-between items-center text-xs border-b border-slate-850 pb-2">
-                <span className="text-slate-400 font-semibold">콤보 (Combo)</span>
+              <div className="flex justify-between items-center text-xs border-b border-duo-gray-dark pb-2">
+                <span className="text-duo-dark font-semibold">콤보 (Combo)</span>
                 <span className="font-mono font-black text-yellow-400">{STATS.combo} / 100</span>
               </div>
               <div className="flex justify-between items-center text-xs">
-                <span className="text-slate-400 font-semibold">멘탈 (Mental/Time pressure)</span>
+                <span className="text-duo-dark font-semibold">멘탈 (Mental/Time pressure)</span>
                 <span className="font-mono font-black text-orange-400">{STATS.mental} / 100</span>
               </div>
             </div>
@@ -179,11 +179,11 @@ export default function PlayerAnalytics() {
         <section className="lg:col-span-7 flex flex-col gap-6">
           
           {/* Win Rate & Overview Panel */}
-          <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-850 rounded-3xl p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          <div className="bg-white backdrop-blur-xl border border-duo-gray-dark rounded-3xl p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             
             {/* Circle Win Rate (Column 5) */}
-            <div className="md:col-span-5 flex flex-col items-center border-r-0 md:border-r border-slate-850/80 pr-0 md:pr-6">
-              <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">
+            <div className="md:col-span-5 flex flex-col items-center border-r-0 md:border-r border-duo-gray-dark pr-0 md:pr-6">
+              <h4 className="text-xs font-bold text-duo-gray-dark uppercase tracking-wider mb-4">
                 승률 분석 (Win Rate)
               </h4>
               <div className="relative w-28 h-28 flex items-center justify-center">
@@ -209,7 +209,7 @@ export default function PlayerAnalytics() {
                 </svg>
                 <div className="absolute text-center">
                   <span className="text-2xl font-black text-duo-dark">{winRate}%</span>
-                  <span className="block text-[9px] font-bold text-slate-500">최근 5경기</span>
+                  <span className="block text-[9px] font-bold text-duo-gray-dark">최근 5경기</span>
                 </div>
               </div>
             </div>
@@ -217,19 +217,19 @@ export default function PlayerAnalytics() {
             {/* Quick Summary Cards (Column 7) */}
             <div className="md:col-span-7 flex flex-col gap-3.5 pl-0 md:pl-2">
               <div>
-                <span className="text-xs text-slate-500 font-semibold block">총 경기 전적</span>
-                <p className="text-lg font-black text-slate-100 mt-1">
-                  3승 2패 <span className="text-xs text-slate-400 font-normal ml-1">최근 전적 양호!</span>
+                <span className="text-xs text-duo-gray-dark font-semibold block">총 경기 전적</span>
+                <p className="text-lg font-black text-duo-dark mt-1">
+                  3승 2패 <span className="text-xs text-duo-dark font-normal ml-1">최근 전적 양호!</span>
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 bg-slate-950/60 border border-slate-850 rounded-2xl">
-                  <span className="text-[10px] text-slate-500 font-bold block uppercase">평균 정답률</span>
+                <div className="p-3 bg-duo-gray border border-duo-gray-dark rounded-2xl">
+                  <span className="text-[10px] text-duo-gray-dark font-bold block uppercase">평균 정답률</span>
                   <span className="text-base font-black text-cyan-400 mt-0.5 block">73.3%</span>
                 </div>
-                <div className="p-3 bg-slate-950/60 border border-slate-850 rounded-2xl">
-                  <span className="text-[10px] text-slate-500 font-bold block uppercase">평균 풀이 속도</span>
+                <div className="p-3 bg-duo-gray border border-duo-gray-dark rounded-2xl">
+                  <span className="text-[10px] text-duo-gray-dark font-bold block uppercase">평균 풀이 속도</span>
                   <span className="text-base font-black text-yellow-500 mt-0.5 block">3.4초</span>
                 </div>
               </div>
@@ -250,14 +250,14 @@ export default function PlayerAnalytics() {
               </span>
             </div>
 
-            <p className="text-slate-300 font-medium text-xs md:text-sm leading-relaxed break-keep relative z-10">
+            <p className="text-duo-dark font-medium text-xs md:text-sm leading-relaxed break-keep relative z-10">
               ⚠️ <strong>오답 경고!</strong> 현재 <strong>관계대명사(Relative Pronouns)</strong> 관련 문법 문제에서 승률이 <strong>20%</strong>에 불과합니다. 오답 노트를 오답 던전(Shadow Raid)에서 격파하여 취약 개념을 반드시 보강하세요!
             </p>
           </div>
 
           {/* Recent Match History */}
-          <div className="bg-slate-900/40 backdrop-blur-xl border border-slate-850 rounded-3xl p-6 flex flex-col">
-            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+          <div className="bg-white backdrop-blur-xl border border-duo-gray-dark rounded-3xl p-6 flex flex-col">
+            <h3 className="text-sm font-bold text-duo-dark uppercase tracking-widest mb-4 flex items-center gap-2">
               <Activity className="w-4.5 h-4.5 text-cyan-400" />
               최근 5경기 매치 기록 (OP.GG)
             </h3>
@@ -276,7 +276,7 @@ export default function PlayerAnalytics() {
                     {/* Result Badge */}
                     <div className={`px-2.5 py-1.5 rounded-xl text-xs font-black text-center w-14 shadow ${
                       match.result === "WIN" 
-                        ? "bg-cyan-500 text-slate-950" 
+                        ? "bg-cyan-500 text-duo-dark" 
                         : "bg-purple-500 text-duo-dark"
                     }`}>
                       {match.result === "WIN" ? "승리" : "패배"}
@@ -284,15 +284,15 @@ export default function PlayerAnalytics() {
 
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-xs text-slate-500 font-bold">VS</span>
-                        <span className="font-extrabold text-sm text-slate-200">{match.opponentName}</span>
-                        <span className="text-[10px] text-slate-400">({match.opponentSchool})</span>
+                        <span className="text-xs text-duo-gray-dark font-bold">VS</span>
+                        <span className="font-extrabold text-sm text-duo-dark">{match.opponentName}</span>
+                        <span className="text-[10px] text-duo-dark">({match.opponentSchool})</span>
                       </div>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-[9px] font-bold px-1.5 py-0.5 bg-black/40 text-slate-400 rounded">
+                        <span className="text-[9px] font-bold px-1.5 py-0.5 bg-duo-gray text-duo-dark rounded">
                           {match.opponentTier}
                         </span>
-                        <span className="text-[10px] text-slate-500 font-semibold">{match.subject} 배틀</span>
+                        <span className="text-[10px] text-duo-gray-dark font-semibold">{match.subject} 배틀</span>
                       </div>
                     </div>
                   </div>
@@ -303,7 +303,7 @@ export default function PlayerAnalytics() {
                     }`}>
                       {match.result === "WIN" ? `+${match.lpChange} LP` : `${match.lpChange} LP`}
                     </span>
-                    <span className="text-[10px] text-slate-500 font-semibold font-sans flex items-center gap-1">
+                    <span className="text-[10px] text-duo-gray-dark font-semibold font-sans flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       {match.date}
                     </span>

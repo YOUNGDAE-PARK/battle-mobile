@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="ko"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-slate-700 font-sans">
+      <body className="min-h-full flex flex-col bg-white text-duo-dark font-sans">
         <BattleStudyProvider>
           {children}
         </BattleStudyProvider>
