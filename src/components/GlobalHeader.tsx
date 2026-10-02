@@ -11,7 +11,7 @@ export default function GlobalHeader() {
   const { energy, isStrictAssessment } = useBattleStudy();
 
   // Hide header on login page
-  if (pathname === "/login" || isStrictAssessment) return null;
+  if (pathname === "/login" || pathname.includes("/assessment") || isStrictAssessment) return null;
 
   const currentTab = pathname.includes("/battle") ? "BATTLE" :
                      pathname.includes("/shadow-raid") ? "SHADOW_RAID" :

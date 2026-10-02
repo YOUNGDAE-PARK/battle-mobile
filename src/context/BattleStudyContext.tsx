@@ -246,7 +246,7 @@ export function BattleStudyProvider({ children }: { children: React.ReactNode })
     setSelectedSubject("수학");
     setIsStrictAssessment(isStrict);
     setIsTeamBattle(false);
-    router.push("/battle");
+    router.push("/assessment");
   };
 
   const handleFinishMatch = (userHp: number, oppHp: number, log: any[]) => {
