@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { BattleStudyProvider } from "@/context/BattleStudyContext";
+import GlobalHeader from "@/components/GlobalHeader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,13 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ko"
-      className={`${inter.variable} h-full antialiased`}
-    >
+    <html lang="ko" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-duo-dark font-sans">
         <BattleStudyProvider>
-          {children}
+          <GlobalHeader />
+          <main className="flex-1 overflow-x-hidden">
+            {children}
+          </main>
         </BattleStudyProvider>
       </body>
     </html>

@@ -199,108 +199,6 @@ export default function Lobby({
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-900/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-900/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Header bar */}
-      <header className="border-b border-duo-gray-dark bg-white backdrop-blur-md sticky top-0 z-20 px-4 md:px-6 py-4 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3 shrink-0">
-          <div className="p-2 rounded-xl bg-gradient-to-tr from-white to-duo-gray text-duo-dark shadow-lg shadow-sm">
-            <Swords className="w-5 h-5 md:w-6 md:h-6" />
-          </div>
-          <div>
-            <h2 className="text-sm md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-duo-dark to-duo-gray-dark font-sans">
-              배틀스터디 아레나
-            </h2>
-            <p className="text-[9px] md:text-[10px] text-duo-blue tracking-wider font-semibold uppercase">
-              Season 1: First Honor
-            </p>
-          </div>
-        </div>
-
-        {/* Game Navigation Tabs */}
-        <div className="hidden md:flex items-center gap-1 bg-duo-gray border border-duo-gray-dark p-1 rounded-xl">
-          <button
-            type="button"
-            onClick={handleGoToLobby}
-            className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
-              lobbyTab === "ARENA"
-                ? "bg-white text-duo-dark shadow-sm"
-                : "text-duo-dark hover:text-duo-dark"
-            }`}
-          >
-            <span>🏛️</span>
-            <span>메인 로비</span>
-          </button>
-          <button
-            type="button"
-            onClick={handleGoToBattle}
-            className="px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 text-duo-dark hover:text-duo-red"
-          >
-            <span>⚔️</span>
-            <span>1:1 퀴즈 배틀</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setLobbyTab("SHADOW_RAID");
-              router.push("/shadow-raid");
-            }}
-            className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
-              lobbyTab === "SHADOW_RAID"
-                ? "bg-white text-duo-green shadow-sm"
-                : "text-duo-dark hover:text-duo-dark"
-            }`}
-          >
-            <span>👾</span>
-            <span>오답 던전</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setLobbyTab("ANALYTICS");
-              router.push("/analytics");
-            }}
-            className={`px-3.5 py-2 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
-              lobbyTab === "ANALYTICS"
-                ? "bg-white text-duo-dark shadow-sm"
-                : "text-duo-dark hover:text-duo-dark"
-            }`}
-          >
-            <span>📊</span>
-            <span>결과 & 분석</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              if (onGoToTeacherDashboard) onGoToTeacherDashboard();
-              else router.push("/teacher");
-            }}
-            className="px-3 py-2 rounded-lg text-xs font-black transition-all cursor-pointer text-duo-dark hover:text-duo-dark hover:bg-purple-950/20 border border-purple-900/30"
-          >
-            👩‍🏫 교사
-          </button>
-        </div>
-
-        {/* User Status Bar */}
-        <div className="flex items-center gap-3 shrink-0">
-          {/* Energy Bolt Badge */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-duo-yellow/10 border border-duo-yellow text-xs font-black text-duo-yellow">
-            <Zap className="w-4 h-4 fill-yellow-400 animate-pulse" />
-            <span>⚡ {energy} / 5</span>
-          </div>
-
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-duo-gray-dark text-xs font-semibold text-duo-green">
-            <span className="w-2 h-2 rounded-full bg-duo-green animate-ping" />
-            <span>4,821명 접속 중</span>
-          </div>
-
-          <button 
-            type="button"
-            onClick={() => setShowSettings(!showSettings)}
-            className="p-2 rounded-lg bg-white border border-duo-gray-dark hover:bg-white text-duo-dark hover:text-duo-dark transition-colors cursor-pointer"
-          >
-            <Settings className="w-4 h-4" />
-          </button>
-        </div>
-      </header>
 
       {/* 4-Card Student Navigation Hub */}
       <div className="max-w-7xl mx-auto px-4 mt-6 w-full">
@@ -319,7 +217,7 @@ export default function Lobby({
                   {nickname || "슈크림먹은빵"}
                 </span>
                 <span className="text-xs text-duo-dark font-medium">
-                  ({school || "청계중학교"})
+                  ({school || "청계중학교"}) <button type="button" onClick={() => setShowSettings(!showSettings)} className="ml-2 p-1 bg-duo-gray rounded"><Settings className="w-4 h-4 text-duo-dark" /></button>
                 </span>
                 <span className="text-[10px] px-2 py-0.5 rounded bg-white text-duo-dark font-mono">
                   {tier} {lp} LP
