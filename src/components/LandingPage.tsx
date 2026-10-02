@@ -15,9 +15,10 @@ const SEOUL_MIDDLE_SCHOOLS = [
 interface LandingPageProps {
   onJoin: (nickname: string, school: string) => void;
   onGoToTeacherDashboard?: () => void;
+  onStudentDirectEntry?: (targetMenu: "BATTLE" | "ANALYTICS" | "SHADOW_RAID" | "LOBBY") => void;
 }
 
-export default function LandingPage({ onJoin, onGoToTeacherDashboard }: LandingPageProps) {
+export default function LandingPage({ onJoin, onGoToTeacherDashboard, onStudentDirectEntry }: LandingPageProps) {
   const [nickname, setNickname] = useState("");
   const [schoolInput, setSchoolInput] = useState("");
   const [filteredSchools, setFilteredSchools] = useState<string[]>([]);
