@@ -704,9 +704,7 @@ export default function BattleArena({
             ? "bg-white border-slate-250" 
             : "bg-white backdrop-blur-xl border-duo-gray-dark"
         }`}>
-          <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-7xl md:text-8xl pointer-events-none select-none ${
-            isStrictAssessment ? "text-duo-dark" : "text-duo-dark/5"
-          }`}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-7xl md:text-8xl pointer-events-none select-none text-duo-dark/5">
             Q{currentRound + 1}
           </div>
           
